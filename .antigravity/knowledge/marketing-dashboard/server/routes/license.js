@@ -40,6 +40,10 @@ router.post('/verify', async (c) => {
 });
 
 router.get('/status', (c) => {
+  if (process.env.SKIP_AUTH === 'true') {
+    return c.json({ hasLicense: true });
+  }
+  
   const rootPath = path.resolve(process.cwd(), '../../../');
   const licenseFile = path.join(rootPath, '.antigravity', '.license');
   const hasLicense = fs.existsSync(licenseFile);

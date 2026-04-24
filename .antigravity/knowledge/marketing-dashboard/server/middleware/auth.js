@@ -16,6 +16,11 @@ export async function licenseAuth(c, next) {
     return next();
   }
 
+  // Skip auth for Demo or SKIP_AUTH mode
+  if (process.env.SKIP_AUTH === 'true') {
+    return next();
+  }
+
   const rootPath = path.resolve(process.cwd(), '../../../');
   const licenseFile = path.join(rootPath, '.antigravity', '.license');
   

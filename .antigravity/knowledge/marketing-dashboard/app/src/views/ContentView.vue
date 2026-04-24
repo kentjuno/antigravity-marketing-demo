@@ -59,18 +59,26 @@
         <div
           v-for="cmd in searchedCommands"
           :key="cmd.id"
-          class="bg-surface/80 p-4 rounded-xl border border-border/60 hover:border-accent hover:shadow-[0_0_15px_rgba(0,240,255,0.15)] transition-all cursor-pointer group flex flex-col h-full"
-          @click="copyCommand(cmd.command[locale] || cmd.command.vi)"
+          class="p-4 rounded-xl border transition-all flex flex-col h-full"
+          :class="[
+            cmd.isLocked 
+              ? 'bg-surface/40 border-border/30 opacity-70 cursor-not-allowed grayscale-[0.5]' 
+              : 'bg-surface/80 border-border/60 hover:border-accent hover:shadow-[0_0_15px_rgba(0,240,255,0.15)] cursor-pointer group'
+          ]"
+          @click="cmd.isLocked ? null : copyCommand(cmd.command[locale] || cmd.command.vi)"
         >
-          <div class="flex items-start justify-between mb-3">
-            <h3 class="font-bold text-text-primary text-sm flex items-center gap-2">
-              <span class="text-lg">{{ cmd.icon }}</span> 
-              <span class="group-hover:text-accent transition-colors">{{ cmd.name[locale] || cmd.name.vi }}</span>
+          <div class="flex items-start justify-between mb-3 relative">
+            <h3 class="font-bold text-sm flex items-center gap-2" :class="cmd.isLocked ? 'text-text-secondary' : 'text-text-primary'">
+              <span class="text-lg">{{ cmd.isLocked ? '🔒' : cmd.icon }}</span> 
+              <span :class="!cmd.isLocked && 'group-hover:text-accent transition-colors'">{{ cmd.name[locale] || cmd.name.vi }}</span>
             </h3>
             <span class="text-[10px] uppercase font-bold tracking-wider text-text-tertiary px-1.5 py-0.5 rounded bg-surface border border-border">{{ cmd.category }}</span>
           </div>
           <p class="text-xs text-text-secondary mb-3 flex-grow">{{ cmd.desc[locale] || cmd.desc.vi }}</p>
-          <code class="text-[10px] text-accent/80 block bg-black/40 px-2 py-1.5 rounded truncate font-mono border border-accent/10">{{ cmd.command[locale] || cmd.command.vi }}</code>
+          <code class="text-[10px] block px-2 py-1.5 rounded truncate font-mono border"
+                :class="cmd.isLocked ? 'text-text-tertiary bg-black/20 border-border/30' : 'text-accent/80 bg-black/40 border-accent/10'">
+            {{ cmd.isLocked ? (locale === 'vi' ? 'Đăng ký bản Full License để mở khóa' : 'Upgrade to Full License to unlock') : (cmd.command[locale] || cmd.command.vi) }}
+          </code>
         </div>
         
         <div v-if="searchedCommands.length === 0" class="col-span-full py-8 text-center text-text-tertiary">
