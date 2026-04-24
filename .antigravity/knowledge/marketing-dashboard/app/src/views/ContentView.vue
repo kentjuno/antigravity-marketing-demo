@@ -275,13 +275,13 @@ const fetchSkills = async () => {
     const dynamicSkills = await res.json();
     
     // Merge logic: only add skills that are not already hardcoded
-    const hardcodedIds = new Set(hardcodedCommands.map(c => c.id));
+    const hardcodedIds = new Set(skillsData.map(c => c.id));
     const newSkills = dynamicSkills.filter(skill => !hardcodedIds.has(skill.id)).map(skill => ({
       ...skill,
       category: 'other' // Put dynamic skills into "Other Skills" category
     }));
     
-    allCommands.value = [...hardcodedCommands, ...newSkills];
+    allCommands.value = [...skillsData, ...newSkills];
   } catch (error) {
     console.error('Failed to fetch dynamic skills:', error);
   }

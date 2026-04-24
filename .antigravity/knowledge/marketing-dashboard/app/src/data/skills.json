@@ -1,0 +1,2746 @@
+[
+  {
+    "id": "blog",
+    "category": "content",
+    "icon": "📝",
+    "name": {
+      "vi": "Viết Blog SEO",
+      "en": "SEO Blog Writer"
+    },
+    "command": {
+      "vi": "/akm:blog Viết bài Blog SEO 1500 chữ về: [Chủ Đề]",
+      "en": "/akm:blog Write a 1500-word SEO Blog post about: [Topic]"
+    },
+    "desc": {
+      "vi": "Blog chuẩn SEO đầy đủ heading, meta description, internal link",
+      "en": "SEO optimized blog with headings, meta descriptions, internal links"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "social",
+    "category": "content",
+    "icon": "🔥",
+    "name": {
+      "vi": "Viral Social Pack",
+      "en": "Viral Social Pack"
+    },
+    "command": {
+      "vi": "/akm:social Viết 5 bài Facebook viral về: [Chủ Đề]",
+      "en": "/akm:social Write 5 viral Facebook posts about: [Topic]"
+    },
+    "desc": {
+      "vi": "5 bài post Facebook/LinkedIn/Twitter giật tít, hook mạnh",
+      "en": "5 Facebook/LinkedIn/Twitter posts with strong hooks and viral potential"
+    }
+  },
+  {
+    "id": "email",
+    "category": "content",
+    "icon": "📧",
+    "name": {
+      "vi": "Email Marketing",
+      "en": "Email Marketing"
+    },
+    "command": {
+      "vi": "/akm:email Viết email sequence 5 bước nurture lead cho: [Sản Phẩm]",
+      "en": "/akm:email Write a 5-step lead nurture email sequence for: [Product]"
+    },
+    "desc": {
+      "vi": "Chuỗi email nuôi dưỡng khách hàng tự động theo funnel",
+      "en": "Automated email sequence to nurture leads down the funnel"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "copywrite",
+    "category": "content",
+    "icon": "✍️",
+    "name": {
+      "vi": "Copywriting",
+      "en": "Copywriting"
+    },
+    "command": {
+      "vi": "/akm:copywriting Viết landing page copy cho: [Sản Phẩm/Dịch Vụ]",
+      "en": "/akm:copywriting Write landing page copy for: [Product/Service]"
+    },
+    "desc": {
+      "vi": "Copy bán hàng theo framework AIDA/PAS/StoryBrand",
+      "en": "Sales copy using AIDA/PAS/StoryBrand frameworks"
+    }
+  },
+  {
+    "id": "content-creator",
+    "category": "content",
+    "icon": "🎯",
+    "name": {
+      "vi": "Content Creator",
+      "en": "Content Creator"
+    },
+    "command": {
+      "vi": "/akm:content-creator Lên lịch content 30 ngày cho: [Kênh/Thương Hiệu]",
+      "en": "/akm:content-creator Plan a 30-day content calendar for: [Channel/Brand]"
+    },
+    "desc": {
+      "vi": "Kế hoạch nội dung 30 ngày đa kênh tự động",
+      "en": "Automated 30-day multi-channel content plan"
+    }
+  },
+  {
+    "id": "content-review",
+    "category": "content",
+    "icon": "🔎",
+    "name": {
+      "vi": "Review & Cải thiện Content",
+      "en": "Content Review & Improvement"
+    },
+    "command": {
+      "vi": "/akm:content-reviewer Review và cải thiện bài viết sau: [Dán nội dung vào]",
+      "en": "/akm:content-reviewer Review and improve this content: [Paste Content]"
+    },
+    "desc": {
+      "vi": "Chấm điểm và đề xuất sửa chữa bài viết hiện có",
+      "en": "Grade and suggest improvements for existing content"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "journal",
+    "category": "content",
+    "icon": "📔",
+    "name": {
+      "vi": "Nhật Ký Thương Hiệu",
+      "en": "Journaling"
+    },
+    "command": {
+      "vi": "/akm:journal-writer Viết nhật ký thương hiệu tuần này về: [Sự Kiện/Cột Mốc]",
+      "en": "/akm:journal Log marketing journal: [Event/Insight]"
+    },
+    "desc": {
+      "vi": "Storytelling thương hiệu dạng nhật ký cảm xúc",
+      "en": "Record and store marketing insights in a structured journal format"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "slides",
+    "category": "content",
+    "icon": "📊",
+    "name": {
+      "vi": "Slide Presentation",
+      "en": "Slide Presentation"
+    },
+    "command": {
+      "vi": "/akm:slides Tạo outline slide deck cho: [Chủ Đề Trình Bày]",
+      "en": "/akm:slides Create slide deck outline for: [Presentation Topic]"
+    },
+    "desc": {
+      "vi": "Cấu trúc slide thuyết trình chuyên nghiệp",
+      "en": "Professional presentation slide structure and outline"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "seo",
+    "category": "seo",
+    "icon": "🔍",
+    "name": {
+      "vi": "Nghiên Cứu Keyword",
+      "en": "Keyword Research"
+    },
+    "command": {
+      "vi": "/akm:seo Nghiên cứu keyword cho: [Ngành Hàng/Chủ Đề]",
+      "en": "/akm:seo Research keywords for: [Industry/Topic]"
+    },
+    "desc": {
+      "vi": "Tìm keyword tiềm năng, low competition, search intent",
+      "en": "Find high-potential keywords, low competition, search intent analysis"
+    }
+  },
+  {
+    "id": "competitor",
+    "category": "seo",
+    "icon": "🕵️",
+    "name": {
+      "vi": "Phân Tích Đối Thủ",
+      "en": "Competitor Analysis"
+    },
+    "command": {
+      "vi": "/akm:competitor Phân tích SEO đối thủ: [URL đối thủ]",
+      "en": "/akm:competitor Analyze competitor SEO: [Competitor URL]"
+    },
+    "desc": {
+      "vi": "Bóc trần chiến lược SEO và content gap của đối thủ",
+      "en": "Uncover competitor SEO strategies and content gaps"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "seo-specialist",
+    "category": "seo",
+    "icon": "🏆",
+    "name": {
+      "vi": "Audit SEO Toàn Diện",
+      "en": "Comprehensive SEO Audit"
+    },
+    "command": {
+      "vi": "/akm:seo-specialist Audit toàn bộ SEO cho website: [URL Website]",
+      "en": "/akm:seo-specialist Complete SEO audit for website: [Website URL]"
+    },
+    "desc": {
+      "vi": "Kiểm tra technical SEO, on-page, off-page đầy đủ",
+      "en": "Full technical SEO, on-page, and off-page inspection"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "marketing-research",
+    "category": "seo",
+    "icon": "🔬",
+    "name": {
+      "vi": "Market Research",
+      "en": "Market Research"
+    },
+    "command": {
+      "vi": "/akm:marketing-research Nghiên cứu thị trường cho: [Sản Phẩm/Ngành]",
+      "en": "/akm:marketing-research Conduct market research for: [Product/Industry]"
+    },
+    "desc": {
+      "vi": "Phân tích thị trường, xu hướng và cơ hội kinh doanh",
+      "en": "Analyze market trends, business opportunities, and landscape"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ads",
+    "category": "ads",
+    "icon": "💰",
+    "name": {
+      "vi": "Facebook/Google Ads",
+      "en": "Facebook/Google Ads"
+    },
+    "command": {
+      "vi": "/akm:ads-management Tạo campaign quảng cáo cho: [Sản Phẩm] ngân sách [X triệu]",
+      "en": "/akm:ads-management Create ad campaign for: [Product] budget [X amount]"
+    },
+    "desc": {
+      "vi": "Bộ copy + target audience + bidding strategy đầy đủ",
+      "en": "Complete ad copy + target audience + bidding strategy"
+    }
+  },
+  {
+    "id": "paid-ads",
+    "category": "ads",
+    "icon": "🎯",
+    "name": {
+      "vi": "Paid Ads Strategy",
+      "en": "Paid Ads Strategy"
+    },
+    "command": {
+      "vi": "/akm:paid-ads Lên chiến lược paid ads cho: [Sản Phẩm/Mục Tiêu]",
+      "en": "/akm:paid-ads Plan paid ads strategy for: [Product/Goal]"
+    },
+    "desc": {
+      "vi": "Chiến lược tổng thể cho toàn bộ kênh quảng cáo trả phí",
+      "en": "Comprehensive strategy for all paid advertising channels"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "banner",
+    "category": "ads",
+    "icon": "🎨",
+    "name": {
+      "vi": "Thiết Kế Banner",
+      "en": "Banner Design"
+    },
+    "command": {
+      "vi": "/akm:banner-design Thiết kế banner quảng cáo cho: [Sản Phẩm/Sự Kiện]",
+      "en": "/akm:banner-design Design an ad banner for: [Product/Event]"
+    },
+    "desc": {
+      "vi": "Brief thiết kế banner chuẩn kích thước đa nền tảng",
+      "en": "Design brief for multi-platform ad banners"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ab-test",
+    "category": "ads",
+    "icon": "🧪",
+    "name": {
+      "vi": "A/B Test Ads",
+      "en": "A/B Test Ads"
+    },
+    "command": {
+      "vi": "/akm:ab-test-setup Setup A/B test cho ad campaign: [Biến thể cần test]",
+      "en": "/akm:ab-test-setup Setup A/B test for ad campaign: [Variant to test]"
+    },
+    "desc": {
+      "vi": "Thiết kế thí nghiệm split test chuẩn thống kê",
+      "en": "Design statistically significant split test experiments"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "campaign",
+    "category": "campaign",
+    "icon": "📣",
+    "name": {
+      "vi": "Lên Kế Hoạch Campaign",
+      "en": "Campaign Planning"
+    },
+    "command": {
+      "vi": "/akm:campaign Lên kế hoạch campaign marketing cho: [Sản Phẩm/Mục Tiêu]",
+      "en": "/akm:campaign Plan a marketing campaign for: [Product/Goal]"
+    },
+    "desc": {
+      "vi": "Kế hoạch campaign 360° từ brief đến execution",
+      "en": "360° campaign planning from brief to execution"
+    }
+  },
+  {
+    "id": "campaign-manager",
+    "category": "campaign",
+    "icon": "🗂️",
+    "name": {
+      "vi": "Quản Lý Campaign",
+      "en": "Campaign Manager"
+    },
+    "command": {
+      "vi": "/akm:campaign-manager Tạo tracking sheet và checklist cho campaign: [Tên Campaign]",
+      "en": "/akm:campaign-manager Create tracking sheet and checklist for campaign: [Campaign Name]"
+    },
+    "desc": {
+      "vi": "Dashboard theo dõi tiến độ và KPI campaign",
+      "en": "Dashboard to track campaign progress and KPIs"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "campaign-debugger",
+    "category": "campaign",
+    "icon": "🔧",
+    "name": {
+      "vi": "Debug Campaign",
+      "en": "Campaign Debugger"
+    },
+    "command": {
+      "vi": "/akm:campaign-debugger Phân tích tại sao campaign đang under-perform: [Mô tả vấn đề]",
+      "en": "/akm:campaign-debugger Analyze why the campaign is under-performing: [Issue Description]"
+    },
+    "desc": {
+      "vi": "Chẩn đoán và đề xuất fix cho campaign không đạt KPI",
+      "en": "Diagnose and propose fixes for underperforming campaigns"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "launch",
+    "category": "campaign",
+    "icon": "🚀",
+    "name": {
+      "vi": "Kế Hoạch Launch",
+      "en": "Launch Strategy"
+    },
+    "command": {
+      "vi": "/akm:launch-strategy Lên kế hoạch launch cho: [Sản Phẩm/Dịch Vụ]",
+      "en": "/akm:launch-strategy Create a launch plan for: [Product/Service]"
+    },
+    "desc": {
+      "vi": "Timeline và checklist ra mắt sản phẩm chi tiết",
+      "en": "Detailed product launch timeline and checklist"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "funnel",
+    "category": "growth",
+    "icon": "🌊",
+    "name": {
+      "vi": "Thiết Kế Funnel",
+      "en": "Funnel Design"
+    },
+    "command": {
+      "vi": "/akm:funnel Thiết kế marketing funnel cho: [Sản Phẩm]",
+      "en": "/akm:funnel Design marketing funnel for: [Product]"
+    },
+    "desc": {
+      "vi": "Phác thảo toàn bộ phễu TOFU → MOFU → BOFU",
+      "en": "Outline complete TOFU → MOFU → BOFU funnel"
+    }
+  },
+  {
+    "id": "funnel-architect",
+    "category": "growth",
+    "icon": "🏗️",
+    "name": {
+      "vi": "Funnel Architect",
+      "en": "Funnel Architect"
+    },
+    "command": {
+      "vi": "/akm:funnel-architect Xây dựng chi tiết funnel conversion cho: [Sản Phẩm]",
+      "en": "/akm:funnel-architect Build detailed conversion funnel for: [Product]"
+    },
+    "desc": {
+      "vi": "Thiết kế funnel kỹ thuật với các conversion point cụ thể",
+      "en": "Design technical funnel with specific conversion points"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "affiliate",
+    "category": "growth",
+    "icon": "🤝",
+    "name": {
+      "vi": "Affiliate Program",
+      "en": "Affiliate Program"
+    },
+    "command": {
+      "vi": "/akm:affiliate-marketing Thiết kế chương trình affiliate cho: [Sản Phẩm]",
+      "en": "/akm:affiliate-marketing Design affiliate program for: [Product]"
+    },
+    "desc": {
+      "vi": "Cấu trúc hoa hồng, onboarding và quản lý đối tác",
+      "en": "Commission structure, onboarding, and partner management"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "referral",
+    "category": "growth",
+    "icon": "👥",
+    "name": {
+      "vi": "Referral Program",
+      "en": "Referral Program"
+    },
+    "command": {
+      "vi": "/akm:referral-program-building Xây dựng chương trình giới thiệu cho: [Sản Phẩm]",
+      "en": "/akm:referral-program-building Build referral program for: [Product]"
+    },
+    "desc": {
+      "vi": "Viral loop referral tăng trưởng tự nhiên",
+      "en": "Viral loop referral for organic growth"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "gamification",
+    "category": "growth",
+    "icon": "🎮",
+    "name": {
+      "vi": "Gamification",
+      "en": "Gamification"
+    },
+    "command": {
+      "vi": "/akm:gamification-marketing Thiết kế gamification cho: [App/Website/Cộng Đồng]",
+      "en": "/akm:gamification-marketing Design gamification for: [App/Website/Community]"
+    },
+    "desc": {
+      "vi": "Hệ thống điểm thưởng, badge và leaderboard tăng engagement",
+      "en": "Reward system, badges, and leaderboards to boost engagement"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "free-tool",
+    "category": "growth",
+    "icon": "🛠️",
+    "name": {
+      "vi": "Free Tool Strategy",
+      "en": "Free Tool Strategy"
+    },
+    "command": {
+      "vi": "/akm:free-tool-strategy Tạo free tool/lead magnet cho ngành: [Ngành Của Bạn]",
+      "en": "/akm:free-tool-strategy Create free tool/lead magnet for: [Your Industry]"
+    },
+    "desc": {
+      "vi": "Ý tưởng công cụ miễn phí để thu hút lead chất lượng",
+      "en": "Free tool ideas to attract high-quality leads"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "upsell",
+    "category": "growth",
+    "icon": "📦",
+    "name": {
+      "vi": "Upsell & Cross-sell",
+      "en": "Upsell & Cross-sell"
+    },
+    "command": {
+      "vi": "/akm:upsell-maximizer Thiết kế upsell strategy cho: [Sản Phẩm]",
+      "en": "/akm:upsell-maximizer Design upsell strategy for: [Product]"
+    },
+    "desc": {
+      "vi": "Tăng AOV qua upsell, cross-sell và bundle thông minh",
+      "en": "Increase AOV via smart upsells, cross-sells, and bundles"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "pricing",
+    "category": "growth",
+    "icon": "💲",
+    "name": {
+      "vi": "Pricing Strategy",
+      "en": "Pricing Strategy"
+    },
+    "command": {
+      "vi": "/akm:pricing-strategy Tư vấn pricing model cho: [Sản Phẩm/Dịch Vụ]",
+      "en": "/akm:pricing-strategy Consult pricing model for: [Product/Service]"
+    },
+    "desc": {
+      "vi": "Phân tích và đề xuất mô hình giá tối ưu",
+      "en": "Analyze and propose optimal pricing models"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "community",
+    "category": "community",
+    "icon": "🏘️",
+    "name": {
+      "vi": "Quản Lý Cộng Đồng",
+      "en": "Community Management"
+    },
+    "command": {
+      "vi": "/akm:community-manager Lên kế hoạch xây dựng cộng đồng cho: [Brand/Sản Phẩm]",
+      "en": "/akm:community-manager Plan community building for: [Brand/Product]"
+    },
+    "desc": {
+      "vi": "Chiến lược xây dựng và nuôi dưỡng community",
+      "en": "Strategy for building and nurturing a community"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "social-manager",
+    "category": "community",
+    "icon": "📱",
+    "name": {
+      "vi": "Social Media Manager",
+      "en": "Social Media Manager"
+    },
+    "command": {
+      "vi": "/akm:social-media-manager Lên lịch social media 1 tháng cho: [Thương Hiệu]",
+      "en": "/akm:social-media-manager Plan 1-month social media calendar for: [Brand]"
+    },
+    "desc": {
+      "vi": "Lịch đăng bài đa kênh với nội dung và hashtag tối ưu",
+      "en": "Multi-channel posting schedule with optimized content and hashtags"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "sale-enabler",
+    "category": "community",
+    "icon": "💬",
+    "name": {
+      "vi": "Sales Enablement",
+      "en": "Sales Enablement"
+    },
+    "command": {
+      "vi": "/akm:sale-enabler Tạo bộ tài liệu hỗ trợ bán hàng cho: [Sản Phẩm]",
+      "en": "/akm:sale-enabler Create sales support materials for: [Product]"
+    },
+    "desc": {
+      "vi": "Script bán hàng, FAQ và objection handling",
+      "en": "Sales scripts, FAQs, and objection handling"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "lead-qualifier",
+    "category": "community",
+    "icon": "🔑",
+    "name": {
+      "vi": "Lead Qualification",
+      "en": "Lead Qualification"
+    },
+    "command": {
+      "vi": "/akm:lead-qualifier Xây dựng hệ thống chấm điểm lead cho: [Sản Phẩm]",
+      "en": "/akm:lead-qualifier Build lead scoring system for: [Product]"
+    },
+    "desc": {
+      "vi": "Lead scoring model phân loại khách hàng tiềm năng",
+      "en": "Lead scoring model to classify potential customers"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "analytics",
+    "category": "analytics",
+    "icon": "📈",
+    "name": {
+      "vi": "Phân Tích Campaign",
+      "en": "Campaign Analysis"
+    },
+    "command": {
+      "vi": "/akm:analytics Phân tích và đưa ra insight cho: [Tên Campaign + Data]",
+      "en": "/akm:analytics Analyze and provide insights for: [Campaign Name + Data]"
+    },
+    "desc": {
+      "vi": "Đọc data và tư vấn tối ưu chiến dịch marketing",
+      "en": "Read data and advise on marketing campaign optimization"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "analyze",
+    "category": "analytics",
+    "icon": "🔭",
+    "name": {
+      "vi": "Marketing Analytics",
+      "en": "Marketing Analytics"
+    },
+    "command": {
+      "vi": "/akm:analyze Phân tích hiệu suất marketing tháng [X] của: [Thương Hiệu]",
+      "en": "/akm:analyze Analyze month [X] marketing performance for: [Brand]"
+    },
+    "desc": {
+      "vi": "Báo cáo hiệu quả marketing toàn diện theo tháng",
+      "en": "Comprehensive monthly marketing performance report"
+    }
+  },
+  {
+    "id": "marketing-ideas",
+    "category": "analytics",
+    "icon": "💡",
+    "name": {
+      "vi": "Marketing Ideas",
+      "en": "Marketing Ideas"
+    },
+    "command": {
+      "vi": "/akm:marketing-ideas Brainstorm 20 ý tưởng marketing cho: [Sản Phẩm/Mục Tiêu]",
+      "en": "/akm:marketing-ideas Brainstorm 20 marketing ideas for: [Product/Goal]"
+    },
+    "desc": {
+      "vi": "Tập hợp ý tưởng marketing sáng tạo từ nhiều góc độ",
+      "en": "Collection of creative marketing ideas from multiple angles"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "marketing-psych",
+    "category": "analytics",
+    "icon": "🧠",
+    "name": {
+      "vi": "Marketing Psychology",
+      "en": "Marketing Psychology"
+    },
+    "command": {
+      "vi": "/akm:marketing-psychology Áp dụng tâm lý học marketing cho: [Sản Phẩm/Landing Page]",
+      "en": "/akm:marketing-psychology Apply marketing psychology for: [Product/Landing Page]"
+    },
+    "desc": {
+      "vi": "Khai thác bias nhận thức để tăng conversion rate",
+      "en": "Exploit cognitive biases to increase conversion rate"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "brand",
+    "category": "brand",
+    "icon": "💎",
+    "name": {
+      "vi": "Brand Voice",
+      "en": "Brand Voice"
+    },
+    "command": {
+      "vi": "/akm:brand Xây dựng brand voice và tone of voice cho: [Tên Thương Hiệu]",
+      "en": "/akm:brand Build brand voice and tone of voice for: [Brand Name]"
+    },
+    "desc": {
+      "vi": "Tài liệu định nghĩa giọng nói thương hiệu chuẩn",
+      "en": "Document defining standard brand voice"
+    }
+  },
+  {
+    "id": "persona",
+    "category": "brand",
+    "icon": "👤",
+    "name": {
+      "vi": "Customer Persona",
+      "en": "Customer Persona"
+    },
+    "command": {
+      "vi": "/akm:persona Xây dựng customer persona chi tiết cho: [Sản Phẩm/Dịch Vụ]",
+      "en": "/akm:persona Build detailed customer persona for: [Product/Service]"
+    },
+    "desc": {
+      "vi": "Phác họa chân dung khách hàng mục tiêu đầy đủ",
+      "en": "Sketch a complete target customer persona"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "logo",
+    "category": "brand",
+    "icon": "🎨",
+    "name": {
+      "vi": "Logo & Visual Identity",
+      "en": "Logo & Visual Identity"
+    },
+    "command": {
+      "vi": "/akm:logo-design Thiết kế brief logo và visual identity cho: [Tên Thương Hiệu]",
+      "en": "/akm:logo-design Design logo brief and visual identity for: [Brand Name]"
+    },
+    "desc": {
+      "vi": "Brief thiết kế nhận diện thương hiệu đầy đủ",
+      "en": "Complete brand identity design brief"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "cip",
+    "category": "brand",
+    "icon": "🖼️",
+    "name": {
+      "vi": "Brand Design System",
+      "en": "Brand Design System"
+    },
+    "command": {
+      "vi": "/akm:cip-design Xây dựng design system marketing cho: [Thương Hiệu]",
+      "en": "/akm:cip-design Build marketing design system for: [Brand]"
+    },
+    "desc": {
+      "vi": "Hệ thống màu sắc, font chữ và template marketing",
+      "en": "System of colors, fonts, and marketing templates"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "video",
+    "category": "video",
+    "icon": "🎬",
+    "name": {
+      "vi": "Video Marketing",
+      "en": "Video Marketing"
+    },
+    "command": {
+      "vi": "/akm:video Viết kịch bản video marketing cho: [Sản Phẩm] dài [X] giây",
+      "en": "/akm:video Write a marketing video script for: [Product] duration [X] seconds"
+    },
+    "desc": {
+      "vi": "Script video quảng cáo/giới thiệu chuyên nghiệp",
+      "en": "Professional ad/intro video script"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "youtube",
+    "category": "video",
+    "icon": "▶️",
+    "name": {
+      "vi": "YouTube Strategy",
+      "en": "YouTube Strategy"
+    },
+    "command": {
+      "vi": "/akm:youtube Lên chiến lược YouTube channel cho: [Thương Hiệu/Ngành]",
+      "en": "/akm:youtube Plan YouTube channel strategy for: [Brand/Industry]"
+    },
+    "desc": {
+      "vi": "Kế hoạch content, SEO và tăng trưởng kênh YouTube",
+      "en": "Content, SEO, and YouTube channel growth plan"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "youtube-thumb",
+    "category": "video",
+    "icon": "🖼️",
+    "name": {
+      "vi": "YouTube Thumbnail",
+      "en": "YouTube Thumbnail"
+    },
+    "command": {
+      "vi": "/akm:youtube-thumbnail-design Thiết kế brief thumbnail cho video về: [Chủ Đề]",
+      "en": "/akm:youtube-thumbnail-design Design thumbnail brief for video about: [Topic]"
+    },
+    "desc": {
+      "vi": "Brief thiết kế thumbnail click-bait chuyên nghiệp",
+      "en": "Professional click-bait thumbnail design brief"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ai-artist",
+    "category": "video",
+    "icon": "🤖",
+    "name": {
+      "vi": "AI Image Generation",
+      "en": "AI Image Generation"
+    },
+    "command": {
+      "vi": "/ag:ai-artist Tạo ảnh marketing cho: [Sản Phẩm/Chiến Dịch]",
+      "en": "/ag:ai-artist Generate marketing image for: [Product/Campaign]"
+    },
+    "desc": {
+      "vi": "Tạo ảnh bằng AI (Imagen/MiniMax) cho marketing",
+      "en": "Generate AI images (Imagen/MiniMax) for marketing"
+    }
+  },
+  {
+    "id": "email-wizard",
+    "category": "content",
+    "icon": "🧙",
+    "name": {
+      "vi": "Email Wizard Pro",
+      "en": "Email Wizard Pro"
+    },
+    "command": {
+      "vi": "/akm:email-wizard Viết email sequence cho: [Mục Tiêu/Sản Phẩm]",
+      "en": "/akm:email-wizard Write an email sequence for: [Goal/Product]"
+    },
+    "desc": {
+      "vi": "Email wizard nâng cao với A/B testing, segmentation và automation flow",
+      "en": "Advanced email wizard with A/B testing, segmentation and automation flows"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "copywriter",
+    "category": "content",
+    "icon": "🖊️",
+    "name": {
+      "vi": "Copywriter Agent",
+      "en": "Copywriter Agent"
+    },
+    "command": {
+      "vi": "/akm:copywriter Viết copy cho: [Sản Phẩm/Chiến Dịch]",
+      "en": "/akm:copywriter Write copy for: [Product/Campaign]"
+    },
+    "desc": {
+      "vi": "Agent chuyên viết copy theo nhiều framework: AIDA, PAS, 4U, StoryBrand",
+      "en": "Specialized copywriter agent using multiple frameworks: AIDA, PAS, 4U, StoryBrand"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "content-marketing",
+    "category": "content",
+    "icon": "📰",
+    "name": {
+      "vi": "Content Marketing",
+      "en": "Content Marketing"
+    },
+    "command": {
+      "vi": "/akm:content-marketing Xây dựng chiến lược content marketing cho: [Thương Hiệu]",
+      "en": "/akm:content-marketing Build a content marketing strategy for: [Brand]"
+    },
+    "desc": {
+      "vi": "Chiến lược content marketing toàn diện từ pillar content đến distribution",
+      "en": "Comprehensive content marketing strategy from pillar content to distribution"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "content-hub",
+    "category": "content",
+    "icon": "🗂️",
+    "name": {
+      "vi": "Content Hub",
+      "en": "Content Hub"
+    },
+    "command": {
+      "vi": "/akm:content-hub Tổ chức content hub cho chủ đề: [Chủ Đề Chính]",
+      "en": "/akm:content-hub Organize a content hub for topic: [Main Topic]"
+    },
+    "desc": {
+      "vi": "Xây dựng hub & spoke content architecture tăng authority SEO",
+      "en": "Build a hub & spoke content architecture to boost SEO authority"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "write",
+    "category": "content",
+    "icon": "📄",
+    "name": {
+      "vi": "Viết Tổng Quát",
+      "en": "General Writing"
+    },
+    "command": {
+      "vi": "/akm:write Viết: [Loại Văn Bản + Yêu Cầu]",
+      "en": "/akm:write Write: [Text Type + Requirements]"
+    },
+    "desc": {
+      "vi": "Công cụ viết đa năng: báo cáo, đề xuất, thư từ, tài liệu nội bộ",
+      "en": "Versatile writing tool: reports, proposals, letters, internal documents"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "journal",
+    "category": "content",
+    "icon": "📓",
+    "name": {
+      "vi": "Journaling",
+      "en": "Journaling"
+    },
+    "command": {
+      "vi": "/akm:journal Ghi chép nhật ký marketing: [Sự Kiện/Insight]",
+      "en": "/akm:journal Log marketing journal: [Event/Insight]"
+    },
+    "desc": {
+      "vi": "Ghi chép và lưu trữ insight marketing theo dạng nhật ký có cấu trúc",
+      "en": "Record and store marketing insights in a structured journal format"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "markdown-novel-viewer",
+    "category": "content",
+    "icon": "📖",
+    "name": {
+      "vi": "Story Viewer",
+      "en": "Story Viewer"
+    },
+    "command": {
+      "vi": "/akm:markdown-novel-viewer Đọc và review story/kịch bản: [Tên File]",
+      "en": "/akm:markdown-novel-viewer Read and review story/script: [File Name]"
+    },
+    "desc": {
+      "vi": "Đọc và phân tích nội dung dạng story, kịch bản, tiểu thuyết marketing",
+      "en": "Read and analyze story, script, and marketing novel content"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "creativity",
+    "category": "content",
+    "icon": "💡",
+    "name": {
+      "vi": "Ideation & Creativity",
+      "en": "Ideation & Creativity"
+    },
+    "command": {
+      "vi": "/akm:creativity Brainstorm ý tưởng sáng tạo cho: [Dự Án/Campaign]",
+      "en": "/akm:creativity Brainstorm creative ideas for: [Project/Campaign]"
+    },
+    "desc": {
+      "vi": "Khơi nguồn sáng tạo với kỹ thuật SCAMPER, mind mapping, random stimulus",
+      "en": "Spark creativity using SCAMPER, mind mapping, and random stimulus techniques"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "cook",
+    "category": "content",
+    "icon": "👨‍🍳",
+    "name": {
+      "vi": "Template Cook",
+      "en": "Template Cook"
+    },
+    "command": {
+      "vi": "/akm:cook Tạo template cho: [Loại Nội Dung]",
+      "en": "/akm:cook Create template for: [Content Type]"
+    },
+    "desc": {
+      "vi": "Tạo và tùy biến template nội dung chuẩn hóa cho team",
+      "en": "Create and customize standardized content templates for the team"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "form-cro",
+    "category": "cro",
+    "icon": "📋",
+    "name": {
+      "vi": "Form CRO",
+      "en": "Form CRO"
+    },
+    "command": {
+      "vi": "/akm:form-cro Tối ưu form đăng ký cho: [Landing Page/Funnel]",
+      "en": "/akm:form-cro Optimize registration form for: [Landing Page/Funnel]"
+    },
+    "desc": {
+      "vi": "Tối ưu form chuyển đổi: số field, copy, microcopy, UX friction points",
+      "en": "Optimize conversion form: field count, copy, microcopy, UX friction points"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "onboarding-cro",
+    "category": "cro",
+    "icon": "🛤️",
+    "name": {
+      "vi": "Onboarding CRO",
+      "en": "Onboarding CRO"
+    },
+    "command": {
+      "vi": "/akm:onboarding-cro Tối ưu luồng onboarding cho: [App/Sản Phẩm]",
+      "en": "/akm:onboarding-cro Optimize onboarding flow for: [App/Product]"
+    },
+    "desc": {
+      "vi": "Tối ưu trải nghiệm onboarding để tăng activation rate và giảm churn",
+      "en": "Optimize onboarding experience to increase activation rate and reduce churn"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "attraction-specialist",
+    "category": "seo",
+    "icon": "🧲",
+    "name": {
+      "vi": "Attraction Specialist",
+      "en": "Attraction Specialist"
+    },
+    "command": {
+      "vi": "/akm:attraction-specialist Tìm cơ hội thu hút lead cho: [Ngành/Sản Phẩm]",
+      "en": "/akm:attraction-specialist Find lead generation opportunities for: [Industry/Product]"
+    },
+    "desc": {
+      "vi": "Chuyên gia TOFU: keyword gap analysis, lead magnet, programmatic SEO template",
+      "en": "TOFU specialist: keyword gap analysis, lead magnets, programmatic SEO templates"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "scout",
+    "category": "seo",
+    "icon": "🔭",
+    "name": {
+      "vi": "Scout Research",
+      "en": "Scout Research"
+    },
+    "command": {
+      "vi": "/akm:scout Trinh sát thị trường và cơ hội cho: [Ngành/Từ Khóa]",
+      "en": "/akm:scout Scout market and opportunities for: [Industry/Keyword]"
+    },
+    "desc": {
+      "vi": "Trinh sát cơ hội nội dung và thị trường từ nhiều nguồn dữ liệu",
+      "en": "Scout content and market opportunities from multiple data sources"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "scout-external",
+    "category": "seo",
+    "icon": "🌐",
+    "name": {
+      "vi": "External Scout",
+      "en": "External Scout"
+    },
+    "command": {
+      "vi": "/akm:scout-external Trinh sát external sources cho: [Chủ Đề]",
+      "en": "/akm:scout-external Scout external sources for: [Topic]"
+    },
+    "desc": {
+      "vi": "Social listening từ Reddit, Quora, forum để tìm pain point thực của khách",
+      "en": "Social listening from Reddit, Quora, forums to find real customer pain points"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "marketing-planning",
+    "category": "campaign",
+    "icon": "🗓️",
+    "name": {
+      "vi": "Lập Kế Hoạch Marketing",
+      "en": "Marketing Planning"
+    },
+    "command": {
+      "vi": "/akm:marketing-planning Lập kế hoạch marketing quý/năm cho: [Thương Hiệu]",
+      "en": "/akm:marketing-planning Create quarterly/yearly marketing plan for: [Brand]"
+    },
+    "desc": {
+      "vi": "Kế hoạch marketing chiến lược theo quý với OKRs và budget allocation",
+      "en": "Strategic quarterly marketing plan with OKRs and budget allocation"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "continuity-specialist",
+    "category": "campaign",
+    "icon": "🔄",
+    "name": {
+      "vi": "Continuity Specialist",
+      "en": "Continuity Specialist"
+    },
+    "command": {
+      "vi": "/akm:continuity-specialist Xây dựng chương trình giữ chân khách hàng cho: [Sản Phẩm]",
+      "en": "/akm:continuity-specialist Build customer retention program for: [Product]"
+    },
+    "desc": {
+      "vi": "Thiết kế subscription model, loyalty program và retention campaign",
+      "en": "Design subscription models, loyalty programs, and retention campaigns"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "hub",
+    "category": "growth",
+    "icon": "🌐",
+    "name": {
+      "vi": "Marketing Hub",
+      "en": "Marketing Hub"
+    },
+    "command": {
+      "vi": "/akm:hub Xây dựng marketing hub tổng hợp cho: [Thương Hiệu]",
+      "en": "/akm:hub Build central marketing hub for: [Brand]"
+    },
+    "desc": {
+      "vi": "Trung tâm điều phối toàn bộ hoạt động marketing đa kênh",
+      "en": "Central command for coordinating multi-channel marketing activities"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "shopify",
+    "category": "growth",
+    "icon": "🛒",
+    "name": {
+      "vi": "Shopify E-commerce",
+      "en": "Shopify E-commerce"
+    },
+    "command": {
+      "vi": "/akm:shopify Tối ưu Shopify store cho: [Sản Phẩm/Ngành]",
+      "en": "/akm:shopify Optimize Shopify store for: [Product/Industry]"
+    },
+    "desc": {
+      "vi": "Chiến lược marketing Shopify: product page, collection, email flows, ads",
+      "en": "Shopify marketing strategy: product page, collections, email flows, ads"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "payment-integration",
+    "category": "growth",
+    "icon": "💳",
+    "name": {
+      "vi": "Payment & Checkout",
+      "en": "Payment & Checkout"
+    },
+    "command": {
+      "vi": "/akm:payment-integration Thiết kế checkout flow cho: [Sản Phẩm]",
+      "en": "/akm:payment-integration Design checkout flow for: [Product]"
+    },
+    "desc": {
+      "vi": "Tối ưu luồng thanh toán để giảm abandoned cart và tăng conversion",
+      "en": "Optimize payment flow to reduce abandoned carts and increase conversion"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ai-multimodal",
+    "category": "ai",
+    "icon": "🤖",
+    "name": {
+      "vi": "AI Multimodal",
+      "en": "AI Multimodal"
+    },
+    "command": {
+      "vi": "/ag:ai-multimodal Phân tích/tạo nội dung đa phương tiện: [Yêu Cầu]",
+      "en": "/ag:ai-multimodal Analyze/generate multimedia content: [Requirements]"
+    },
+    "desc": {
+      "vi": "Phân tích ảnh/video/audio, tạo ảnh Imagen 4, video Veo 3, giọng nói MiniMax",
+      "en": "Analyze images/video/audio, generate Imagen 4 images, Veo 3 video, MiniMax voice"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "analytics-analyst",
+    "category": "analytics",
+    "icon": "🔬",
+    "name": {
+      "vi": "Analytics Analyst",
+      "en": "Analytics Analyst"
+    },
+    "command": {
+      "vi": "/akm:analytics-analyst Phân tích hiệu suất: [Campaign/Kênh + Data]",
+      "en": "/akm:analytics-analyst Analyze performance: [Campaign/Channel + Data]"
+    },
+    "desc": {
+      "vi": "Agent phân tích chuyên sâu: traffic patterns, conversion tracking, trend analysis",
+      "en": "In-depth analyst agent: traffic patterns, conversion tracking, trend analysis"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "mermaidjs-v11",
+    "category": "analytics",
+    "icon": "🗺️",
+    "name": {
+      "vi": "Diagram & Flowchart",
+      "en": "Diagram & Flowchart"
+    },
+    "command": {
+      "vi": "/akm:mermaidjs-v11 Vẽ sơ đồ quy trình cho: [Chiến Lược/Funnel]",
+      "en": "/akm:mermaidjs-v11 Draw process diagram for: [Strategy/Funnel]"
+    },
+    "desc": {
+      "vi": "Tạo diagram, flowchart, Gantt chart cho marketing strategy bằng Mermaid.js v11",
+      "en": "Create diagrams, flowcharts, Gantt charts for marketing strategy using Mermaid.js v11"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "problem-solving",
+    "category": "analytics",
+    "icon": "🧩",
+    "name": {
+      "vi": "Problem Solving",
+      "en": "Problem Solving"
+    },
+    "command": {
+      "vi": "/akm:problem-solving Phân tích và giải quyết vấn đề: [Mô Tả Vấn Đề]",
+      "en": "/akm:problem-solving Analyze and solve problem: [Problem Description]"
+    },
+    "desc": {
+      "vi": "Giải quyết vấn đề marketing có cấu trúc: 5 Whys, fishbone diagram, PDCA",
+      "en": "Structured marketing problem solving: 5 Whys, fishbone diagram, PDCA"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "design-system",
+    "category": "brand",
+    "icon": "🎨",
+    "name": {
+      "vi": "Design System",
+      "en": "Design System"
+    },
+    "command": {
+      "vi": "/akm:design-system Xây dựng design system cho: [Thương Hiệu]",
+      "en": "/akm:design-system Build design system for: [Brand]"
+    },
+    "desc": {
+      "vi": "Tạo design system chuẩn: color palette, typography, spacing, component library",
+      "en": "Create standard design system: color palette, typography, spacing, component library"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ui-ux-pro-max",
+    "category": "design",
+    "icon": "✨",
+    "name": {
+      "vi": "UI/UX Pro Max",
+      "en": "UI/UX Pro Max"
+    },
+    "command": {
+      "vi": "/ag:ui-ux-pro-max Thiết kế UI/UX premium cho: [App/Landing Page]",
+      "en": "/ag:ui-ux-pro-max Premium UI/UX design for: [App/Landing Page]"
+    },
+    "desc": {
+      "vi": "Thiết kế giao diện premium với glassmorphism, micro-animation, dark mode chuẩn 2025",
+      "en": "Premium UI design with glassmorphism, micro-animations, and modern dark mode"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "frontend-design",
+    "category": "design",
+    "icon": "🖥️",
+    "name": {
+      "vi": "Frontend Design",
+      "en": "Frontend Design"
+    },
+    "command": {
+      "vi": "/ag:frontend-design Implement design cho: [Dự Án Web]",
+      "en": "/ag:frontend-design Implement design for: [Web Project]"
+    },
+    "desc": {
+      "vi": "Chuyển design system sang code HTML/CSS/Vue với hiệu ứng animation hiện đại",
+      "en": "Translate design system into HTML/CSS/Vue with modern animations"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "media-processing",
+    "category": "video",
+    "icon": "🎞️",
+    "name": {
+      "vi": "Media Processing",
+      "en": "Media Processing"
+    },
+    "command": {
+      "vi": "/ag:media-processing Xử lý media: [Video/Ảnh + Yêu Cầu]",
+      "en": "/ag:media-processing Process media: [Video/Image + Requirements]"
+    },
+    "desc": {
+      "vi": "Xử lý và tối ưu hóa video, ảnh, audio cho marketing content",
+      "en": "Process and optimize video, images, audio for marketing content"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "elevenlabs",
+    "category": "video",
+    "icon": "🎙️",
+    "name": {
+      "vi": "ElevenLabs Voice",
+      "en": "ElevenLabs Voice"
+    },
+    "command": {
+      "vi": "/ag:elevenlabs Tạo giọng nói AI cho: [Script/Nội Dung]",
+      "en": "/ag:elevenlabs Generate AI voice for: [Script/Content]"
+    },
+    "desc": {
+      "vi": "Tạo voiceover chuyên nghiệp bằng ElevenLabs cho video marketing và ads",
+      "en": "Create professional voiceovers using ElevenLabs for marketing videos and ads"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "remotion",
+    "category": "video",
+    "icon": "🎥",
+    "name": {
+      "vi": "Remotion Video",
+      "en": "Remotion Video"
+    },
+    "command": {
+      "vi": "/ag:remotion Tạo animated video cho: [Sản Phẩm/Nội Dung]",
+      "en": "/ag:remotion Create animated video for: [Product/Content]"
+    },
+    "desc": {
+      "vi": "Tạo video animation chuyên nghiệp bằng Remotion (React-based video creation)",
+      "en": "Create professional animation video using Remotion (React-based video creation)"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "brainstorm",
+    "category": "research",
+    "icon": "🧠",
+    "name": {
+      "vi": "Brainstorm",
+      "en": "Brainstorm"
+    },
+    "command": {
+      "vi": "/ag:brainstorm Brainstorm giải pháp cho: [Vấn Đề/Dự Án]",
+      "en": "/ag:brainstorm Brainstorm solutions for: [Problem/Project]"
+    },
+    "desc": {
+      "vi": "Tư duy phản biện, phân tích trade-off và ideation với nhiều góc nhìn khác nhau",
+      "en": "Critical thinking, trade-off analysis, and ideation from multiple perspectives"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ask",
+    "category": "research",
+    "icon": "💬",
+    "name": {
+      "vi": "Ask Agent",
+      "en": "Ask Agent"
+    },
+    "command": {
+      "vi": "/ag:ask Giải thích/trả lời câu hỏi về: [Chủ Đề Kỹ Thuật]",
+      "en": "/ag:ask Explain/answer questions about: [Technical Topic]"
+    },
+    "desc": {
+      "vi": "Trả lời câu hỏi technical và architectural chuyên sâu về marketing tech stack",
+      "en": "Answer deep technical and architectural questions about marketing tech stack"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "researcher",
+    "category": "research",
+    "icon": "🔭",
+    "name": {
+      "vi": "Researcher Agent",
+      "en": "Researcher Agent"
+    },
+    "command": {
+      "vi": "/ag:researcher Nghiên cứu chuyên sâu về: [Chủ Đề/Thị Trường]",
+      "en": "/ag:researcher Deep dive research on: [Topic/Market]"
+    },
+    "desc": {
+      "vi": "Agent nghiên cứu toàn diện: tổng hợp thông tin, so sánh, đánh giá từ nhiều nguồn",
+      "en": "Comprehensive research agent: aggregate info, compare, and evaluate from multiple sources"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "context-engineering",
+    "category": "research",
+    "icon": "🗺️",
+    "name": {
+      "vi": "Context Engineering",
+      "en": "Context Engineering"
+    },
+    "command": {
+      "vi": "/ag:context-engineering Thiết kế context cho AI workflow: [Dự Án]",
+      "en": "/ag:context-engineering Design context for AI workflow: [Project]"
+    },
+    "desc": {
+      "vi": "Kỹ thuật thiết kế context tối ưu để AI agent hoạt động hiệu quả nhất",
+      "en": "Optimal context engineering techniques for maximum AI agent effectiveness"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "sequential-thinking",
+    "category": "research",
+    "icon": "🧩",
+    "name": {
+      "vi": "Sequential Thinking",
+      "en": "Sequential Thinking"
+    },
+    "command": {
+      "vi": "/ag:sequential-thinking Phân tích từng bước vấn đề: [Vấn Đề Phức Tạp]",
+      "en": "/ag:sequential-thinking Step-by-step analysis of: [Complex Problem]"
+    },
+    "desc": {
+      "vi": "Giải quyết vấn đề phức tạp bằng cách chia nhỏ và xử lý tuần tự từng bước",
+      "en": "Solve complex problems by breaking them down and processing sequentially"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "kanban",
+    "category": "ops",
+    "icon": "📌",
+    "name": {
+      "vi": "Kanban Board",
+      "en": "Kanban Board"
+    },
+    "command": {
+      "vi": "/ag:kanban Tạo kanban board cho dự án: [Tên Dự Án]",
+      "en": "/ag:kanban Create kanban board for project: [Project Name]"
+    },
+    "desc": {
+      "vi": "Quản lý công việc bằng Kanban: To-do, In-progress, Done với priority tracking",
+      "en": "Task management using Kanban: To-do, In-progress, Done with priority tracking"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "plans-kanban",
+    "category": "ops",
+    "icon": "🗂️",
+    "name": {
+      "vi": "Plans & Kanban",
+      "en": "Plans & Kanban"
+    },
+    "command": {
+      "vi": "/ag:plans-kanban Lập kế hoạch và kanban cho: [Sprint/Quý]",
+      "en": "/ag:plans-kanban Plan and kanban for: [Sprint/Quarter]"
+    },
+    "desc": {
+      "vi": "Kết hợp planning và kanban để quản lý toàn bộ marketing sprint",
+      "en": "Combine planning and kanban to manage entire marketing sprints"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "plan",
+    "category": "ops",
+    "icon": "📋",
+    "name": {
+      "vi": "Plan Creator",
+      "en": "Plan Creator"
+    },
+    "command": {
+      "vi": "/ag:plan Tạo plan chi tiết cho: [Dự Án/Task]",
+      "en": "/ag:plan Create detailed plan for: [Project/Task]"
+    },
+    "desc": {
+      "vi": "Tạo kế hoạch thực thi chi tiết với milestones, dependencies và timeline rõ ràng",
+      "en": "Create detailed execution plans with clear milestones, dependencies, and timelines"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "planner",
+    "category": "ops",
+    "icon": "🗓️",
+    "name": {
+      "vi": "Planner Agent",
+      "en": "Planner Agent"
+    },
+    "command": {
+      "vi": "/ag:planner Lên lịch và sắp xếp ưu tiên cho: [Công Việc/Tuần/Tháng]",
+      "en": "/ag:planner Schedule and prioritize for: [Task/Week/Month]"
+    },
+    "desc": {
+      "vi": "Agent lập kế hoạch thông minh, tối ưu thứ tự ưu tiên dựa trên impact và effort",
+      "en": "Smart planning agent, optimizes priorities based on impact and effort"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "project-manager",
+    "category": "ops",
+    "icon": "👔",
+    "name": {
+      "vi": "Project Manager",
+      "en": "Project Manager"
+    },
+    "command": {
+      "vi": "/ag:project-manager Quản lý toàn bộ dự án: [Tên Dự Án]",
+      "en": "/ag:project-manager Manage entire project: [Project Name]"
+    },
+    "desc": {
+      "vi": "PM agent: scope, timeline, resource allocation, risk management và status report",
+      "en": "PM agent: scope, timeline, resource allocation, risk management, and status reports"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "assets-organizing",
+    "category": "ops",
+    "icon": "🗃️",
+    "name": {
+      "vi": "Assets Organizing",
+      "en": "Assets Organizing"
+    },
+    "command": {
+      "vi": "/ag:assets-organizing Sắp xếp và phân loại assets cho: [Chiến Dịch/Thương Hiệu]",
+      "en": "/ag:assets-organizing Organize and categorize assets for: [Campaign/Brand]"
+    },
+    "desc": {
+      "vi": "Tổ chức toàn bộ marketing assets theo topic, date, slug chuẩn AntigravityKit",
+      "en": "Organize all marketing assets by topic, date, and standard AntigravityKit slugs"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "docs-manager",
+    "category": "ops",
+    "icon": "📂",
+    "name": {
+      "vi": "Docs Manager",
+      "en": "Docs Manager"
+    },
+    "command": {
+      "vi": "/ag:docs-manager Quản lý tài liệu cho: [Dự Án/Team]",
+      "en": "/ag:docs-manager Manage documents for: [Project/Team]"
+    },
+    "desc": {
+      "vi": "Quản lý, phân loại và cập nhật toàn bộ tài liệu marketing của team",
+      "en": "Manage, categorize, and update all team marketing documents"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "docs-seeker",
+    "category": "ops",
+    "icon": "🔎",
+    "name": {
+      "vi": "Docs Seeker",
+      "en": "Docs Seeker"
+    },
+    "command": {
+      "vi": "/ag:docs-seeker Tìm kiếm tài liệu liên quan đến: [Chủ Đề]",
+      "en": "/ag:docs-seeker Search for documents related to: [Topic]"
+    },
+    "desc": {
+      "vi": "Tìm kiếm thông minh trong kho tài liệu nội bộ để trả lời câu hỏi nhanh",
+      "en": "Smart search within the internal document repository for quick answers"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "document-skills",
+    "category": "ops",
+    "icon": "📑",
+    "name": {
+      "vi": "Document Skills",
+      "en": "Document Skills"
+    },
+    "command": {
+      "vi": "/ag:document-skills Tạo tài liệu chuyên nghiệp cho: [Loại Tài Liệu]",
+      "en": "/ag:document-skills Create professional document for: [Document Type]"
+    },
+    "desc": {
+      "vi": "Soạn thảo tài liệu chuyên nghiệp: SOP, báo cáo, proposal, brief marketing",
+      "en": "Draft professional documents: SOPs, reports, proposals, marketing briefs"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "skill-creator",
+    "category": "ops",
+    "icon": "🛠️",
+    "name": {
+      "vi": "Skill Creator",
+      "en": "Skill Creator"
+    },
+    "command": {
+      "vi": "/ag:skill-creator Tạo custom skill mới cho: [Workflow/Tác Vụ]",
+      "en": "/ag:skill-creator Create custom new skill for: [Workflow/Task]"
+    },
+    "desc": {
+      "vi": "Tạo skill tùy biến cho AntigravityKit theo nhu cầu riêng của team",
+      "en": "Create custom skills for AntigravityKit based on specific team needs"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "kit-builder",
+    "category": "ops",
+    "icon": "📦",
+    "name": {
+      "vi": "Kit Builder",
+      "en": "Kit Builder"
+    },
+    "command": {
+      "vi": "/ag:kit-builder Xây dựng kit tùy chỉnh cho: [Dự Án/Ngành]",
+      "en": "/ag:kit-builder Build custom kit for: [Project/Industry]"
+    },
+    "desc": {
+      "vi": "Đóng gói và tạo bộ kit marketing tùy biến cho nhu cầu cụ thể",
+      "en": "Package and build custom marketing kits for specific needs"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "storage",
+    "category": "ops",
+    "icon": "💾",
+    "name": {
+      "vi": "Storage",
+      "en": "Storage"
+    },
+    "command": {
+      "vi": "/ag:storage Lưu trữ và quản lý dữ liệu cho: [Loại Dữ Liệu]",
+      "en": "/ag:storage Store and manage data for: [Data Type]"
+    },
+    "desc": {
+      "vi": "Quản lý lưu trữ dữ liệu marketing: campaigns, reports, assets có cấu trúc",
+      "en": "Manage marketing data storage: structured campaigns, reports, and assets"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ckm-storage",
+    "category": "ops",
+    "icon": "🗄️",
+    "name": {
+      "vi": "CKM Storage",
+      "en": "CKM Storage"
+    },
+    "command": {
+      "vi": "/ag:ckm-storage Lưu kiến thức vào knowledge base: [Insight/Kinh Nghiệm]",
+      "en": "/ag:ckm-storage Save knowledge to knowledge base: [Insight/Experience]"
+    },
+    "desc": {
+      "vi": "Lưu và truy xuất knowledge marketing vào hệ thống CKM của AntigravityKit",
+      "en": "Store and retrieve marketing knowledge into AntigravityKit's CKM system"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "init",
+    "category": "ops",
+    "icon": "🚀",
+    "name": {
+      "vi": "Init Setup",
+      "en": "Init Setup"
+    },
+    "command": {
+      "vi": "/ag:init Khởi tạo project marketing mới cho: [Tên Dự Án]",
+      "en": "/ag:init Initialize new marketing project for: [Project Name]"
+    },
+    "desc": {
+      "vi": "Khởi tạo cấu trúc project marketing chuẩn AntigravityKit từ đầu",
+      "en": "Initialize standard AntigravityKit marketing project structure from scratch"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "preview",
+    "category": "ops",
+    "icon": "👁️",
+    "name": {
+      "vi": "Preview Content",
+      "en": "Preview Content"
+    },
+    "command": {
+      "vi": "/ag:preview Preview và review nội dung: [File/Content]",
+      "en": "/ag:preview Preview and review content: [File/Content]"
+    },
+    "desc": {
+      "vi": "Xem trước và đánh giá nội dung trước khi publish hoặc gửi cho khách",
+      "en": "Preview and evaluate content before publishing or sending to clients"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "play",
+    "category": "ops",
+    "icon": "▶️",
+    "name": {
+      "vi": "Play Mode",
+      "en": "Play Mode"
+    },
+    "command": {
+      "vi": "/ag:play Chạy thử workflow: [Tên Workflow]",
+      "en": "/ag:play Test run workflow: [Workflow Name]"
+    },
+    "desc": {
+      "vi": "Chạy thử và test workflow marketing trong môi trường sandbox an toàn",
+      "en": "Test run marketing workflows in a safe sandbox environment"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "watzup",
+    "category": "community",
+    "icon": "💬",
+    "name": {
+      "vi": "Watzup (WhatsApp)",
+      "en": "Watzup (WhatsApp)"
+    },
+    "command": {
+      "vi": "/ag:watzup Automation tin nhắn WhatsApp/Zalo cho: [Campaign]",
+      "en": "/ag:watzup Automate WhatsApp/Zalo messages for: [Campaign]"
+    },
+    "desc": {
+      "vi": "Tự động hóa tin nhắn WhatsApp/Zalo cho marketing và chăm sóc khách hàng",
+      "en": "Automate WhatsApp/Zalo messaging for marketing and customer care"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "google-adk-python",
+    "category": "ai",
+    "icon": "🐍",
+    "name": {
+      "vi": "Google ADK Python",
+      "en": "Google ADK Python"
+    },
+    "command": {
+      "vi": "/ag:google-adk-python Xây dựng AI agent bằng Google ADK cho: [Tác Vụ]",
+      "en": "/ag:google-adk-python Build AI agent using Google ADK for: [Task]"
+    },
+    "desc": {
+      "vi": "Tạo AI agent tùy chỉnh bằng Google ADK Python để tự động hóa marketing tasks",
+      "en": "Create custom AI agents using Google ADK Python to automate marketing tasks"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "mcp-builder",
+    "category": "mcp",
+    "icon": "🔨",
+    "name": {
+      "vi": "MCP Builder",
+      "en": "MCP Builder"
+    },
+    "command": {
+      "vi": "/ag:mcp-builder Xây dựng MCP server cho: [Tool/Service]",
+      "en": "/ag:mcp-builder Build MCP server for: [Tool/Service]"
+    },
+    "desc": {
+      "vi": "Tạo MCP server tùy chỉnh để kết nối AI với các service marketing bên ngoài",
+      "en": "Create custom MCP server to connect AI with external marketing services"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "mcp-management",
+    "category": "mcp",
+    "icon": "⚙️",
+    "name": {
+      "vi": "MCP Management",
+      "en": "MCP Management"
+    },
+    "command": {
+      "vi": "/ag:mcp-management Quản lý MCP servers cho: [Dự Án]",
+      "en": "/ag:mcp-management Manage MCP servers for: [Project]"
+    },
+    "desc": {
+      "vi": "Quản lý, cấu hình và monitor các MCP server trong hệ sinh thái marketing",
+      "en": "Manage, configure, and monitor MCP servers in the marketing ecosystem"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "mcp-manager",
+    "category": "mcp",
+    "icon": "🎛️",
+    "name": {
+      "vi": "MCP Manager",
+      "en": "MCP Manager"
+    },
+    "command": {
+      "vi": "/ag:mcp-manager Điều phối các MCP tools cho: [Workflow]",
+      "en": "/ag:mcp-manager Coordinate MCP tools for: [Workflow]"
+    },
+    "desc": {
+      "vi": "Orchestrate nhiều MCP tools cùng lúc để thực hiện marketing workflow phức tạp",
+      "en": "Orchestrate multiple MCP tools simultaneously for complex marketing workflows"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "use-mcp",
+    "category": "mcp",
+    "icon": "🔌",
+    "name": {
+      "vi": "Use MCP Tools",
+      "en": "Use MCP Tools"
+    },
+    "command": {
+      "vi": "/ag:use-mcp Sử dụng MCP tool: [Tên Tool + Yêu Cầu]",
+      "en": "/ag:use-mcp Use MCP tool: [Tool Name + Requirements]"
+    },
+    "desc": {
+      "vi": "Hướng dẫn sử dụng các MCP tools tích hợp sẵn trong AntigravityKit",
+      "en": "Guide to using built-in MCP tools in AntigravityKit"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "backend-development",
+    "category": "dev",
+    "icon": "⚙️",
+    "name": {
+      "vi": "Backend Development",
+      "en": "Backend Development"
+    },
+    "command": {
+      "vi": "/ag:backend-development Xây dựng backend cho: [Dự Án/API]",
+      "en": "/ag:backend-development Build backend for: [Project/API]"
+    },
+    "desc": {
+      "vi": "Build backend robust với Node.js, Python, Go – REST/GraphQL, auth, database, security",
+      "en": "Build robust backends with Node.js, Python, Go – REST/GraphQL, auth, database, security"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "frontend-development",
+    "category": "dev",
+    "icon": "🖼️",
+    "name": {
+      "vi": "Frontend Development",
+      "en": "Frontend Development"
+    },
+    "command": {
+      "vi": "/ag:frontend-development Xây dựng frontend cho: [Dự Án/UI]",
+      "en": "/ag:frontend-development Build frontend for: [Project/UI]"
+    },
+    "desc": {
+      "vi": "Phát triển frontend hiện đại: React, Vue, Next.js với animation và responsive design",
+      "en": "Modern frontend development: React, Vue, Next.js with animations and responsive design"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "fullstack-developer",
+    "category": "dev",
+    "icon": "🏗️",
+    "name": {
+      "vi": "Fullstack Developer",
+      "en": "Fullstack Developer"
+    },
+    "command": {
+      "vi": "/ag:fullstack-developer Xây dựng fullstack app cho: [Dự Án]",
+      "en": "/ag:fullstack-developer Build fullstack app for: [Project]"
+    },
+    "desc": {
+      "vi": "Phát triển toàn bộ stack từ DB → API → UI với best practices production-ready",
+      "en": "Full-stack development from DB → API → UI with production-ready best practices"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "better-auth",
+    "category": "dev",
+    "icon": "🔐",
+    "name": {
+      "vi": "Better Auth",
+      "en": "Better Auth"
+    },
+    "command": {
+      "vi": "/ag:better-auth Implement authentication cho: [App/Dự Án]",
+      "en": "/ag:better-auth Implement authentication for: [App/Project]"
+    },
+    "desc": {
+      "vi": "Xây dựng auth chuẩn: OAuth 2.0, JWT, 2FA, passkeys, RBAC với Better Auth framework",
+      "en": "Standard auth: OAuth 2.0, JWT, 2FA, passkeys, RBAC with Better Auth framework"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "database-admin",
+    "category": "dev",
+    "icon": "🗄️",
+    "name": {
+      "vi": "Database Admin",
+      "en": "Database Admin"
+    },
+    "command": {
+      "vi": "/ag:database-admin Quản lý và tối ưu database cho: [Dự Án]",
+      "en": "/ag:database-admin Manage and optimize database for: [Project]"
+    },
+    "desc": {
+      "vi": "DBA tasks: schema design, query optimization, indexing, backup, migration strategy",
+      "en": "DBA tasks: schema design, query optimization, indexing, backup, migration strategy"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "databases",
+    "category": "dev",
+    "icon": "💽",
+    "name": {
+      "vi": "Databases",
+      "en": "Databases"
+    },
+    "command": {
+      "vi": "/ag:databases Thiết kế database schema cho: [Ứng Dụng]",
+      "en": "/ag:databases Design database schema for: [App]"
+    },
+    "desc": {
+      "vi": "Thiết kế DB schema: PostgreSQL, MongoDB, Redis, SQLite với relationship modeling",
+      "en": "DB schema design: PostgreSQL, MongoDB, Redis, SQLite with relationship modeling"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "devops",
+    "category": "dev",
+    "icon": "🚢",
+    "name": {
+      "vi": "DevOps",
+      "en": "DevOps"
+    },
+    "command": {
+      "vi": "/ag:devops Thiết lập DevOps pipeline cho: [Dự Án]",
+      "en": "/ag:devops Setup DevOps pipeline for: [Project]"
+    },
+    "desc": {
+      "vi": "CI/CD, Docker, Kubernetes, monitoring, auto-scaling và infrastructure as code",
+      "en": "CI/CD, Docker, Kubernetes, monitoring, auto-scaling, and infrastructure as code"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "chrome-devtools",
+    "category": "dev",
+    "icon": "🔍",
+    "name": {
+      "vi": "Chrome DevTools",
+      "en": "Chrome DevTools"
+    },
+    "command": {
+      "vi": "/ag:chrome-devtools Debug performance cho: [URL/Trang Web]",
+      "en": "/ag:chrome-devtools Debug performance for: [URL/Website]"
+    },
+    "desc": {
+      "vi": "Profiling, network analysis, memory leak detection và performance optimization với DevTools",
+      "en": "Profiling, network analysis, memory leak detection, and performance optimization with DevTools"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "claude-code",
+    "category": "dev",
+    "icon": "🤖",
+    "name": {
+      "vi": "Claude Code",
+      "en": "Claude Code"
+    },
+    "command": {
+      "vi": "/ag:claude-code Code/review với Claude AI: [Task/File]",
+      "en": "/ag:claude-code Code/review with Claude AI: [Task/File]"
+    },
+    "desc": {
+      "vi": "Khai thác Claude AI để viết, review và refactor code marketing automation",
+      "en": "Leverage Claude AI to write, review, and refactor marketing automation code"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "code-review",
+    "category": "dev",
+    "icon": "👁️",
+    "name": {
+      "vi": "Code Review",
+      "en": "Code Review"
+    },
+    "command": {
+      "vi": "/ag:code-review Review code cho: [File/PR]",
+      "en": "/ag:code-review Review code for: [File/PR]"
+    },
+    "desc": {
+      "vi": "Review code theo chuẩn: correctness, security, performance, maintainability",
+      "en": "Code review standards: correctness, security, performance, maintainability"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "code-reviewer",
+    "category": "dev",
+    "icon": "✅",
+    "name": {
+      "vi": "Code Reviewer Agent",
+      "en": "Code Reviewer Agent"
+    },
+    "command": {
+      "vi": "/ag:code-reviewer Tự động review toàn bộ codebase: [Dự Án]",
+      "en": "/ag:code-reviewer Auto review entire codebase: [Project]"
+    },
+    "desc": {
+      "vi": "Agent tự động review codebase và đưa ra recommendations cải thiện",
+      "en": "Agent automatically reviews codebase and provides improvement recommendations"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "debugger",
+    "category": "dev",
+    "icon": "🐛",
+    "name": {
+      "vi": "Debugger",
+      "en": "Debugger"
+    },
+    "command": {
+      "vi": "/ag:debugger Debug lỗi: [Mô Tả Lỗi + Stack Trace]",
+      "en": "/ag:debugger Debug issue: [Issue Description + Stack Trace]"
+    },
+    "desc": {
+      "vi": "Chẩn đoán và giải quyết bugs: runtime errors, logic errors, memory leaks",
+      "en": "Diagnose and resolve bugs: runtime errors, logic errors, memory leaks"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "debugging",
+    "category": "dev",
+    "icon": "🔦",
+    "name": {
+      "vi": "Debugging Guide",
+      "en": "Debugging Guide"
+    },
+    "command": {
+      "vi": "/ag:debugging Hướng dẫn debug cho: [Vấn Đề/Ngôn Ngữ]",
+      "en": "/ag:debugging Debugging guide for: [Issue/Language]"
+    },
+    "desc": {
+      "vi": "Chiến lược và kỹ thuật debugging có hệ thống cho từng loại lỗi",
+      "en": "Systematic debugging strategies and techniques for each error type"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "fix",
+    "category": "dev",
+    "icon": "🔧",
+    "name": {
+      "vi": "Fix Issues",
+      "en": "Fix Issues"
+    },
+    "command": {
+      "vi": "/ag:fix Sửa lỗi: [Mô Tả Lỗi/Code]",
+      "en": "/ag:fix Fix issue: [Error Description/Code]"
+    },
+    "desc": {
+      "vi": "Fix nhanh các lỗi code, config, build với giải thích rõ nguyên nhân gốc rễ",
+      "en": "Quickly fix code, config, and build errors with clear root cause explanations"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "tester",
+    "category": "dev",
+    "icon": "🧪",
+    "name": {
+      "vi": "Tester Agent",
+      "en": "Tester Agent"
+    },
+    "command": {
+      "vi": "/ag:tester Viết test cho: [Function/Component/API]",
+      "en": "/ag:tester Write tests for: [Function/Component/API]"
+    },
+    "desc": {
+      "vi": "Tự động tạo unit test, integration test, e2e test với coverage cao",
+      "en": "Auto generate unit tests, integration tests, e2e tests with high coverage"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "test",
+    "category": "dev",
+    "icon": "✔️",
+    "name": {
+      "vi": "Test Runner",
+      "en": "Test Runner"
+    },
+    "command": {
+      "vi": "/ag:test Chạy và phân tích test suite cho: [Dự Án]",
+      "en": "/ag:test Run and analyze test suite for: [Project]"
+    },
+    "desc": {
+      "vi": "Chạy test, phân tích kết quả và đề xuất cải thiện test coverage",
+      "en": "Run tests, analyze results, and propose test coverage improvements"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "web-frameworks",
+    "category": "dev",
+    "icon": "🌐",
+    "name": {
+      "vi": "Web Frameworks",
+      "en": "Web Frameworks"
+    },
+    "command": {
+      "vi": "/ag:web-frameworks Chọn và setup framework cho: [Dự Án Web]",
+      "en": "/ag:web-frameworks Choose and setup framework for: [Web Project]"
+    },
+    "desc": {
+      "vi": "Tư vấn lựa chọn và setup framework: Next.js, Nuxt, SvelteKit, Astro, Remix",
+      "en": "Consultation and framework setup: Next.js, Nuxt, SvelteKit, Astro, Remix"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "web-design-guidelines",
+    "category": "dev",
+    "icon": "📐",
+    "name": {
+      "vi": "Web Design Guidelines",
+      "en": "Web Design Guidelines"
+    },
+    "command": {
+      "vi": "/ag:web-design-guidelines Kiểm tra design guidelines cho: [Website/App]",
+      "en": "/ag:web-design-guidelines Check design guidelines for: [Website/App]"
+    },
+    "desc": {
+      "vi": "Đánh giá và cải thiện theo web design best practices: a11y, UX patterns, responsive",
+      "en": "Evaluate and improve based on web design best practices: a11y, UX patterns, responsive"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ui-styling",
+    "category": "dev",
+    "icon": "🎨",
+    "name": {
+      "vi": "UI Styling",
+      "en": "UI Styling"
+    },
+    "command": {
+      "vi": "/ag:ui-styling Implement styling cho: [Component/Page]",
+      "en": "/ag:ui-styling Implement styling for: [Component/Page]"
+    },
+    "desc": {
+      "vi": "CSS/Tailwind styling nâng cao: animation, glassmorphism, custom properties, dark mode",
+      "en": "Advanced CSS/Tailwind styling: animations, glassmorphism, custom properties, dark mode"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "ui-ux-designer",
+    "category": "dev",
+    "icon": "🖌️",
+    "name": {
+      "vi": "UI/UX Designer",
+      "en": "UI/UX Designer"
+    },
+    "command": {
+      "vi": "/ag:ui-ux-designer Thiết kế UI/UX cho: [Screen/Flow]",
+      "en": "/ag:ui-ux-designer Design UI/UX for: [Screen/Flow]"
+    },
+    "desc": {
+      "vi": "Thiết kế user interface và user experience với wireframe, prototype và design tokens",
+      "en": "User interface and experience design with wireframes, prototypes, and design tokens"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "shader",
+    "category": "dev",
+    "icon": "🌊",
+    "name": {
+      "vi": "Shader Effects",
+      "en": "Shader Effects"
+    },
+    "command": {
+      "vi": "/ag:shader Tạo shader effect cho: [Element/Background]",
+      "en": "/ag:shader Create shader effect for: [Element/Background]"
+    },
+    "desc": {
+      "vi": "Tạo WebGL shader effects: gradient, noise, particle, fluid animation cho landing page",
+      "en": "Create WebGL shader effects: gradients, noise, particles, fluid animations for landing pages"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "threejs",
+    "category": "dev",
+    "icon": "🧊",
+    "name": {
+      "vi": "Three.js",
+      "en": "Three.js"
+    },
+    "command": {
+      "vi": "/ag:threejs Tạo 3D scene với Three.js cho: [Dự Án/Effect]",
+      "en": "/ag:threejs Create 3D scene with Three.js for: [Project/Effect]"
+    },
+    "desc": {
+      "vi": "Build 3D visualization, product showcase và interactive effects bằng Three.js",
+      "en": "Build 3D visualizations, product showcases, and interactive effects using Three.js"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "repomix",
+    "category": "dev",
+    "icon": "📦",
+    "name": {
+      "vi": "Repomix",
+      "en": "Repomix"
+    },
+    "command": {
+      "vi": "/ag:repomix Đóng gói codebase cho: [Dự Án/Repo]",
+      "en": "/ag:repomix Package codebase for: [Project/Repo]"
+    },
+    "desc": {
+      "vi": "Đóng gói và analyze codebase để đưa cho AI xử lý toàn bộ context một lúc",
+      "en": "Package and analyze codebase to provide AI with full context at once"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "worktree",
+    "category": "dev",
+    "icon": "🌳",
+    "name": {
+      "vi": "Git Worktree",
+      "en": "Git Worktree"
+    },
+    "command": {
+      "vi": "/ag:worktree Quản lý git worktree cho: [Dự Án]",
+      "en": "/ag:worktree Manage git worktree for: [Project]"
+    },
+    "desc": {
+      "vi": "Làm việc song song nhiều branches với git worktree, tăng tốc development workflow",
+      "en": "Work in parallel on multiple branches with git worktree, accelerating development workflows"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "git",
+    "category": "dev",
+    "icon": "🔀",
+    "name": {
+      "vi": "Git",
+      "en": "Git"
+    },
+    "command": {
+      "vi": "/ag:git Thực hiện git operation: [Lệnh/Task]",
+      "en": "/ag:git Execute git operation: [Command/Task]"
+    },
+    "desc": {
+      "vi": "Git workflow: branching, merging, rebasing, conflict resolution, conventional commits",
+      "en": "Git workflow: branching, merging, rebasing, conflict resolution, conventional commits"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "git-manager",
+    "category": "dev",
+    "icon": "📊",
+    "name": {
+      "vi": "Git Manager",
+      "en": "Git Manager"
+    },
+    "command": {
+      "vi": "/ag:git-manager Quản lý git repository cho: [Dự Án]",
+      "en": "/ag:git-manager Manage git repository for: [Project]"
+    },
+    "desc": {
+      "vi": "Quản lý toàn bộ repo: branch strategy, PR workflow, release management, changelog",
+      "en": "Manage entire repo: branch strategy, PR workflow, release management, changelog"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  },
+  {
+    "id": "template-skill",
+    "category": "dev",
+    "icon": "📄",
+    "name": {
+      "vi": "Template Skill",
+      "en": "Template Skill"
+    },
+    "command": {
+      "vi": "/ag:template-skill Tạo skill template cho: [Use Case]",
+      "en": "/ag:template-skill Create skill template for: [Use Case]"
+    },
+    "desc": {
+      "vi": "Blueprint để tạo custom skill mới cho AntigravityKit theo chuẩn YAML/Markdown",
+      "en": "Blueprint to create new custom skills for AntigravityKit using YAML/Markdown standard"
+    },
+    "content": {
+      "en": "🔒 [LOCKED] This skill is only available in the Full License. Please upgrade to unlock all 130+ Marketing Skills!",
+      "vi": "🔒 [ĐÃ KHÓA] Skill này chỉ khả dụng ở bản Full License. Vui lòng nâng cấp để mở khóa toàn bộ 130+ Marketing Skills!"
+    },
+    "isLocked": true
+  }
+]
