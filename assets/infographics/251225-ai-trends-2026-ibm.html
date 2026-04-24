@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trends 2026 - Infographic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Design Tokens (embedded for file:// compatibility) */
+    :root {
+      --primitive-spacing-2: 8px;
+      --primitive-spacing-4: 16px;
+      --primitive-spacing-5: 20px;
+      --primitive-spacing-6: 24px;
+      --primitive-spacing-8: 32px;
+      --primitive-spacing-12: 48px;
+      --primitive-spacing-16: 64px;
+      --primitive-fontSize-xs: 12px;
+      --primitive-fontSize-sm: 14px;
+      --primitive-fontSize-base: 16px;
+      --primitive-fontSize-lg: 18px;
+      --primitive-fontSize-xl: 20px;
+      --primitive-fontSize-2xl: 24px;
+      --primitive-fontSize-3xl: 30px;
+      --primitive-fontSize-5xl: 56px;
+      --primitive-fontWeight-semibold: 600;
+      --primitive-fontWeight-bold: 700;
+      --primitive-lineHeight-relaxed: 1.6;
+      --primitive-radius-xl: 16px;
+      --primitive-radius-2xl: 24px;
+      --primitive-radius-full: 9999px;
+      --primitive-shadow-glow-coral: 0 0 40px rgba(59,130,246,0.3);
+      --primitive-gradient-primary: linear-gradient(135deg, #3B82F6 0%, #14B8A6 100%);
+      --primitive-gradient-accent: linear-gradient(135deg, #14B8A6 0%, #F59E0B 100%);
+      --primitive-duration-base: 200ms;
+      --color-primary: #3B82F6;
+      --color-secondary: #F59E0B;
+      --color-accent: #10B981;
+      --color-background: #070B14;
+      --color-surface: #0F172A;
+      --color-foreground: #FFFFFF;
+      --color-foreground-secondary: #94A3B8;
+      --color-foreground-muted: #475569;
+      --color-border: #1E293B;
+      --typography-font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      --typography-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+  </style>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--typography-font-body);
+      background: var(--color-background);
+      color: var(--color-foreground);
+      line-height: var(--primitive-lineHeight-relaxed);
+    }
+
+    .infographic {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: var(--primitive-spacing-8);
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: var(--primitive-spacing-12) var(--primitive-spacing-8);
+      background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-background) 100%);
+      border-radius: var(--primitive-radius-2xl);
+      margin-bottom: var(--primitive-spacing-8);
+      border: 1px solid var(--color-border);
+    }
+
+    .header h1 {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-5xl);
+      font-weight: var(--primitive-fontWeight-bold);
+      background: var(--primitive-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--primitive-spacing-2);
+    }
+
+    .header .subtitle {
+      color: var(--color-foreground-secondary);
+      font-size: var(--primitive-fontSize-lg);
+    }
+
+    .header .source {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--primitive-spacing-2);
+      margin-top: var(--primitive-spacing-6);
+      padding: var(--primitive-spacing-2) var(--primitive-spacing-4);
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: var(--primitive-radius-full);
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-primary);
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--primitive-spacing-4);
+      margin-bottom: var(--primitive-spacing-8);
+    }
+
+    .stat {
+      background: var(--color-surface);
+      padding: var(--primitive-spacing-5);
+      border-radius: var(--primitive-radius-xl);
+      text-align: center;
+      border: 1px solid var(--color-border);
+    }
+
+    .stat-value {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-3xl);
+      font-weight: var(--primitive-fontWeight-bold);
+      color: var(--color-secondary);
+    }
+
+    .stat-label {
+      font-size: var(--primitive-fontSize-xs);
+      color: var(--color-foreground-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Trends Timeline */
+    .trends {
+      position: relative;
+    }
+
+    .trends::before {
+      content: '';
+      position: absolute;
+      left: var(--primitive-spacing-8);
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primitive-gradient-accent);
+    }
+
+    .trend {
+      position: relative;
+      margin-left: var(--primitive-spacing-16);
+      margin-bottom: var(--primitive-spacing-6);
+      padding: var(--primitive-spacing-6);
+      background: var(--color-surface);
+      border-radius: var(--primitive-radius-xl);
+      border: 1px solid var(--color-border);
+      transition: transform var(--primitive-duration-base), box-shadow var(--primitive-duration-base);
+    }
+
+    .trend:hover {
+      transform: translateX(4px);
+      box-shadow: var(--primitive-shadow-glow-coral);
+      border-color: var(--color-primary);
+    }
+
+    .trend::before {
+      content: attr(data-num);
+      position: absolute;
+      left: -3.5rem;
+      top: var(--primitive-spacing-6);
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--color-primary);
+      border-radius: var(--primitive-radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--typography-font-heading);
+      font-weight: var(--primitive-fontWeight-bold);
+      font-size: var(--primitive-fontSize-base);
+      color: white;
+      box-shadow: 0 0 0 4px var(--color-background);
+    }
+
+    .trend:nth-child(even)::before { background: var(--color-secondary); }
+    .trend:nth-child(3n)::before { background: var(--color-accent); }
+
+    .trend h3 {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-xl);
+      font-weight: var(--primitive-fontWeight-semibold);
+      margin-bottom: var(--primitive-spacing-2);
+      color: var(--color-foreground);
+    }
+
+    .trend p {
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-foreground-secondary);
+      line-height: var(--primitive-lineHeight-relaxed);
+    }
+
+    .trend .icon {
+      position: absolute;
+      right: var(--primitive-spacing-6);
+      top: var(--primitive-spacing-6);
+      font-size: var(--primitive-fontSize-2xl);
+      opacity: 0.6;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: var(--primitive-spacing-8);
+      padding: var(--primitive-spacing-6);
+      background: var(--color-surface);
+      border-radius: var(--primitive-radius-xl);
+      text-align: center;
+      border: 1px solid var(--color-border);
+    }
+
+    .footer a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .date {
+      font-size: var(--primitive-fontSize-xs);
+      color: var(--color-foreground-muted);
+      margin-top: var(--primitive-spacing-2);
+    }
+  </style>
+</head>
+<body>
+  <div class="infographic">
+    <!-- Header -->
+    <header class="header">
+      <h1>AI Trends 2026</h1>
+      <p class="subtitle">Quantum, Agentic AI & Smarter Automation</p>
+      <div class="source">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+        IBM Technology
+      </div>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-value">57K+</div>
+        <div class="stat-label">Views</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">8</div>
+        <div class="stat-label">Key Trends</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">11:39</div>
+        <div class="stat-label">Duration</div>
+      </div>
+    </div>
+
+    <!-- Trends Timeline -->
+    <div class="trends">
+      <div class="trend" data-num="1">
+        <span class="icon">🤖</span>
+        <h3>Multi-Agent Orchestration</h3>
+        <p>Teams of AI agents (planner, worker, critic) collaborate under an orchestrator. Cross-checking and discrete verifiable steps improve reliability.</p>
+      </div>
+
+      <div class="trend" data-num="2">
+        <span class="icon">👷</span>
+        <h3>Digital Labor Workforce</h3>
+        <p>Autonomous agents parse tasks via multimodal input, execute workflows, and integrate with systems. Human-in-the-loop provides oversight and correction.</p>
+      </div>
+
+      <div class="trend" data-num="3">
+        <span class="icon">🦾</span>
+        <h3>Physical AI</h3>
+        <p>Models understand the 3D world through simulation training. World foundation models enable humanoid robots to move from research to commercial production.</p>
+      </div>
+
+      <div class="trend" data-num="4">
+        <span class="icon">🌐</span>
+        <h3>Social Computing</h3>
+        <p>Agents and humans share an AI fabric for context exchange and collaboration. Creates collective intelligence and real-world swarm computing.</p>
+      </div>
+
+      <div class="trend" data-num="5">
+        <span class="icon">✅</span>
+        <h3>Verifiable AI</h3>
+        <p>EU AI Act mandates auditable, traceable AI systems. Requires documentation, transparency, and data lineage - setting global AI governance template.</p>
+      </div>
+
+      <div class="trend" data-num="6">
+        <span class="icon">⚛️</span>
+        <h3>Quantum Utility</h3>
+        <p>Quantum computing solves real problems faster than classical methods. Hybrid quantum-classical systems deliver value in optimization, simulation, and decisions.</p>
+      </div>
+
+      <div class="trend" data-num="7">
+        <span class="icon">🧠</span>
+        <h3>Reasoning at the Edge</h3>
+        <p>Smaller models (few billion params) learn to reason via distillation. Work offline with no data center latency - critical for real-time applications.</p>
+      </div>
+
+      <div class="trend" data-num="8">
+        <span class="icon">☁️</span>
+        <h3>Amorphous Hybrid Computing</h3>
+        <p>AI models blend transformers + state-space architectures. Cloud combines CPUs, GPUs, TPUs, QPUs into unified compute with automatic optimal mapping.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Source: <a href="https://www.youtube.com/watch?v=zt0JA5rxdfM" target="_blank">IBM Technology - AI Trends 2026</a></p>
+      <p class="date">Generated: December 25, 2025</p>
+    </footer>
+  </div>
+</body>
+</html>

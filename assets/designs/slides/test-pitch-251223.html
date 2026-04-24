@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntigravityKit Marketing - Test Pitch</title>
+    <link rel="stylesheet" href="../../design-tokens.css">
+    <link rel="stylesheet" href="../../css/slide-animations.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--typography-font-body);
+            background: var(--color-background);
+            color: var(--color-foreground);
+            overflow: hidden;
+        }
+
+        .slides-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--primitive-spacing-12);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease;
+            background: var(--color-background);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Slide with background image */
+        .slide-with-bg {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .slide-with-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .slide-with-bg .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero background */
+        .slide-hero {
+            background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920');
+        }
+        .slide-hero::before {
+            background: linear-gradient(135deg, var(--color-background)E6, var(--color-background)B3);
+        }
+
+        /* CTA background */
+        .slide-cta {
+            background-image: url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1920');
+        }
+        .slide-cta::before {
+            background: linear-gradient(135deg, var(--color-primary)CC, var(--color-secondary)99);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--typography-font-heading);
+            font-weight: var(--primitive-fontWeight-bold);
+        }
+
+        .slide-title {
+            font-size: clamp(48px, 8vw, 96px);
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--primitive-spacing-6);
+        }
+
+        .slide-subtitle {
+            font-size: clamp(18px, 3vw, 32px);
+            color: var(--color-muted);
+            max-width: 800px;
+        }
+
+        .tagline {
+            font-size: var(--primitive-fontSize-lg);
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--primitive-spacing-4);
+        }
+
+        /* Problem slide grid */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--primitive-spacing-8);
+            max-width: 1000px;
+            margin-top: var(--primitive-spacing-10);
+        }
+
+        .problem-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--primitive-borderRadius-lg);
+            padding: var(--primitive-spacing-8);
+            text-align: left;
+        }
+
+        .problem-card .icon {
+            font-size: 32px;
+            margin-bottom: var(--primitive-spacing-4);
+        }
+
+        .problem-card h3 {
+            font-size: var(--primitive-fontSize-xl);
+            margin-bottom: var(--primitive-spacing-2);
+            color: var(--color-primary);
+        }
+
+        .problem-card p {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-muted);
+        }
+
+        /* Solution slide */
+        .solution-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--primitive-spacing-8);
+            max-width: 900px;
+        }
+
+        .solution-headline {
+            font-size: clamp(32px, 5vw, 56px);
+            color: var(--color-foreground);
+        }
+
+        .solution-features {
+            display: flex;
+            gap: var(--primitive-spacing-6);
+            justify-content: center;
+        }
+
+        .feature-pill {
+            background: var(--color-surface);
+            border-left: 3px solid var(--color-accent);
+            padding: var(--primitive-spacing-4) var(--primitive-spacing-6);
+            border-radius: var(--primitive-borderRadius-md);
+        }
+
+        .feature-pill span {
+            color: var(--color-accent);
+            font-weight: var(--primitive-fontWeight-semibold);
+        }
+
+        /* Metrics slide */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--primitive-spacing-6);
+            max-width: 1100px;
+            margin-top: var(--primitive-spacing-8);
+        }
+
+        .metric-card {
+            background: var(--color-surface);
+            border-radius: var(--primitive-borderRadius-lg);
+            padding: var(--primitive-spacing-6);
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: var(--primitive-fontWeight-bold);
+            font-family: var(--typography-font-heading);
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-muted);
+            margin-top: var(--primitive-spacing-2);
+        }
+
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            margin-top: var(--primitive-spacing-8);
+        }
+
+        /* CTA slide */
+        .cta-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--primitive-spacing-8);
+        }
+
+        .cta-headline {
+            font-size: clamp(40px, 7vw, 80px);
+            color: var(--color-foreground);
+            text-shadow: 0 2px 20px var(--color-background);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--primitive-spacing-3);
+            background: var(--color-foreground);
+            color: var(--color-background);
+            font-size: var(--primitive-fontSize-lg);
+            font-weight: var(--primitive-fontWeight-semibold);
+            padding: var(--primitive-spacing-5) var(--primitive-spacing-10);
+            border-radius: var(--primitive-borderRadius-full);
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--primitive-shadow-lg);
+        }
+
+        .cta-note {
+            color: var(--color-muted);
+        }
+
+        /* Navigation */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primitive-gradient-primary);
+            width: 0%;
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav-controls {
+            position: fixed;
+            bottom: var(--primitive-spacing-8);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: var(--primitive-spacing-4);
+            z-index: 100;
+        }
+
+        .nav-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-foreground);
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: var(--color-surface-hover);
+            border-color: var(--color-primary);
+        }
+
+        .slide-counter {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-muted);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .problem-grid, .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            .solution-features {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="slides-container">
+        <!-- Slide 1: Hero with Background -->
+        <div class="slide slide-with-bg slide-hero active">
+            <div class="content animate-fade-up">
+                <p class="tagline">Marketing Automation for Google Antigravity</p>
+                <h1 class="slide-title">AntigravityKit Marketing</h1>
+                <p class="slide-subtitle">AI-powered marketing campaigns, content creation, and lead generation — all orchestrated by Antigravity.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem -->
+        <div class="slide">
+            <div class="content">
+                <h2 class="solution-headline animate-fade-up">Marketing Teams Are Overwhelmed</h2>
+                <div class="problem-grid animate-stagger">
+                    <div class="problem-card">
+                        <div class="icon">⏰</div>
+                        <h3>Time Drain</h3>
+                        <p>80% of time spent on repetitive tasks instead of strategy</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="icon">🔀</div>
+                        <h3>Tool Fragmentation</h3>
+                        <p>10+ disconnected tools for content, SEO, ads, and analytics</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="icon">📉</div>
+                        <h3>Inconsistent Output</h3>
+                        <p>Brand voice and quality vary across channels and campaigns</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Solution -->
+        <div class="slide">
+            <div class="solution-content animate-scale">
+                <h2 class="solution-headline">One AI. All Your Marketing.</h2>
+                <p class="slide-subtitle">AntigravityKit orchestrates 15+ specialized agents that work together — content creation, SEO, campaigns, analytics — all following your brand guidelines.</p>
+                <div class="solution-features">
+                    <div class="feature-pill"><span>✓</span> Content Creator</div>
+                    <div class="feature-pill"><span>✓</span> SEO Specialist</div>
+                    <div class="feature-pill"><span>✓</span> Campaign Manager</div>
+                    <div class="feature-pill"><span>✓</span> Analytics Analyst</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Traction/Metrics -->
+        <div class="slide">
+            <div class="content">
+                <h2 class="solution-headline animate-fade-up">Early Traction</h2>
+                <div class="metrics-grid animate-stagger">
+                    <div class="metric-card">
+                        <div class="metric-number">15+</div>
+                        <div class="metric-label">AI Agents</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">40+</div>
+                        <div class="metric-label">Skills</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">80%</div>
+                        <div class="metric-label">Time Saved</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">5x</div>
+                        <div class="metric-label">Output Increase</div>
+                    </div>
+                </div>
+                <div class="chart-container animate-chart">
+                    <canvas id="tractionChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: CTA with Background -->
+        <div class="slide slide-with-bg slide-cta">
+            <div class="content cta-content animate-fade-up">
+                <h2 class="cta-headline">Ready to Transform Your Marketing?</h2>
+                <a href="#" class="cta-button animate-pulse">
+                    Get Started Free →
+                </a>
+                <p class="slide-subtitle cta-note">No credit card required • 14-day trial</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <span class="slide-counter"><span id="current">1</span> / <span id="total">5</span></span>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let current = 1;
+        const total = document.querySelectorAll('.slide').length;
+
+        function showSlide(n) {
+            if (n < 1) n = 1;
+            if (n > total) n = total;
+            current = n;
+            document.querySelectorAll('.slide').forEach((s, i) => {
+                s.classList.toggle('active', i === n - 1);
+            });
+            document.getElementById('current').textContent = n;
+            document.getElementById('total').textContent = total;
+            document.getElementById('progressBar').style.width = (n / total * 100) + '%';
+        }
+
+        function nextSlide() { showSlide(current + 1); }
+        function prevSlide() { showSlide(current - 1); }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+
+        // Chart.js - Traction chart
+        const ctx = document.getElementById('tractionChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Content Output',
+                        data: [10, 25, 55, 120],
+                        borderColor: '#FF6B6B',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#B8B8D0' }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#B8B8D0' }
+                        }
+                    }
+                }
+            });
+        }
+
+        showSlide(1);
+    </script>
+</body>
+</html>

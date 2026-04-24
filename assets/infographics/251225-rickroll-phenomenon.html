@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Never Gonna Give You Up - The Rickroll Phenomenon</title>
+  <link rel="stylesheet" href="../design-tokens.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--typography-font-body);
+      background: var(--color-background);
+      color: var(--color-foreground);
+      min-height: 100vh;
+      padding: var(--primitive-spacing-8);
+    }
+
+    .infographic {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--primitive-gradient-dark);
+      border-radius: var(--primitive-radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--primitive-shadow-lg);
+    }
+
+    header {
+      background: var(--color-primary);
+      padding: var(--primitive-spacing-8);
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-3xl);
+      font-weight: var(--primitive-fontWeight-bold);
+      margin-bottom: var(--primitive-spacing-2);
+    }
+
+    header p {
+      opacity: 0.9;
+      font-size: var(--primitive-fontSize-base);
+    }
+
+    .thumbnail {
+      width: 100%;
+      max-width: 400px;
+      margin: var(--primitive-spacing-4) auto;
+      border-radius: var(--primitive-radius-lg);
+      box-shadow: var(--primitive-shadow-lg);
+    }
+
+    main { padding: var(--primitive-spacing-8); }
+
+    h2 {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-xl);
+      margin-bottom: var(--primitive-spacing-4);
+      color: var(--color-foreground);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--primitive-spacing-6);
+      margin-bottom: var(--primitive-spacing-8);
+    }
+
+    .stat-card {
+      background: var(--color-surface);
+      border-radius: var(--card-radius);
+      padding: var(--primitive-spacing-6);
+      text-align: center;
+      border: 1px solid var(--color-border);
+    }
+
+    .stat-value {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-4xl);
+      font-weight: var(--primitive-fontWeight-bold);
+      color: var(--color-primary);
+    }
+
+    .stat-label {
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-foreground-secondary);
+      margin-top: var(--primitive-spacing-2);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: var(--primitive-spacing-8);
+      margin: var(--primitive-spacing-8) 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--primitive-gradient-primary);
+      border-radius: 3px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: var(--primitive-spacing-4) 0 var(--primitive-spacing-4) var(--primitive-spacing-6);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--primitive-spacing-8));
+      top: 1.2rem;
+      width: 12px;
+      height: 12px;
+      background: var(--color-primary);
+      border-radius: var(--primitive-radius-full);
+      border: 3px solid var(--color-background);
+    }
+
+    .timeline-year {
+      font-family: var(--typography-font-heading);
+      font-weight: var(--primitive-fontWeight-bold);
+      color: var(--color-primary);
+      font-size: var(--primitive-fontSize-lg);
+    }
+
+    .timeline-event {
+      color: var(--color-foreground-secondary);
+      margin-top: var(--primitive-spacing-1);
+    }
+
+    .quote-box {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid var(--color-primary);
+      padding: var(--primitive-spacing-6);
+      border-radius: 0 var(--primitive-radius-lg) var(--primitive-radius-lg) 0;
+      margin: var(--primitive-spacing-8) 0;
+    }
+
+    .quote-box .author {
+      font-weight: var(--primitive-fontWeight-bold);
+      margin-top: var(--primitive-spacing-2);
+      color: var(--color-primary);
+    }
+
+    .key-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--primitive-spacing-4);
+      margin: var(--primitive-spacing-8) 0;
+    }
+
+    .point {
+      background: var(--color-surface-elevated);
+      border-radius: var(--primitive-radius-lg);
+      padding: var(--primitive-spacing-4);
+      display: flex;
+      gap: var(--primitive-spacing-4);
+      align-items: center;
+    }
+
+    .point-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-primary);
+      border-radius: var(--primitive-radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--primitive-fontSize-2xl);
+      flex-shrink: 0;
+    }
+
+    .point-text {
+      font-size: var(--primitive-fontSize-sm);
+    }
+
+    .point-text strong {
+      color: var(--color-foreground);
+    }
+
+    footer {
+      background: rgba(0,0,0,0.3);
+      padding: var(--primitive-spacing-6) var(--primitive-spacing-8);
+      text-align: center;
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-foreground-secondary);
+    }
+
+    footer a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="infographic">
+    <header>
+      <h1>🎵 The Rickroll Phenomenon</h1>
+      <p>How a 1987 pop song became the internet's greatest meme</p>
+      <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Rick Astley" class="thumbnail">
+    </header>
+
+    <main>
+      <h2>📊 By The Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">1.7B</div>
+          <div class="stat-label">YouTube Views</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">18.7M</div>
+          <div class="stat-label">Likes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2.4M</div>
+          <div class="stat-label">Comments</div>
+        </div>
+      </div>
+
+      <h2>📅 Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">1987</div>
+          <div class="timeline-event">Song released, tops charts in 25 countries</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2007</div>
+          <div class="timeline-event">Rickrolling meme begins on 4chan</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-event">Video crosses 1 billion YouTube views</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-event">4K Remaster hits 1.7 billion views</div>
+        </div>
+      </div>
+
+      <div class="quote-box">
+        <p>"can confirm: he never gave us up"</p>
+        <p class="author">— @YouTube (151K likes)</p>
+      </div>
+
+      <h2>🔑 Why It Works</h2>
+      <div class="key-points">
+        <div class="point">
+          <div class="point-icon">🎯</div>
+          <div class="point-text"><strong>Simplicity</strong><br>Easy to share & execute</div>
+        </div>
+        <div class="point">
+          <div class="point-icon">😂</div>
+          <div class="point-text"><strong>Harmless</strong><br>Safe internet humor</div>
+        </div>
+        <div class="point">
+          <div class="point-icon">🎵</div>
+          <div class="point-text"><strong>Catchy</strong><br>Instantly recognizable</div>
+        </div>
+        <div class="point">
+          <div class="point-icon">🔄</div>
+          <div class="point-text"><strong>Shareable</strong><br>Easy to spread virally</div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Source: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Rick Astley - Never Gonna Give You Up (Official Video)</a></p>
+      <p style="margin-top: 0.5rem;">Generated by AntigravityKit Marketing • 2025-12-25</p>
+    </footer>
+  </div>
+</body>
+</html>

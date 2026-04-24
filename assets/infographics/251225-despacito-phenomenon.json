@@ -1,0 +1,98 @@
+{
+  "title": "Despacito: The Most Viewed Video in YouTube History",
+  "subtitle": "How a Spanish-language song conquered the world",
+  "source": {
+    "url": "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
+    "platform": "YouTube",
+    "retrieved": "2025-12-25"
+  },
+  "stats": {
+    "views": "8.9B",
+    "likes": "56.5M",
+    "comments": "3.2M",
+    "published": "January 12, 2017"
+  },
+  "keyInsights": [
+    {
+      "metric": "8.9 Billion",
+      "label": "Total Views",
+      "context": "Most viewed YouTube video of all time"
+    },
+    {
+      "metric": "97 Days",
+      "label": "To 1 Billion",
+      "context": "Fastest video to reach 1B views at the time"
+    },
+    {
+      "metric": "#1",
+      "label": "Billboard Hot 100",
+      "context": "16 weeks at top position"
+    },
+    {
+      "metric": "47",
+      "label": "Countries #1",
+      "context": "Topped charts globally"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "Jan 2017",
+      "event": "Original release",
+      "milestone": "Luis Fonsi releases Despacito ft. Daddy Yankee"
+    },
+    {
+      "date": "Apr 2017",
+      "event": "Remix drops",
+      "milestone": "Justin Bieber remix explodes globally"
+    },
+    {
+      "date": "Aug 2017",
+      "event": "5 Billion views",
+      "milestone": "First video to reach 5B views"
+    },
+    {
+      "date": "Apr 2018",
+      "event": "6 Billion views",
+      "milestone": "Continues breaking records"
+    },
+    {
+      "date": "2025",
+      "event": "8.9 Billion",
+      "milestone": "Still the #1 most viewed video"
+    }
+  ],
+  "factors": [
+    {
+      "title": "Strategic Remix",
+      "description": "Justin Bieber collaboration opened English-speaking markets",
+      "icon": "🎤"
+    },
+    {
+      "title": "Summer Timing",
+      "description": "Perfect release timing for summer playlists",
+      "icon": "☀️"
+    },
+    {
+      "title": "Dance Challenge",
+      "description": "Viral dance moves drove social sharing",
+      "icon": "💃"
+    },
+    {
+      "title": "Cross-Cultural Appeal",
+      "description": "Spanish lyrics didn't limit global reach",
+      "icon": "🌎"
+    }
+  ],
+  "marketingLessons": [
+    "Collaborate strategically to access new audiences",
+    "Language barriers don't limit global appeal",
+    "Timing release with cultural moments amplifies reach",
+    "Simple, memorable hooks transcend demographics"
+  ],
+  "metadata": {
+    "category": "Music Marketing",
+    "tags": ["viral", "music", "youtube", "latin", "crossover"],
+    "generatedBy": "AntigravityKit Marketing",
+    "version": "1.0"
+  }
+}

@@ -1,0 +1,8 @@
+﻿{
+  "summary": "S3 storage operations - upload, sync, list, get URLs",
+  "keywords": [
+    "akm:storage"
+  ],
+  "title": "akm:storage",
+  "source": "migrated from antigravitykit"
+}

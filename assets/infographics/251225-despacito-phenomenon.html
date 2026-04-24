@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Despacito: The Most Viewed Video in YouTube History</title>
+  <link rel="stylesheet" href="../design-tokens.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--typography-font-body);
+      background: var(--primitive-gradient-dark);
+      color: var(--color-foreground);
+      min-height: 100vh;
+      padding: var(--primitive-spacing-8);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: var(--primitive-spacing-12);
+    }
+
+    .header h1 {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-5xl);
+      background: var(--primitive-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--primitive-spacing-2);
+    }
+
+    .header .subtitle {
+      font-size: var(--primitive-fontSize-lg);
+      color: var(--color-foreground-secondary);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--primitive-spacing-6);
+      margin-bottom: var(--primitive-spacing-12);
+    }
+
+    .stat-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--card-radius);
+      padding: var(--card-padding);
+      text-align: center;
+      transition: transform var(--primitive-duration-slow), box-shadow var(--primitive-duration-slow);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--primitive-shadow-glow-coral);
+      border-color: var(--color-primary);
+    }
+
+    .stat-card .number {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-5xl);
+      font-weight: var(--primitive-fontWeight-bold);
+      color: var(--color-primary);
+    }
+
+    .stat-card .label {
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-foreground-secondary);
+      margin-top: var(--primitive-spacing-1);
+    }
+
+    .stat-card .context {
+      font-size: var(--primitive-fontSize-xs);
+      color: var(--color-foreground-muted);
+      margin-top: var(--primitive-spacing-2);
+    }
+
+    /* Timeline */
+    .timeline-section {
+      margin-bottom: var(--primitive-spacing-12);
+    }
+
+    .section-title {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-2xl);
+      margin-bottom: var(--primitive-spacing-6);
+      display: flex;
+      align-items: center;
+      gap: var(--primitive-spacing-2);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: var(--primitive-spacing-8);
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primitive-gradient-primary);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: var(--primitive-spacing-6);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--primitive-spacing-8));
+      top: var(--primitive-spacing-1);
+      width: 12px;
+      height: 12px;
+      background: var(--color-primary);
+      border-radius: var(--primitive-radius-full);
+      transform: translateX(-5px);
+    }
+
+    .timeline-item .date {
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-primary);
+      font-weight: var(--primitive-fontWeight-semibold);
+    }
+
+    .timeline-item .event {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-lg);
+      font-weight: var(--primitive-fontWeight-semibold);
+      margin: var(--primitive-spacing-1) 0;
+    }
+
+    .timeline-item .milestone {
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-foreground-secondary);
+    }
+
+    /* Success Factors */
+    .factors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--primitive-spacing-6);
+      margin-bottom: var(--primitive-spacing-12);
+    }
+
+    .factor-card {
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--primitive-radius-lg);
+      padding: var(--primitive-spacing-5);
+    }
+
+    .factor-card .icon {
+      font-size: var(--primitive-fontSize-4xl);
+      margin-bottom: var(--primitive-spacing-3);
+    }
+
+    .factor-card h3 {
+      font-family: var(--typography-font-heading);
+      font-size: var(--primitive-fontSize-base);
+      margin-bottom: var(--primitive-spacing-2);
+      color: var(--color-secondary);
+    }
+
+    .factor-card p {
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-foreground-secondary);
+      line-height: var(--primitive-lineHeight-normal);
+    }
+
+    /* Lessons */
+    .lessons {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid var(--color-primary);
+      border-radius: var(--card-radius);
+      padding: var(--card-padding);
+      margin-bottom: var(--primitive-spacing-8);
+    }
+
+    .lessons ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--primitive-spacing-4);
+    }
+
+    .lessons li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--primitive-spacing-3);
+      font-size: var(--primitive-fontSize-sm);
+    }
+
+    .lessons li::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-weight: var(--primitive-fontWeight-bold);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding-top: var(--primitive-spacing-6);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer .source {
+      color: var(--color-foreground-muted);
+      font-size: var(--primitive-fontSize-xs);
+    }
+
+    .footer a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Despacito: The Most Viewed Video Ever</h1>
+      <p class="subtitle">How a Spanish-language song conquered the world</p>
+    </header>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="number">8.9B</div>
+        <div class="label">Total Views</div>
+        <div class="context">Most viewed YouTube video of all time</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">97</div>
+        <div class="label">Days to 1 Billion</div>
+        <div class="context">Fastest video to reach 1B views at the time</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">#1</div>
+        <div class="label">Billboard Hot 100</div>
+        <div class="context">16 weeks at top position</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">47</div>
+        <div class="label">Countries #1</div>
+        <div class="context">Topped charts globally</div>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <h2 class="section-title">📈 Journey to 8.9 Billion</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">January 2017</div>
+          <div class="event">Original Release</div>
+          <div class="milestone">Luis Fonsi releases Despacito ft. Daddy Yankee</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">April 2017</div>
+          <div class="event">Remix Drops</div>
+          <div class="milestone">Justin Bieber remix explodes globally</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">August 2017</div>
+          <div class="event">5 Billion Views</div>
+          <div class="milestone">First video to reach 5B views</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">April 2018</div>
+          <div class="event">6 Billion Views</div>
+          <div class="milestone">Continues breaking records</div>
+        </div>
+        <div class="timeline-item">
+          <div class="date">2025</div>
+          <div class="event">8.9 Billion Views</div>
+          <div class="milestone">Still the #1 most viewed video</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">🚀 Success Factors</h2>
+      <div class="factors-grid">
+        <div class="factor-card">
+          <div class="icon">🎤</div>
+          <h3>Strategic Remix</h3>
+          <p>Justin Bieber collaboration opened English-speaking markets</p>
+        </div>
+        <div class="factor-card">
+          <div class="icon">☀️</div>
+          <h3>Summer Timing</h3>
+          <p>Perfect release timing for summer playlists</p>
+        </div>
+        <div class="factor-card">
+          <div class="icon">💃</div>
+          <h3>Dance Challenge</h3>
+          <p>Viral dance moves drove social sharing</p>
+        </div>
+        <div class="factor-card">
+          <div class="icon">🌎</div>
+          <h3>Cross-Cultural Appeal</h3>
+          <p>Spanish lyrics didn't limit global reach</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lessons">
+      <h2 class="section-title">💡 Marketing Lessons</h2>
+      <ul>
+        <li>Collaborate strategically to access new audiences</li>
+        <li>Language barriers don't limit global appeal</li>
+        <li>Timing release with cultural moments amplifies reach</li>
+        <li>Simple, memorable hooks transcend demographics</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p class="source">
+        Source: <a href="https://www.youtube.com/watch?v=kJQP7kiw5Fk" target="_blank">YouTube</a> |
+        Generated by AntigravityKit Marketing | December 25, 2025
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

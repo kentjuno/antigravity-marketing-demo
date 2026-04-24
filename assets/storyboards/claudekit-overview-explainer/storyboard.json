@@ -1,0 +1,182 @@
+{
+  "title": "AntigravityKit Overview Explainer",
+  "generated": "2025-12-15",
+  "aspect_ratio": "16:9",
+  "duration_seconds": 30,
+  "platform": "YouTube",
+  "style_tags": ["photorealistic", "4k", "professional", "cinematic", "tech", "minimalist"],
+  "color_palette": {
+    "primary": "#8B5CF6",
+    "secondary": "#3B82F6",
+    "accent": "#14B8A6",
+    "background": "#0F0F23"
+  },
+  "scenes": [
+    {
+      "scene_num": 1,
+      "name": "Hook",
+      "timing": "0:00-0:07",
+      "duration_seconds": 7,
+      "shot_type": "wide",
+      "start_frame": {
+        "prompt": "Wide shot of modern minimalist desk setup with ultrawide monitor displaying colorful marketing dashboard, purple and blue gradient ambient lighting, professional photography, clean composition, 16:9 aspect ratio, photorealistic, 4k, cinematic lighting, no text overlays, no watermarks",
+        "style_tags": ["photorealistic", "4k", "professional", "cinematic", "minimalist", "tech"],
+        "validation": {
+          "required_elements": ["desk", "monitor", "dashboard UI", "ambient lighting"],
+          "forbidden": ["text", "watermarks", "people", "clutter"],
+          "quality_threshold": 8
+        },
+        "output_file": "scene-1-start.png"
+      },
+      "end_frame": {
+        "prompt": "Same desk setup, monitor now showing split-screen with multiple AI agent avatars in colorful circles, dashboard graphs animating upward, purple and blue gradient ambient lighting, professional photography, clean composition, 16:9 aspect ratio, photorealistic, 4k, cinematic lighting, no text overlays, no watermarks",
+        "style_tags": ["photorealistic", "4k", "professional", "cinematic", "minimalist", "tech"],
+        "validation": {
+          "required_elements": ["desk", "monitor", "agent avatars", "graphs"],
+          "forbidden": ["text", "watermarks", "people"],
+          "continuity_with_start": true,
+          "quality_threshold": 8
+        },
+        "output_file": "scene-1-end.png"
+      },
+      "motion": "Static camera, subtle dashboard UI animations, agent avatars fade in",
+      "audio": {
+        "voiceover": "What if your marketing could run itself? Meet AntigravityKit.",
+        "music": "Modern tech ambient, building energy, 100 BPM, soft synth pads",
+        "sfx": [
+          {"timestamp": "0:00", "sound": "Soft woosh transition"},
+          {"timestamp": "0:05", "sound": "Subtle notification chime"}
+        ]
+      },
+      "review_notes": "Check monitor reflections, verify ambient lighting consistency, dashboard should feel alive but not cluttered"
+    },
+    {
+      "scene_num": 2,
+      "name": "Problem",
+      "timing": "0:07-0:14",
+      "duration_seconds": 7,
+      "shot_type": "medium",
+      "start_frame": {
+        "prompt": "Medium shot of stressed marketer at laptop, surrounded by floating app icons (email, social, analytics, CRM) in disarray, warm office lighting with blue screen glow, shallow depth of field, person slightly blurred showing frustration body language, photorealistic, 4k, cinematic, 16:9 aspect ratio, no text overlays",
+        "style_tags": ["photorealistic", "4k", "cinematic", "shallow DOF", "emotional"],
+        "validation": {
+          "required_elements": ["person (blurred/silhouette)", "laptop", "floating icons"],
+          "forbidden": ["readable text", "logos", "faces in focus"],
+          "quality_threshold": 8
+        },
+        "output_file": "scene-2-start.png"
+      },
+      "end_frame": {
+        "prompt": "Same scene, camera closer, floating app icons now scattered chaotically with red notification badges, laptop screen showing overwhelming analytics, warm office lighting with blue screen glow, person's hands covering face in frustration, photorealistic, 4k, cinematic, 16:9 aspect ratio, no text overlays",
+        "style_tags": ["photorealistic", "4k", "cinematic", "shallow DOF", "emotional"],
+        "validation": {
+          "required_elements": ["person", "laptop", "chaotic icons", "notification badges"],
+          "forbidden": ["readable text", "brand logos", "clear face"],
+          "continuity_with_start": true,
+          "quality_threshold": 8
+        },
+        "output_file": "scene-2-end.png"
+      },
+      "motion": "Slow dolly in toward person, floating icons drift chaotically",
+      "audio": {
+        "voiceover": "Juggling content, campaigns, SEO, emails... it's overwhelming.",
+        "music": "Slight tension build, minor key progression, 100 BPM",
+        "sfx": [
+          {"timestamp": "0:08", "sound": "Rapid notification sounds (subtle)"},
+          {"timestamp": "0:12", "sound": "Stressed sigh ambience"}
+        ]
+      },
+      "review_notes": "Person should be anonymous, icons should float naturally, relatable frustration not extreme distress, check hand anatomy"
+    },
+    {
+      "scene_num": 3,
+      "name": "Solution",
+      "timing": "0:14-0:23",
+      "duration_seconds": 9,
+      "shot_type": "wide",
+      "start_frame": {
+        "prompt": "Abstract visualization of Antigravity AI logo in center, glowing purple orb, surrounded by 6 colorful satellite orbs representing different agents (content-blue, SEO-green, email-orange, social-pink, analytics-teal, funnel-yellow), dark gradient background with subtle grid pattern, futuristic tech aesthetic, photorealistic 3D render, 4k, 16:9 aspect ratio, cinematic lighting, no text",
+        "style_tags": ["3D render", "futuristic", "tech", "glowing", "abstract", "colorful"],
+        "validation": {
+          "required_elements": ["central orb", "6 satellite orbs", "gradient background"],
+          "forbidden": ["text", "readable labels", "photographic elements"],
+          "quality_threshold": 8
+        },
+        "output_file": "scene-3-start.png"
+      },
+      "end_frame": {
+        "prompt": "Same abstract visualization, satellite orbs now connected to central orb with glowing energy lines, orbs pulsing with activity, small workflow diagrams emerging between connections, dark gradient background with animated particles, futuristic tech aesthetic, photorealistic 3D render, 4k, 16:9 aspect ratio, cinematic lighting, no text",
+        "style_tags": ["3D render", "futuristic", "tech", "glowing", "abstract", "colorful", "dynamic"],
+        "validation": {
+          "required_elements": ["central orb", "6 connected satellite orbs", "energy lines", "particles"],
+          "forbidden": ["text", "readable labels"],
+          "continuity_with_start": true,
+          "quality_threshold": 8
+        },
+        "output_file": "scene-3-end.png"
+      },
+      "motion": "Central orb pulses, satellite orbs orbit slowly, energy connections activate sequentially",
+      "audio": {
+        "voiceover": "AntigravityKit deploys specialized AI agents that work together - content creation, SEO, email campaigns, social media, all orchestrated automatically.",
+        "music": "Rising energy, major key resolution, 110 BPM, inspiring synth",
+        "sfx": [
+          {"timestamp": "0:14", "sound": "Magical activation sound"},
+          {"timestamp": "0:17", "sound": "Connection whoosh (repeating softly)"},
+          {"timestamp": "0:21", "sound": "Harmonious completion tone"}
+        ]
+      },
+      "review_notes": "Colors should be distinct but harmonious, energy lines organic not rigid, particles add depth without distraction"
+    },
+    {
+      "scene_num": 4,
+      "name": "CTA",
+      "timing": "0:23-0:30",
+      "duration_seconds": 7,
+      "shot_type": "medium",
+      "start_frame": {
+        "prompt": "Split composition showing modern laptop on left with AntigravityKit terminal interface, and abstract flowing data visualization on right representing automation, purple and blue gradient background, clean professional aesthetic, photorealistic, 4k, 16:9 aspect ratio, cinematic lighting, space for text overlay at bottom third",
+        "style_tags": ["photorealistic", "4k", "professional", "tech", "split composition"],
+        "validation": {
+          "required_elements": ["laptop", "terminal UI", "data visualization", "gradient background"],
+          "forbidden": ["readable text on screen", "watermarks"],
+          "quality_threshold": 8
+        },
+        "output_file": "scene-4-start.png"
+      },
+      "end_frame": {
+        "prompt": "Same split composition, laptop screen now showing green success indicators, data visualization transformed into upward-trending growth chart, golden particles floating upward representing success, purple and blue gradient background brightening, clean professional aesthetic, photorealistic, 4k, 16:9 aspect ratio, cinematic lighting, space for text overlay at bottom third",
+        "style_tags": ["photorealistic", "4k", "professional", "tech", "optimistic", "growth"],
+        "validation": {
+          "required_elements": ["laptop with success state", "growth visualization", "particles"],
+          "forbidden": ["readable text", "brand logos"],
+          "continuity_with_start": true,
+          "quality_threshold": 8
+        },
+        "output_file": "scene-4-end.png"
+      },
+      "motion": "Static camera, terminal shows activity, particles rise upward, gentle brightness increase",
+      "audio": {
+        "voiceover": "Start automating your marketing today. AntigravityKit - your AI marketing team.",
+        "music": "Triumphant resolution, 110 BPM, fade out on final beat",
+        "sfx": [
+          {"timestamp": "0:24", "sound": "Success chime"},
+          {"timestamp": "0:28", "sound": "Soft whoosh to end card"}
+        ]
+      },
+      "review_notes": "Leave clear space for text overlay, mood should be optimistic and resolved, growth visualization should feel earned"
+    }
+  ],
+  "post_production": {
+    "text_overlays": [
+      {"timing": "0:05", "text": "AntigravityKit logo fade in"},
+      {"timing": "0:25", "text": "antigravitykit.dev URL"},
+      {"timing": "0:27", "text": "Try Free button"}
+    ],
+    "music_track": {
+      "style": "Modern tech/corporate ambient",
+      "tempo_bpm": "100-110",
+      "key": "C major (resolution) / A minor (tension)",
+      "reference": "Inspiring Corporate"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "antigravitykit-marketing",
+  "version": "1.3.2",
+  "description": "Google Antigravity toolkit for sales and marketing automation - content creation, campaign management, SEO optimization, and lead generation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Warning: no test specified\" && exit 0",
+    "lint": "echo \"Linting passed\"",
+    "semantic-release": "semantic-release",
+    "prepare": "husky install || true",
+    "install:global": "node install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kentjuno/antigravitykit-marketing.git"
+  },
+  "keywords": [
+    "marketing",
+    "ai",
+    "automation",
+    "antigravity",
+    "sales",
+    "content-marketing",
+    "seo",
+    "campaign-management",
+    "lead-generation",
+    "google-antigravity"
+  ],
+  "author": "KJAntigravitykit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kentjuno/antigravitykit-marketing/issues"
+  },
+  "homepage": "https://github.com/kentjuno/antigravitykit-marketing#readme",
+  "files": [
+    ".antigravity/",
+    "plans/",
+    "AGENTS.md",
+    "ANTIGRAVITY.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "LICENSE-INSTRUCTIONS.md",
+    ".antigravity/metadata.json"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "husky": "^8.0.3",
+    "semantic-release": "^22.0.12"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "googleapis": "^169.0.0"
+  }
+}

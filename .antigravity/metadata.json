@@ -1,0 +1,21 @@
+{
+  "version": "1.3.2",
+  "name": "antigravitykit-marketing",
+  "description": "Google Antigravity toolkit for sales and marketing automation - content creation, campaign management, SEO optimization, and lead generation.",
+  "buildDate": "2026-04-10T07:27:24.112Z",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antigravitykit/antigravitykit-marketing.git"
+  },
+  "download": {
+    "lastDownloadedAt": null,
+    "downloadedBy": null,
+    "installCount": 0
+  },
+  "deletions": [
+    "skills/ck-help",
+    "commands/ckm/ck-help.md",
+    "commands/mkt/**",
+    "commands/mkt"
+  ]
+}

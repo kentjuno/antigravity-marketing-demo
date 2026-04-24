@@ -1,0 +1,207 @@
+{
+  "title": "AntigravityKit Marketing - Top 4 Features",
+  "generated": "2025-12-17",
+  "aspect_ratio": "16:9",
+  "total_duration": 32,
+  "platform": "YouTube",
+  "art_style": {
+    "name": "Colored Sketch + Handwriting Annotations",
+    "keywords": ["colored pencil sketch", "rough linework", "storyboard", "handwritten annotations", "arrows", "callouts", "animatic style"],
+    "color_palette": {
+      "primary": ["#14B8A6", "#8B5CF6"],
+      "paper": "#FDF6E3",
+      "accents": {
+        "chaos": "#EF4444",
+        "success": "#F59E0B"
+      },
+      "sketch_lines": "#78716C"
+    }
+  },
+  "scenes": [
+    {
+      "scene_num": 1,
+      "name": "Hook - The Tool Chaos",
+      "timing": "0:00-0:08",
+      "duration": 8,
+      "shot_type": "wide",
+      "motion": "static with icon proliferation",
+      "start_frame": {
+        "prompt": "Colored pencil sketch storyboard style, wide shot of frustrated marketer at desk, single laptop screen, warm neutrals with teal accents, off-white paper texture, rough linework, handwritten annotation arrow pointing to laptop saying 'just one tool?', margin notes visible, animatic style, 16:9 aspect ratio, no readable text except handwritten notes",
+        "style_tags": ["colored pencil sketch", "storyboard", "handwritten annotations", "animatic style", "rough linework", "paper texture"],
+        "validation": {
+          "required_elements": ["desk", "person silhouette", "laptop", "handwritten arrow annotation"],
+          "forbidden": ["photorealistic", "clean vector", "readable brand text"],
+          "quality_threshold": 8
+        },
+        "output_path": "./scene-1-start.png"
+      },
+      "end_frame": {
+        "prompt": "Same colored pencil sketch storyboard style, marketer now surrounded by 8+ floating app icons (email, social, analytics, CRM, SEO, ads, CMS, calendar) drawn in sketch style, chaotic scribble lines connecting them, handwritten annotation '5-10 tools = chaos' with arrow, red pencil accent on notification badges, warm neutrals with teal and red accents, off-white paper texture, 16:9 aspect ratio",
+        "style_tags": ["colored pencil sketch", "storyboard", "handwritten annotations", "animatic style", "rough linework", "paper texture", "chaotic"],
+        "validation": {
+          "required_elements": ["person", "laptop", "8+ floating sketched icons", "handwritten annotation", "chaos lines"],
+          "forbidden": ["photorealistic", "clean UI"],
+          "continuity_with_start": true,
+          "quality_threshold": 8
+        },
+        "output_path": "./scene-1-end.png"
+      },
+      "audio": {
+        "voiceover": "Still juggling 5 different marketing tools? There's a better way.",
+        "music": {
+          "description": "Playful tension, slightly chaotic melody",
+          "bpm": 105
+        },
+        "sfx": [
+          {"timestamp": "0:00", "sound": "Paper rustle"},
+          {"timestamp": "0:03", "sound": "Rapid pencil scribble sounds"},
+          {"timestamp": "0:06", "sound": "Frustrated sigh"}
+        ]
+      },
+      "veo_directive": "Static camera, icons appear one by one with sketch-draw animation, chaos lines connect them",
+      "review_notes": "Sketch style should feel hand-drawn, not AI-generated vector. Icons should be simple recognizable shapes."
+    },
+    {
+      "scene_num": 2,
+      "name": "Feature 1 - 27 AI Agents",
+      "timing": "0:08-0:16",
+      "duration": 8,
+      "shot_type": "medium",
+      "motion": "agents emerge and connect",
+      "start_frame": {
+        "prompt": "Colored pencil sketch storyboard style, central circular hub with '27' written in bold handwriting, surrounded by empty circle placeholders in a orbital pattern, handwritten annotation 'your AI marketing team' with arrow pointing to center, teal accent color for hub, warm paper texture, rough construction lines visible, 16:9 aspect ratio",
+        "style_tags": ["colored pencil sketch", "storyboard", "handwritten annotations", "animatic style", "diagram style", "organizational"],
+        "validation": {
+          "required_elements": ["central hub with 27", "orbital placeholder circles", "handwritten annotation"],
+          "forbidden": ["photorealistic", "3D render", "clean graphics"],
+          "quality_threshold": 8
+        },
+        "output_path": "./scene-2-start.png"
+      },
+      "end_frame": {
+        "prompt": "Same colored pencil sketch style, central hub now connected to 6 filled agent circles with simple icon sketches inside (pen for copywriter, magnifying glass for SEO, envelope for email, megaphone for social, funnel shape, chart), colorful pencil fills (blue, green, orange, pink, teal, yellow), dashed lines connecting to center, handwritten labels 'copywriter', 'SEO', 'email' near respective icons, annotation 'all working together' with circled highlight, 16:9 aspect ratio",
+        "style_tags": ["colored pencil sketch", "storyboard", "handwritten annotations", "colorful", "connected", "team"],
+        "validation": {
+          "required_elements": ["hub", "6 colored agent circles with icons", "connecting lines", "handwritten labels"],
+          "forbidden": ["photorealistic", "complex illustrations"],
+          "continuity_with_start": true,
+          "quality_threshold": 8
+        },
+        "output_path": "./scene-2-end.png"
+      },
+      "audio": {
+        "voiceover": "AntigravityKit Marketing gives you 27 specialized AI agents. Copywriter. SEO. Email. Social. All working as one team.",
+        "music": {
+          "description": "Building energy, adding instruments",
+          "bpm": 105
+        },
+        "sfx": [
+          {"timestamp": "0:09", "sound": "Soft pop sound per agent appear"},
+          {"timestamp": "0:14", "sound": "Connection whoosh"}
+        ]
+      },
+      "veo_directive": "Agents fill in sequentially with sketch-draw animation, lines connect with dashed animation",
+      "review_notes": "Agent icons should be simple, recognizable sketches. Colors should be distinct but harmonious pastel-sketch tones."
+    },
+    {
+      "scene_num": 3,
+      "name": "Feature 2 - Slash Commands",
+      "timing": "0:16-0:24",
+      "duration": 8,
+      "shot_type": "close-up",
+      "motion": "commands typing animation",
+      "start_frame": {
+        "prompt": "Colored pencil sketch storyboard style, close-up of terminal window drawn in sketch style, dark background with sketch texture, cursor blinking represented as small rectangle, handwritten annotation 'just type...' with arrow pointing to command line, teal accent on cursor, construction sketch lines visible around terminal frame, 16:9 aspect ratio",
+        "style_tags": ["colored pencil sketch", "storyboard", "terminal", "code aesthetic", "handwritten annotations"],
+        "validation": {
+          "required_elements": ["terminal sketch", "cursor", "handwritten annotation"],
+          "forbidden": ["photorealistic screenshot", "clean vector UI"],
+          "quality_threshold": 8
+        },
+        "output_path": "./scene-3-start.png"
+      },
+      "end_frame": {
+        "prompt": "Same colored pencil sketch style terminal, now showing handwritten slash commands '/campaign', '/content', '/seo', '/email' stacked vertically in chalk-like white on dark sketch terminal, each with small teal checkmark, handwritten annotation 'one command = full campaign' circled, small workflow diagram sketched to the side showing command flowing to multiple outputs, 16:9 aspect ratio",
+        "style_tags": ["colored pencil sketch", "storyboard", "terminal", "commands", "workflow diagram", "handwritten"],
+        "validation": {
+          "required_elements": ["terminal with commands", "checkmarks", "workflow diagram sketch", "annotation"],
+          "forbidden": ["photorealistic", "actual screenshots"],
+          "continuity_with_start": true,
+          "quality_threshold": 8
+        },
+        "output_path": "./scene-3-end.png"
+      },
+      "audio": {
+        "voiceover": "Just type slash-campaign, slash-content, slash-SEO. One command triggers your entire workflow.",
+        "music": {
+          "description": "Rhythmic clicks matching command rhythm",
+          "bpm": 110
+        },
+        "sfx": [
+          {"timestamp": "0:17", "sound": "Keyboard typing sounds"},
+          {"timestamp": "0:20", "sound": "Success ding per checkmark"},
+          {"timestamp": "0:23", "sound": "Satisfying completion sound"}
+        ]
+      },
+      "veo_directive": "Commands appear as if being typed, checkmarks animate in sequence",
+      "review_notes": "Commands should look hand-written, not typed font. Terminal should feel sketched but readable."
+    },
+    {
+      "scene_num": 4,
+      "name": "CTA - Transform Your Marketing",
+      "timing": "0:24-0:32",
+      "duration": 8,
+      "shot_type": "wide",
+      "motion": "static with upward particles",
+      "start_frame": {
+        "prompt": "Colored pencil sketch storyboard style, split composition: left side shows crossed-out pile of app icons from scene 1 (red X marks), right side shows clean single laptop with AntigravityKit logo sketch, large handwritten arrow from chaos to simplicity, annotation 'before / after' at top, warm paper texture, teal and purple accents, 16:9 aspect ratio",
+        "style_tags": ["colored pencil sketch", "storyboard", "before-after", "transformation", "handwritten annotations"],
+        "validation": {
+          "required_elements": ["crossed-out chaos side", "clean solution side", "transformation arrow", "before/after label"],
+          "forbidden": ["photorealistic", "complex graphics"],
+          "quality_threshold": 8
+        },
+        "output_path": "./scene-4-start.png"
+      },
+      "end_frame": {
+        "prompt": "Same colored pencil sketch style, chaos side now faded/erased, solution side prominent with laptop surrounded by upward-floating success indicators (checkmarks, stars, hearts in sketch style), handwritten annotation 'your AI marketing team awaits' with arrow to laptop, circled 'antigravitykit.dev' in teal at bottom, golden pencil accents for success particles, triumphant composition, 16:9 aspect ratio",
+        "style_tags": ["colored pencil sketch", "storyboard", "success", "triumphant", "handwritten annotations", "CTA"],
+        "validation": {
+          "required_elements": ["laptop", "success indicators floating up", "CTA annotation", "URL"],
+          "forbidden": ["photorealistic", "complex 3D"],
+          "continuity_with_start": true,
+          "quality_threshold": 8
+        },
+        "output_path": "./scene-4-end.png"
+      },
+      "audio": {
+        "voiceover": "Stop tool-hopping. Start marketing smarter. AntigravityKit Marketing - your AI marketing team awaits.",
+        "music": {
+          "description": "Triumphant resolution, major key, fade out",
+          "bpm": 110
+        },
+        "sfx": [
+          {"timestamp": "0:25", "sound": "Erasing/whoosh for chaos fade"},
+          {"timestamp": "0:28", "sound": "Rising sparkle sounds"},
+          {"timestamp": "0:31", "sound": "Satisfying final chime"}
+        ]
+      },
+      "veo_directive": "Chaos fades out with eraser effect, success particles float upward, brightness increases",
+      "review_notes": "Transformation should feel satisfying and complete. CTA URL must be clearly visible and readable."
+    }
+  ],
+  "post_production": {
+    "text_overlays": [
+      {"timing": "0:03", "content": "5-10 Tools counter"},
+      {"timing": "0:10", "content": "27 AI Agents highlight"},
+      {"timing": "0:18", "content": "/ command prefix highlight"},
+      {"timing": "0:28", "content": "antigravitykit.dev URL, Try Free button"}
+    ],
+    "music_track": {
+      "style": "Playful tech with sketch/educational feel",
+      "tempo_range": "105-110 BPM",
+      "key": "G major (warmth), E minor (tension Scene 1)",
+      "reference": "Whiteboard Explainer style"
+    }
+  }
+}

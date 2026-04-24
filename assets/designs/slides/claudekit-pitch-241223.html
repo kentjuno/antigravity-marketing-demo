@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AntigravityKit Marketing - Product Pitch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* AntigravityKit Marketing Design System Tokens */
+    :root {
+      /* Primary Colors */
+      --primary: #6366F1;
+      --primary-dark: #4F46E5;
+      --primary-light: #A5B4FC;
+
+      /* Text Colors */
+      --text-primary: #111827;
+      --text-secondary: #374151;
+      --text-muted: #6B7280;
+
+      /* UI Colors */
+      --border: #E5E7EB;
+      --bg-light: #F9FAFB;
+      --bg-white: #FFFFFF;
+
+      /* Semantic Colors */
+      --success: #10B981;
+      --warning: #F59E0B;
+      --error: #EF4444;
+
+      /* Typography */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      /* Spacing (4px base) */
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --space-16: 64px;
+
+      /* Border Radius */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+
+      /* Transitions */
+      --transition-fast: 100ms ease-out;
+      --transition-base: 200ms ease-in-out;
+      --transition-slow: 300ms ease-in-out;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-sans); background: var(--text-primary); overflow: hidden; }
+
+    .slides { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      padding: var(--space-16);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--bg-white);
+      position: absolute;
+      top: 0; left: 0;
+      opacity: 0;
+      transition: opacity var(--transition-slow);
+    }
+    .slide.active { display: flex; opacity: 1; }
+
+    /* Typography */
+    h1 { font-size: 56px; font-weight: 700; color: var(--text-primary); line-height: 1.15; margin-bottom: var(--space-6); }
+    h2 { font-size: 44px; font-weight: 600; color: var(--text-primary); line-height: 1.2; margin-bottom: var(--space-6); }
+    h3 { font-size: 28px; font-weight: 600; color: var(--text-secondary); margin-bottom: var(--space-4); }
+    p { font-size: 22px; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-4); }
+    .large { font-size: 28px; }
+    .accent { color: var(--primary); }
+    .muted { color: var(--text-muted); }
+
+    /* Slide: Title */
+    .slide--title {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    }
+    .slide--title h1 { color: white; font-size: 72px; margin-bottom: var(--space-4); }
+    .slide--title p { color: rgba(255,255,255,0.9); font-size: 28px; margin-bottom: 0; }
+    .slide--title .tagline {
+      margin-top: var(--space-8);
+      padding: var(--space-3) var(--space-6);
+      background: rgba(255,255,255,0.15);
+      border-radius: var(--radius-lg);
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Slide: Problem */
+    .slide--problem { background: var(--bg-light); }
+    .slide--problem h2 { color: var(--error); }
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+    .pain-point {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-6);
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--error);
+    }
+    .pain-point-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    .pain-point h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+    .pain-point p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Slide: Solution */
+    .slide--solution { }
+    .solution-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+      margin-top: var(--space-8);
+    }
+    .solution-step {
+      text-align: center;
+      padding: var(--space-6);
+    }
+    .solution-step-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--primary-light);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-4);
+      font-size: 36px;
+    }
+    .solution-step h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+    .solution-step p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+    .solution-arrow {
+      font-size: 32px;
+      color: var(--primary);
+    }
+
+    /* Slide: Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+    .feature-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4);
+      font-size: 24px;
+    }
+    .feature-card h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+    .feature-card p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* Slide: Agents */
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+    .agent-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      text-align: center;
+      transition: border-color var(--transition-fast);
+    }
+    .agent-card:hover { border-color: var(--primary); }
+    .agent-emoji { font-size: 28px; margin-bottom: var(--space-2); }
+    .agent-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .agent-role { font-size: 12px; color: var(--text-muted); }
+
+    /* Slide: CTA */
+    .slide--cta {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
+    }
+    .slide--cta h2 { margin-bottom: var(--space-4); }
+    .slide--cta p { max-width: 600px; margin-bottom: var(--space-8); }
+    .cta-buttons { display: flex; gap: var(--space-4); justify-content: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-md);
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition-fast);
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: var(--bg-white);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Progress & Controls */
+    .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: var(--primary); transition: width var(--transition-base); z-index: 100; }
+    .counter { position: fixed; bottom: var(--space-4); right: var(--space-4); font-size: 14px; color: var(--text-muted); z-index: 100; }
+    .nav-hint { position: fixed; bottom: var(--space-4); left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--text-muted); opacity: 0.6; z-index: 100; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .slide { padding: var(--space-8); }
+      h1 { font-size: 40px; }
+      h2 { font-size: 32px; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .agents-grid { grid-template-columns: repeat(2, 1fr); }
+      .pain-points { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .slide { page-break-after: always; display: flex !important; opacity: 1 !important; position: relative; }
+      .progress, .counter, .nav-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slides">
+    <!-- Slide 1: Title -->
+    <section class="slide slide--title active" data-slide="1">
+      <h1>AntigravityKit Marketing</h1>
+      <p>Autonomous marketing workflows powered by AI agents</p>
+      <div class="tagline">Save hours. Scale output. Stay on brand.</div>
+    </section>
+
+    <!-- Slide 2: Problem -->
+    <section class="slide slide--problem" data-slide="2">
+      <h2>The Problem</h2>
+      <p class="large">Marketing teams are stretched thin</p>
+      <div class="pain-points">
+        <div class="pain-point">
+          <span class="pain-point-icon">⏰</span>
+          <div>
+            <h4>"I don't have time"</h4>
+            <p>Content creation takes hours. Campaigns pile up. You're always behind.</p>
+          </div>
+        </div>
+        <div class="pain-point">
+          <span class="pain-point-icon">💸</span>
+          <div>
+            <h4>"I can't afford a team"</h4>
+            <p>Hiring specialists is expensive. Agencies cost too much for SMBs.</p>
+          </div>
+        </div>
+        <div class="pain-point">
+          <span class="pain-point-icon">🎭</span>
+          <div>
+            <h4>"My brand is inconsistent"</h4>
+            <p>Different voices across channels. Quality varies with whoever writes it.</p>
+          </div>
+        </div>
+        <div class="pain-point">
+          <span class="pain-point-icon">📊</span>
+          <div>
+            <h4>"I don't know what works"</h4>
+            <p>No time to analyze. Guessing instead of optimizing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Solution -->
+    <section class="slide slide--solution" data-slide="3">
+      <h2>The Solution</h2>
+      <p class="large">AI agents that work like a marketing team</p>
+      <div class="solution-visual">
+        <div class="solution-step">
+          <div class="solution-step-icon">📝</div>
+          <h4>You Brief</h4>
+          <p>Describe what you need</p>
+        </div>
+        <span class="solution-arrow">→</span>
+        <div class="solution-step">
+          <div class="solution-step-icon">🤖</div>
+          <h4>Agents Execute</h4>
+          <p>15+ specialized agents work</p>
+        </div>
+        <span class="solution-arrow">→</span>
+        <div class="solution-step">
+          <div class="solution-step-icon">✅</div>
+          <h4>Quality Review</h4>
+          <p>Brand-aligned output</p>
+        </div>
+        <span class="solution-arrow">→</span>
+        <div class="solution-step">
+          <div class="solution-step-icon">🚀</div>
+          <h4>You Publish</h4>
+          <p>Ready for your channels</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Features -->
+    <section class="slide" data-slide="4">
+      <h2>Key Features</h2>
+      <p>Everything you need to automate your marketing</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h4>15+ AI Agents</h4>
+          <p>Specialized agents for content, SEO, email, social, ads, and analytics</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h4>Automated Workflows</h4>
+          <p>From draft to publish with quality gates and brand checks</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h4>Brand Consistency</h4>
+          <p>Every output follows your brand voice and design system</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h4>Performance Tracking</h4>
+          <p>Built-in analytics and optimization recommendations</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔌</div>
+          <h4>Integrations</h4>
+          <p>Connect to your tools: social, email, CRM, analytics</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💻</div>
+          <h4>CLI-First</h4>
+          <p>Power user interface with Google Antigravity integration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Agents -->
+    <section class="slide" data-slide="5" style="background: var(--bg-light);">
+      <h2>Meet Your <span class="accent">AI Marketing Team</span></h2>
+      <p>Specialized agents for every marketing function</p>
+      <div class="agents-grid">
+        <div class="agent-card"><div class="agent-emoji">✍️</div><div class="agent-name">Copywriter</div><div class="agent-role">High-converting copy</div></div>
+        <div class="agent-card"><div class="agent-emoji">📝</div><div class="agent-name">Content Creator</div><div class="agent-role">Blog, social, video</div></div>
+        <div class="agent-card"><div class="agent-emoji">🔍</div><div class="agent-name">SEO Specialist</div><div class="agent-role">Search optimization</div></div>
+        <div class="agent-card"><div class="agent-emoji">📧</div><div class="agent-name">Email Wizard</div><div class="agent-role">Sequences & campaigns</div></div>
+        <div class="agent-card"><div class="agent-emoji">📱</div><div class="agent-name">Social Manager</div><div class="agent-role">Multi-platform posts</div></div>
+        <div class="agent-card"><div class="agent-emoji">🎯</div><div class="agent-name">Funnel Architect</div><div class="agent-role">Conversion funnels</div></div>
+        <div class="agent-card"><div class="agent-emoji">📊</div><div class="agent-name">Analytics Analyst</div><div class="agent-role">Performance reports</div></div>
+        <div class="agent-card"><div class="agent-emoji">🔬</div><div class="agent-name">Researcher</div><div class="agent-role">Market intelligence</div></div>
+      </div>
+    </section>
+
+    <!-- Slide 6: CTA -->
+    <section class="slide slide--cta" data-slide="6">
+      <h2>Ready to <span class="accent">10x</span> your marketing output?</h2>
+      <p>Join indie hackers and small teams who are scaling their marketing with AI agents. Start automating today.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary" onclick="alert('Demo: Get started!')">
+          Get Started Free →
+        </button>
+        <a href="#" class="btn btn-secondary">
+          View Documentation
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <div class="progress" style="width: 16.67%"></div>
+  <div class="counter">1 / 6</div>
+  <div class="nav-hint">← → or Space to navigate • F for fullscreen</div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const progress = document.querySelector('.progress');
+    const counter = document.querySelector('.counter');
+    let current = 0;
+    const total = slides.length;
+
+    function showSlide(n) {
+      slides[current].classList.remove('active');
+      current = (n + total) % total;
+      slides[current].classList.add('active');
+      progress.style.width = ((current + 1) / total * 100) + '%';
+      counter.textContent = (current + 1) + ' / ' + total;
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); showSlide(current + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); showSlide(current - 1); }
+      if (e.key === 'f' || e.key === 'F') { document.documentElement.requestFullscreen?.(); }
+      if (e.key === 'Escape') { document.exitFullscreen?.(); }
+      if (e.key === 'Home') { showSlide(0); }
+      if (e.key === 'End') { showSlide(total - 1); }
+    });
+
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+    document.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) showSlide(current + (diff > 0 ? 1 : -1));
+    });
+
+    showSlide(0);
+  </script>
+</body>
+</html>

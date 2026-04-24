@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntigravityKit Marketing - Layout Demo (Different Layouts)</title>
+    <link rel="stylesheet" href="../../design-tokens.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--color-background);
+            color: var(--color-foreground);
+            font-family: var(--typography-font-body);
+        }
+
+        .slides-container { position: relative; width: 100%; height: 100%; }
+
+        .slide {
+            position: absolute;
+            width: 100%; height: 100%;
+            padding: var(--slide-padding);
+            opacity: 0; visibility: hidden;
+            transition: opacity var(--primitive-duration-slower) var(--primitive-easing-out);
+            background: var(--color-background);
+        }
+
+        .slide.active { opacity: 1; visibility: visible; }
+
+        h1, h2, h3 {
+            font-family: var(--typography-font-heading);
+            font-weight: var(--primitive-fontWeight-bold);
+            line-height: var(--primitive-lineHeight-tight);
+        }
+
+        /* ========================================
+           LAYOUT 1: Title Slide (Centered)
+           ======================================== */
+        .layout-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .layout-title .slide-title {
+            font-size: clamp(48px, 8vw, var(--slide-title-size));
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--primitive-spacing-6);
+        }
+
+        .layout-title .tagline {
+            font-size: var(--primitive-fontSize-2xl);
+            color: var(--color-foreground-secondary);
+            max-width: 700px;
+        }
+
+        /* ========================================
+           LAYOUT 2: Two Column Split
+           CSS: display:grid; grid-template-columns:1fr 1fr; gap:48px
+           ======================================== */
+        .layout-two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            padding: var(--primitive-spacing-16);
+        }
+
+        .layout-two-column .col-left {
+            display: flex;
+            flex-direction: column;
+            gap: var(--primitive-spacing-6);
+        }
+
+        .layout-two-column .col-right {
+            display: flex;
+            flex-direction: column;
+            gap: var(--primitive-spacing-4);
+        }
+
+        .layout-two-column h2 {
+            font-size: var(--slide-heading-size);
+            color: var(--color-primary);
+        }
+
+        .layout-two-column .lead {
+            font-size: var(--primitive-fontSize-xl);
+            color: var(--color-foreground-secondary);
+            line-height: var(--primitive-lineHeight-relaxed);
+        }
+
+        .pain-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--primitive-spacing-4);
+            padding: var(--primitive-spacing-4);
+            background: var(--color-surface);
+            border-radius: var(--primitive-radius-lg);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .pain-item .icon { font-size: 32px; }
+
+        .pain-item .content h4 {
+            font-size: var(--primitive-fontSize-lg);
+            color: var(--color-foreground);
+            margin-bottom: var(--primitive-spacing-1);
+        }
+
+        .pain-item .content p {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-foreground-muted);
+        }
+
+        /* ========================================
+           LAYOUT 3: Big Number Hero + List
+           CSS: display:flex; flex-direction:column; justify-content:center; align-items:center; font-size:120px
+           ======================================== */
+        .layout-big-number {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .layout-big-number .big-stat {
+            font-family: var(--typography-font-heading);
+            font-size: clamp(80px, 15vw, 160px);
+            font-weight: var(--primitive-fontWeight-bold);
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .layout-big-number .stat-label {
+            font-size: var(--primitive-fontSize-2xl);
+            color: var(--color-foreground-secondary);
+            margin-bottom: var(--primitive-spacing-10);
+        }
+
+        .feature-row {
+            display: flex;
+            gap: var(--primitive-spacing-8);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: var(--primitive-spacing-6);
+        }
+
+        .feature-pill {
+            display: flex;
+            align-items: center;
+            gap: var(--primitive-spacing-2);
+            padding: var(--primitive-spacing-3) var(--primitive-spacing-5);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--primitive-radius-full);
+            font-size: var(--primitive-fontSize-base);
+            color: var(--color-foreground-secondary);
+        }
+
+        .feature-pill .check {
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* ========================================
+           LAYOUT 4: Quote Plus Stats
+           CSS: display:grid; grid-template-columns:1.5fr 1fr; gap:48px
+           ======================================== */
+        .layout-quote-stats {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 64px;
+            align-items: center;
+            padding: var(--primitive-spacing-16);
+        }
+
+        .quote-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--primitive-spacing-6);
+        }
+
+        .quote-text {
+            font-size: var(--primitive-fontSize-3xl);
+            font-style: italic;
+            color: var(--color-foreground);
+            line-height: var(--primitive-lineHeight-relaxed);
+            border-left: 4px solid var(--color-secondary);
+            padding-left: var(--primitive-spacing-6);
+        }
+
+        .quote-author {
+            display: flex;
+            align-items: center;
+            gap: var(--primitive-spacing-4);
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            background: var(--primitive-gradient-accent);
+            border-radius: var(--primitive-radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .author-info h4 {
+            font-size: var(--primitive-fontSize-lg);
+            color: var(--color-foreground);
+        }
+
+        .author-info p {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-foreground-muted);
+        }
+
+        .stats-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--primitive-spacing-6);
+        }
+
+        .stat-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--primitive-radius-lg);
+            padding: var(--primitive-spacing-5);
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-family: var(--typography-font-heading);
+            font-size: var(--primitive-fontSize-4xl);
+            font-weight: var(--primitive-fontWeight-bold);
+            background: var(--primitive-gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card .label {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-foreground-secondary);
+        }
+
+        /* ========================================
+           LAYOUT 5: Full Bleed Image + CTA
+           CSS: background-size:cover; color:white; text-shadow for contrast
+           ======================================== */
+        .layout-full-bleed {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--primitive-gradient-dark);
+            position: relative;
+        }
+
+        .layout-full-bleed::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--primitive-gradient-glow);
+            pointer-events: none;
+        }
+
+        .layout-full-bleed .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .layout-full-bleed .cta-headline {
+            font-size: clamp(40px, 7vw, 80px);
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--primitive-spacing-4);
+        }
+
+        .layout-full-bleed .cta-sub {
+            font-size: var(--primitive-fontSize-xl);
+            color: var(--color-foreground-secondary);
+            margin-bottom: var(--primitive-spacing-8);
+            max-width: 500px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--primitive-spacing-3);
+            background: var(--button-primary-bg);
+            color: var(--button-primary-fg);
+            font-size: var(--primitive-fontSize-xl);
+            font-weight: var(--primitive-fontWeight-semibold);
+            padding: var(--primitive-spacing-5) var(--primitive-spacing-10);
+            border-radius: var(--button-primary-radius);
+            border: none;
+            cursor: pointer;
+            transition: all var(--primitive-duration-base) var(--primitive-easing-out);
+            box-shadow: var(--button-primary-shadow);
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: var(--button-primary-shadow); }
+            50% { box-shadow: 0 0 60px var(--color-primary); }
+        }
+
+        .cta-button:hover {
+            background: var(--button-primary-bg-hover);
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           Layout Labels (for demo)
+           ======================================== */
+        .layout-label {
+            position: absolute;
+            top: var(--primitive-spacing-4);
+            left: var(--primitive-spacing-4);
+            background: var(--color-surface);
+            color: var(--color-accent);
+            font-size: var(--primitive-fontSize-xs);
+            font-family: var(--typography-font-mono);
+            padding: var(--primitive-spacing-2) var(--primitive-spacing-3);
+            border-radius: var(--primitive-radius-sm);
+            border: 1px solid var(--color-border);
+            z-index: 10;
+        }
+
+        /* Navigation */
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            background: var(--primitive-gradient-primary);
+            transition: width var(--primitive-duration-base) var(--primitive-easing-out);
+            z-index: 100;
+        }
+
+        .nav-controls {
+            position: fixed;
+            bottom: var(--primitive-spacing-8);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: var(--primitive-spacing-4);
+            background: var(--color-surface);
+            padding: var(--primitive-spacing-3) var(--primitive-spacing-5);
+            border-radius: var(--primitive-radius-full);
+            border: 1px solid var(--color-border);
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--color-foreground-secondary);
+            font-size: var(--primitive-fontSize-xl);
+            cursor: pointer;
+            padding: var(--primitive-spacing-2) var(--primitive-spacing-3);
+            border-radius: var(--primitive-radius-md);
+            transition: all var(--primitive-duration-fast);
+        }
+
+        .nav-btn:hover {
+            background: var(--color-surface-elevated);
+            color: var(--color-primary);
+        }
+
+        .slide-counter {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-foreground-muted);
+            min-width: 50px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .layout-two-column, .layout-quote-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="slides-container">
+        <!-- Slide 1: LAYOUT = Title Slide (Centered) -->
+        <div class="slide layout-title active">
+            <span class="layout-label">Layout: Title Slide</span>
+            <h1 class="slide-title">AntigravityKit Marketing</h1>
+            <p class="tagline">
+                What if you could 10x your marketing output<br>without hiring a single person?
+            </p>
+        </div>
+
+        <!-- Slide 2: LAYOUT = Two Column Split -->
+        <div class="slide layout-two-column">
+            <span class="layout-label">Layout: Two Column Split</span>
+            <div class="col-left">
+                <h2>Marketing is Eating Your Time</h2>
+                <p class="lead">
+                    You're a builder stuck doing marketer work. Every hour on content is an hour not spent on your product.
+                </p>
+            </div>
+            <div class="col-right">
+                <div class="pain-item">
+                    <span class="icon">&#128337;</span>
+                    <div class="content">
+                        <h4>20+ Hours/Week</h4>
+                        <p>Writing blogs, emails, social posts</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <span class="icon">&#128176;</span>
+                    <div class="content">
+                        <h4>$5K+/Month</h4>
+                        <p>Hiring marketers or agencies</p>
+                    </div>
+                </div>
+                <div class="pain-item">
+                    <span class="icon">&#128561;</span>
+                    <div class="content">
+                        <h4>Inconsistent Results</h4>
+                        <p>Random content, no strategy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: LAYOUT = Big Number Hero -->
+        <div class="slide layout-big-number">
+            <span class="layout-label">Layout: Big Number Hero</span>
+            <div class="big-stat">15+</div>
+            <p class="stat-label">AI Agents Working For You</p>
+            <div class="feature-row">
+                <div class="feature-pill"><span class="check">&#10003;</span> Content Creator</div>
+                <div class="feature-pill"><span class="check">&#10003;</span> SEO Specialist</div>
+                <div class="feature-pill"><span class="check">&#10003;</span> Email Wizard</div>
+                <div class="feature-pill"><span class="check">&#10003;</span> Campaign Manager</div>
+                <div class="feature-pill"><span class="check">&#10003;</span> Analytics Analyst</div>
+                <div class="feature-pill"><span class="check">&#10003;</span> Funnel Architect</div>
+            </div>
+        </div>
+
+        <!-- Slide 4: LAYOUT = Quote Plus Stats -->
+        <div class="slide layout-quote-stats">
+            <span class="layout-label">Layout: Quote + Stats</span>
+            <div class="quote-section">
+                <blockquote class="quote-text">
+                    "AntigravityKit saved me 15 hours a week on marketing. Now I ship features instead of writing blog posts."
+                </blockquote>
+                <div class="quote-author">
+                    <div class="author-avatar">&#128104;&#8205;&#128187;</div>
+                    <div class="author-info">
+                        <h4>Alex Chen</h4>
+                        <p>Indie Hacker, ShipFast.io</p>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-section">
+                <div class="stat-card">
+                    <div class="number">85%</div>
+                    <div class="label">Time Saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">3x</div>
+                    <div class="label">Content Output</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">$0</div>
+                    <div class="label">Agency Fees</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: LAYOUT = Full Bleed + CTA -->
+        <div class="slide layout-full-bleed">
+            <span class="layout-label">Layout: Full Bleed CTA</span>
+            <div class="content">
+                <h2 class="cta-headline">Stop Marketing.<br>Start Shipping.</h2>
+                <p class="cta-sub">Let AI handle your marketing while you build.</p>
+                <a href="https://github.com/antigravitykit/antigravitykit-marketing" class="cta-button">
+                    Get Started Free &#8594;
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="prevSlide()">&#8592;</button>
+        <span class="slide-counter"><span id="current">1</span> / <span id="total">5</span></span>
+        <button class="nav-btn" onclick="nextSlide()">&#8594;</button>
+    </div>
+
+    <script>
+        let current = 1;
+        const total = document.querySelectorAll('.slide').length;
+        document.getElementById('total').textContent = total;
+
+        function showSlide(n) {
+            if (n < 1) n = 1;
+            if (n > total) n = total;
+            current = n;
+            document.querySelectorAll('.slide').forEach((s, i) => {
+                s.classList.toggle('active', i === n - 1);
+            });
+            document.getElementById('current').textContent = n;
+            document.getElementById('progressBar').style.width = (n / total * 100) + '%';
+        }
+
+        function nextSlide() { showSlide(current + 1); }
+        function prevSlide() { showSlide(current - 1); }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+
+        document.querySelector('.slides-container').addEventListener('click', (e) => {
+            if (e.target.closest('.nav-controls') || e.target.closest('a') || e.target.closest('button')) return;
+            e.clientX > window.innerWidth / 2 ? nextSlide() : prevSlide();
+        });
+
+        showSlide(1);
+    </script>
+</body>
+</html>

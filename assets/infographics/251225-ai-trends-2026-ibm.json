@@ -1,0 +1,67 @@
+{
+  "source": {
+    "platform": "youtube",
+    "url": "https://www.youtube.com/watch?v=zt0JA5rxdfM",
+    "videoId": "zt0JA5rxdfM",
+    "channel": "IBM Technology",
+    "title": "AI Trends 2026: Quantum, Agentic AI & Smarter Automation",
+    "duration": 699,
+    "views": 57132,
+    "likes": 2071
+  },
+  "infographic": {
+    "type": "timeline",
+    "style": "listicle",
+    "generatedAt": "2025-12-25T02:01:00Z"
+  },
+  "trends": [
+    {
+      "num": 1,
+      "title": "Multi-Agent Orchestration",
+      "summary": "Teams of AI agents (planner, worker, critic) collaborate under an orchestrator. Cross-checking and discrete verifiable steps improve reliability.",
+      "timestamp": "0:26"
+    },
+    {
+      "num": 2,
+      "title": "Digital Labor Workforce",
+      "summary": "Autonomous agents parse tasks via multimodal input, execute workflows, and integrate with systems. Human-in-the-loop provides oversight and correction.",
+      "timestamp": "1:45"
+    },
+    {
+      "num": 3,
+      "title": "Physical AI",
+      "summary": "Models understand the 3D world through simulation training. World foundation models enable humanoid robots to move from research to commercial production.",
+      "timestamp": "2:48"
+    },
+    {
+      "num": 4,
+      "title": "Social Computing",
+      "summary": "Agents and humans share an AI fabric for context exchange and collaboration. Creates collective intelligence and real-world swarm computing.",
+      "timestamp": "4:39"
+    },
+    {
+      "num": 5,
+      "title": "Verifiable AI",
+      "summary": "EU AI Act mandates auditable, traceable AI systems. Requires documentation, transparency, and data lineage - setting global AI governance template.",
+      "timestamp": "5:51"
+    },
+    {
+      "num": 6,
+      "title": "Quantum Utility",
+      "summary": "Quantum computing solves real problems faster than classical methods. Hybrid quantum-classical systems deliver value in optimization, simulation, and decisions.",
+      "timestamp": "7:06"
+    },
+    {
+      "num": 7,
+      "title": "Reasoning at the Edge",
+      "summary": "Smaller models (few billion params) learn to reason via distillation. Work offline with no data center latency - critical for real-time applications.",
+      "timestamp": "8:04"
+    },
+    {
+      "num": 8,
+      "title": "Amorphous Hybrid Computing",
+      "summary": "AI models blend transformers + state-space architectures. Cloud combines CPUs, GPUs, TPUs, QPUs into unified compute with automatic optimal mapping.",
+      "timestamp": "9:34"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "includeCoAuthoredBy": false,
+  "statusLine": {
+    "type": "command",
+    "command": "node .antigravity/statusline.cjs",
+    "padding": 0
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/session-init.cjs"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/subagent-init.cjs"
+          }
+        ]
+      },
+      {
+        "matcher": "content-creator|copywriter|social-media-manager|email-wizard|sale-enabler",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/brand-guidelines-reminder.cjs"
+          }
+        ]
+      },
+      {
+        "matcher": "campaign-manager|campaign-debugger|social-media-manager|email-wizard|content-creator|analytics-analyst",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/campaign-tracking.cjs"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/approval-workflow.cjs"
+          },
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/subagent-init.cjs"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/dev-rules-reminder.cjs"
+          },
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/usage-context-awareness.cjs",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/descriptive-name.cjs"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Glob|Grep|Read|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/scout-block.cjs"
+          },
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/privacy-block.cjs"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/post-edit-simplify-reminder.cjs"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "manual|auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/write-compact-marker.cjs"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .antigravity/hooks/session-end.cjs"
+          }
+        ]
+      }
+    ]
+  }
+}

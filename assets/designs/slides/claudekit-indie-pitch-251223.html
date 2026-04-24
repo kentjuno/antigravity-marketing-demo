@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntigravityKit Marketing - AI-Powered Marketing for Indie Hackers</title>
+    <link rel="stylesheet" href="../../design-tokens.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--color-background);
+            color: var(--color-foreground);
+            font-family: var(--typography-font-body);
+        }
+
+        .slides-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--slide-padding);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--primitive-duration-slower) var(--primitive-easing-out);
+            background: var(--color-background);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--typography-font-heading);
+            font-weight: var(--primitive-fontWeight-bold);
+            line-height: var(--primitive-lineHeight-tight);
+        }
+
+        .slide-title {
+            font-size: clamp(48px, 8vw, var(--slide-title-size));
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--primitive-spacing-6);
+        }
+
+        .slide-heading {
+            font-size: clamp(36px, 6vw, var(--slide-heading-size));
+            color: var(--color-foreground);
+            margin-bottom: var(--primitive-spacing-6);
+        }
+
+        .slide-subheading {
+            font-size: var(--primitive-fontSize-2xl);
+            color: var(--color-foreground-secondary);
+            max-width: 800px;
+            line-height: var(--primitive-lineHeight-relaxed);
+        }
+
+        .tagline {
+            font-size: var(--primitive-fontSize-xl);
+            color: var(--color-foreground-secondary);
+            margin-top: var(--primitive-spacing-4);
+        }
+
+        /* Animations */
+        .animate-fade-up {
+            animation: fadeUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-scale {
+            animation: scaleIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Problem Slide */
+        .pain-points {
+            display: flex;
+            gap: var(--primitive-spacing-8);
+            margin-top: var(--primitive-spacing-10);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pain-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--card-radius);
+            padding: var(--primitive-spacing-8);
+            width: 280px;
+            text-align: left;
+            transition: all var(--primitive-duration-base) var(--primitive-easing-out);
+        }
+
+        .pain-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--primitive-shadow-glow-coral);
+            transform: translateY(-4px);
+        }
+
+        .pain-icon {
+            font-size: 48px;
+            margin-bottom: var(--primitive-spacing-4);
+        }
+
+        .pain-title {
+            font-size: var(--primitive-fontSize-xl);
+            font-weight: var(--primitive-fontWeight-semibold);
+            color: var(--color-primary);
+            margin-bottom: var(--primitive-spacing-2);
+        }
+
+        .pain-desc {
+            font-size: var(--primitive-fontSize-base);
+            color: var(--color-foreground-secondary);
+            line-height: var(--primitive-lineHeight-relaxed);
+        }
+
+        /* Solution Slide */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--primitive-spacing-6);
+            margin-top: var(--primitive-spacing-10);
+            max-width: 1000px;
+        }
+
+        .solution-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--card-radius);
+            padding: var(--primitive-spacing-6);
+            text-align: center;
+            transition: all var(--primitive-duration-base) var(--primitive-easing-out);
+        }
+
+        .solution-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: var(--primitive-shadow-glow-mint);
+        }
+
+        .solution-icon {
+            font-size: 40px;
+            margin-bottom: var(--primitive-spacing-3);
+        }
+
+        .solution-title {
+            font-size: var(--primitive-fontSize-lg);
+            font-weight: var(--primitive-fontWeight-semibold);
+            color: var(--color-accent);
+            margin-bottom: var(--primitive-spacing-2);
+        }
+
+        .solution-desc {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-foreground-secondary);
+        }
+
+        /* Traction Slide */
+        .traction-container {
+            display: flex;
+            align-items: center;
+            gap: var(--primitive-spacing-16);
+            margin-top: var(--primitive-spacing-10);
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .chart-container {
+            flex: 1;
+            height: 350px;
+            background: var(--color-surface);
+            border-radius: var(--card-radius);
+            padding: var(--primitive-spacing-6);
+        }
+
+        .stats-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--primitive-spacing-6);
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-family: var(--typography-font-heading);
+            font-size: var(--primitive-fontSize-5xl);
+            font-weight: var(--primitive-fontWeight-bold);
+            background: var(--primitive-gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: var(--primitive-fontSize-lg);
+            color: var(--color-foreground-secondary);
+        }
+
+        /* CTA Slide */
+        .cta-headline {
+            font-size: clamp(40px, 7vw, 72px);
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--primitive-spacing-6);
+        }
+
+        .cta-subtext {
+            font-size: var(--primitive-fontSize-xl);
+            color: var(--color-foreground-secondary);
+            margin-bottom: var(--primitive-spacing-10);
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--primitive-spacing-3);
+            background: var(--button-primary-bg);
+            color: var(--button-primary-fg);
+            font-size: var(--primitive-fontSize-xl);
+            font-weight: var(--primitive-fontWeight-semibold);
+            padding: var(--primitive-spacing-5) var(--primitive-spacing-10);
+            border-radius: var(--button-primary-radius);
+            border: none;
+            cursor: pointer;
+            transition: all var(--primitive-duration-base) var(--primitive-easing-out);
+            box-shadow: var(--button-primary-shadow);
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: var(--button-primary-bg-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--primitive-shadow-glow-coral);
+        }
+
+        .secondary-cta {
+            margin-top: var(--primitive-spacing-6);
+            font-size: var(--primitive-fontSize-base);
+            color: var(--color-foreground-muted);
+        }
+
+        .secondary-cta a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .secondary-cta a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primitive-gradient-primary);
+            transition: width var(--primitive-duration-base) var(--primitive-easing-out);
+            z-index: 100;
+        }
+
+        .nav-controls {
+            position: fixed;
+            bottom: var(--primitive-spacing-8);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: var(--primitive-spacing-4);
+            background: var(--color-surface);
+            padding: var(--primitive-spacing-3) var(--primitive-spacing-5);
+            border-radius: var(--primitive-radius-full);
+            border: 1px solid var(--color-border);
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--color-foreground-secondary);
+            font-size: var(--primitive-fontSize-xl);
+            cursor: pointer;
+            padding: var(--primitive-spacing-2) var(--primitive-spacing-3);
+            border-radius: var(--primitive-radius-md);
+            transition: all var(--primitive-duration-fast);
+        }
+
+        .nav-btn:hover {
+            background: var(--color-surface-elevated);
+            color: var(--color-primary);
+        }
+
+        .slide-counter {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-foreground-muted);
+            min-width: 50px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide {
+                padding: var(--primitive-spacing-8);
+            }
+
+            .pain-points {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .traction-container {
+                flex-direction: column;
+            }
+
+            .chart-container {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="slides-container">
+        <!-- Slide 1: Title - Hook with "What If" Formula -->
+        <div class="slide active">
+            <h1 class="slide-title animate-fade-up">AntigravityKit Marketing</h1>
+            <p class="slide-subheading animate-fade-up" style="animation-delay: 0.1s">
+                What if you could 10x your marketing output<br>without hiring a single person?
+            </p>
+            <p class="tagline animate-fade-up" style="animation-delay: 0.2s">
+                AI-Powered Marketing Automation for Indie Hackers & Small Teams
+            </p>
+        </div>
+
+        <!-- Slide 2: Problem - PAS Formula -->
+        <div class="slide">
+            <h2 class="slide-heading animate-fade-up">Marketing is Eating Your Time Alive</h2>
+            <p class="slide-subheading animate-fade-up" style="animation-delay: 0.1s">
+                You're a builder. But you're stuck doing marketer work.
+            </p>
+            <div class="pain-points">
+                <div class="pain-card animate-scale" style="animation-delay: 0.2s">
+                    <div class="pain-icon">&#128337;</div>
+                    <div class="pain-title">20+ Hours/Week</div>
+                    <div class="pain-desc">Writing blogs, emails, social posts. Time you could spend building your product.</div>
+                </div>
+                <div class="pain-card animate-scale" style="animation-delay: 0.3s">
+                    <div class="pain-icon">&#128176;</div>
+                    <div class="pain-title">$5K+/Month</div>
+                    <div class="pain-desc">Hiring marketers or agencies. Budget you don't have as an indie hacker.</div>
+                </div>
+                <div class="pain-card animate-scale" style="animation-delay: 0.4s">
+                    <div class="pain-icon">&#128561;</div>
+                    <div class="pain-title">Inconsistent Results</div>
+                    <div class="pain-desc">Random content. No strategy. Leads trickling in. Growth stalling.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Solution - FAB Formula -->
+        <div class="slide">
+            <h2 class="slide-heading animate-fade-up">Your AI Marketing Team</h2>
+            <p class="slide-subheading animate-fade-up" style="animation-delay: 0.1s">
+                15+ specialized AI agents working together. One toolkit.
+            </p>
+            <div class="solution-grid">
+                <div class="solution-card animate-scale" style="animation-delay: 0.2s">
+                    <div class="solution-icon">&#128221;</div>
+                    <div class="solution-title">Content Creator</div>
+                    <div class="solution-desc">Blog posts, emails, social content on autopilot</div>
+                </div>
+                <div class="solution-card animate-scale" style="animation-delay: 0.25s">
+                    <div class="solution-icon">&#128270;</div>
+                    <div class="solution-title">SEO Specialist</div>
+                    <div class="solution-desc">Keyword research, optimization, technical audits</div>
+                </div>
+                <div class="solution-card animate-scale" style="animation-delay: 0.3s">
+                    <div class="solution-icon">&#128200;</div>
+                    <div class="solution-title">Analytics Analyst</div>
+                    <div class="solution-desc">Performance tracking, insights, recommendations</div>
+                </div>
+                <div class="solution-card animate-scale" style="animation-delay: 0.35s">
+                    <div class="solution-icon">&#127919;</div>
+                    <div class="solution-title">Campaign Manager</div>
+                    <div class="solution-desc">Multi-channel orchestration, A/B testing</div>
+                </div>
+                <div class="solution-card animate-scale" style="animation-delay: 0.4s">
+                    <div class="solution-icon">&#9993;</div>
+                    <div class="solution-title">Email Wizard</div>
+                    <div class="solution-desc">Sequences, personalization, deliverability</div>
+                </div>
+                <div class="solution-card animate-scale" style="animation-delay: 0.45s">
+                    <div class="solution-icon">&#128640;</div>
+                    <div class="solution-title">Funnel Architect</div>
+                    <div class="solution-desc">Lead magnets, landing pages, conversion flows</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Traction - Proof with Chart -->
+        <div class="slide">
+            <h2 class="slide-heading animate-fade-up">Results That Speak</h2>
+            <div class="traction-container">
+                <div class="chart-container">
+                    <canvas id="timeChart"></canvas>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-item animate-fade-up" style="animation-delay: 0.2s">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Time Saved on Marketing</div>
+                    </div>
+                    <div class="stat-item animate-fade-up" style="animation-delay: 0.3s">
+                        <div class="stat-number">3x</div>
+                        <div class="stat-label">Content Output</div>
+                    </div>
+                    <div class="stat-item animate-fade-up" style="animation-delay: 0.4s">
+                        <div class="stat-number">$0</div>
+                        <div class="stat-label">Agency Fees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: CTA - AIDA Close -->
+        <div class="slide">
+            <h2 class="cta-headline animate-fade-up">Stop Marketing.<br>Start Shipping.</h2>
+            <p class="cta-subtext animate-fade-up" style="animation-delay: 0.1s">
+                Let AI handle your marketing while you focus on building the product your users love.
+            </p>
+            <a href="https://github.com/antigravitykit/antigravitykit-marketing" class="cta-button animate-scale" style="animation-delay: 0.2s">
+                Get Started Free &#8594;
+            </a>
+            <p class="secondary-cta animate-fade-up" style="animation-delay: 0.3s">
+                Open source. No credit card required. <a href="#">See Documentation</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="prevSlide()">&#8592;</button>
+        <span class="slide-counter"><span id="current">1</span> / <span id="total">5</span></span>
+        <button class="nav-btn" onclick="nextSlide()">&#8594;</button>
+    </div>
+
+    <script>
+        let current = 1;
+        const total = document.querySelectorAll('.slide').length;
+        document.getElementById('total').textContent = total;
+
+        function showSlide(n) {
+            if (n < 1) n = 1;
+            if (n > total) n = total;
+            current = n;
+            document.querySelectorAll('.slide').forEach((s, i) => {
+                s.classList.toggle('active', i === n - 1);
+            });
+            document.getElementById('current').textContent = n;
+            document.getElementById('progressBar').style.width = (n / total * 100) + '%';
+        }
+
+        function nextSlide() { showSlide(current + 1); }
+        function prevSlide() { showSlide(current - 1); }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+
+        // Click navigation
+        document.querySelector('.slides-container').addEventListener('click', (e) => {
+            if (e.target.closest('.nav-controls') || e.target.closest('a') || e.target.closest('button')) return;
+            const x = e.clientX;
+            if (x > window.innerWidth / 2) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        });
+
+        showSlide(1);
+
+        // Chart.js - Time Saved Chart
+        const ctx = document.getElementById('timeChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Content Writing', 'SEO Research', 'Email Campaigns', 'Social Media', 'Analytics'],
+                    datasets: [{
+                        label: 'Hours/Week Before',
+                        data: [8, 4, 5, 6, 3],
+                        backgroundColor: 'rgba(155, 93, 229, 0.6)',
+                        borderColor: '#9B5DE5',
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }, {
+                        label: 'Hours/Week With AntigravityKit',
+                        data: [1, 0.5, 0.5, 1, 0.5],
+                        backgroundColor: 'rgba(0, 245, 212, 0.6)',
+                        borderColor: '#00F5D4',
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#B8B8D0',
+                                font: { family: 'Inter', size: 12 },
+                                padding: 20
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#B8B8D0', font: { size: 11 } }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#B8B8D0' },
+                            title: {
+                                display: true,
+                                text: 'Hours per Week',
+                                color: '#6B6B8D'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

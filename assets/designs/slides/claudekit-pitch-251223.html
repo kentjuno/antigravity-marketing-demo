@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntigravityKit Marketing - Investor Pitch</title>
+
+    <!-- Brand Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Design Tokens -->
+    <link rel="stylesheet" href="../../design-tokens.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: var(--typography-font-body);
+            background: var(--color-background);
+            color: var(--color-foreground);
+        }
+
+        /* ============ SLIDE SYSTEM ============ */
+        .slides-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            background: var(--color-background);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide--surface {
+            background: var(--color-surface);
+        }
+
+        .slide--gradient {
+            background: var(--slide-bg-gradient);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(ellipse at center, rgba(155,93,229,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* ============ TYPOGRAPHY ============ */
+        h1, h2, h3, h4 {
+            font-family: var(--typography-font-heading);
+            font-weight: var(--primitive-fontWeight-bold);
+            line-height: 1.1;
+        }
+
+        .slide-title {
+            font-size: clamp(48px, 8vw, 96px);
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+        }
+
+        .slide-headline {
+            font-size: clamp(36px, 5vw, 64px);
+            color: var(--color-foreground);
+            margin-bottom: 24px;
+            max-width: 900px;
+        }
+
+        .slide-subheadline {
+            font-size: clamp(18px, 2.5vw, 28px);
+            color: var(--color-foreground-secondary);
+            max-width: 700px;
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        .highlight {
+            color: var(--color-primary);
+        }
+
+        .highlight-accent {
+            color: var(--color-accent);
+        }
+
+        /* ============ BADGE ============ */
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(155, 93, 229, 0.15);
+            border: 1px solid rgba(155, 93, 229, 0.3);
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+        }
+
+        /* ============ BUTTONS ============ */
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: var(--button-primary-radius);
+            font-size: 18px;
+            font-weight: 600;
+            font-family: var(--typography-font-body);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: 0 0 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-foreground);
+            border: 2px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* ============ CARDS GRID ============ */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 100%;
+            max-width: 1100px;
+            margin-top: 48px;
+        }
+
+        .card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--color-secondary);
+            transform: translateY(-4px);
+        }
+
+        .card-number {
+            font-family: var(--typography-font-heading);
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .card:nth-child(1) .card-number { color: var(--color-primary); }
+        .card:nth-child(2) .card-number { color: var(--color-secondary); }
+        .card:nth-child(3) .card-number { color: var(--color-accent); }
+
+        .card h4 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--color-foreground);
+        }
+
+        .card p {
+            font-size: 16px;
+            color: var(--color-foreground-muted);
+            line-height: 1.6;
+        }
+
+        /* ============ METRICS GRID ============ */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 48px;
+        }
+
+        .metric-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-family: var(--typography-font-heading);
+            font-size: 48px;
+            font-weight: 700;
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: var(--color-foreground-secondary);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ============ CHART CONTAINER ============ */
+        .chart-section {
+            display: flex;
+            gap: 48px;
+            width: 100%;
+            max-width: 1100px;
+            align-items: center;
+            margin-top: 32px;
+        }
+
+        .chart-container {
+            flex: 1.5;
+            background: var(--color-surface);
+            border-radius: 20px;
+            padding: 32px;
+            height: 350px;
+        }
+
+        .chart-insights {
+            flex: 1;
+            text-align: left;
+        }
+
+        .chart-insights h3 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            color: var(--color-foreground);
+        }
+
+        .insight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 18px;
+            color: var(--color-foreground-secondary);
+        }
+
+        .insight-item::before {
+            content: '→';
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* ============ FEATURES LIST ============ */
+        .features-section {
+            display: flex;
+            gap: 64px;
+            width: 100%;
+            max-width: 1100px;
+            align-items: center;
+            margin-top: 32px;
+        }
+
+        .features-list {
+            flex: 1;
+            text-align: left;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 20px;
+            margin-bottom: 4px;
+            color: var(--color-foreground);
+        }
+
+        .feature-content p {
+            font-size: 16px;
+            color: var(--color-foreground-muted);
+        }
+
+        .features-visual {
+            flex: 1;
+            background: var(--color-surface);
+            border-radius: 20px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+        }
+
+        .visual-placeholder {
+            text-align: center;
+            color: var(--color-foreground-muted);
+        }
+
+        .visual-placeholder span {
+            font-size: 64px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        /* ============ TESTIMONIAL ============ */
+        .testimonial-container {
+            max-width: 800px;
+            margin-top: 32px;
+        }
+
+        .testimonial-quote {
+            font-size: clamp(24px, 3vw, 36px);
+            color: var(--color-foreground);
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            left: -40px;
+            top: -20px;
+            font-size: 120px;
+            color: var(--color-primary);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            background: var(--primitive-gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-foreground);
+        }
+
+        .author-title {
+            font-size: 14px;
+            color: var(--color-foreground-muted);
+        }
+
+        /* ============ PRICING ============ */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 48px;
+        }
+
+        .pricing-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--color-primary);
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(255, 107, 107, 0.2);
+        }
+
+        .pricing-name {
+            font-size: 18px;
+            color: var(--color-foreground-secondary);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            font-family: var(--typography-font-heading);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--color-foreground);
+        }
+
+        .pricing-price span {
+            font-size: 18px;
+            color: var(--color-foreground-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 24px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            color: var(--color-foreground-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--color-accent);
+        }
+
+        /* ============ CTA SLIDE ============ */
+        .cta-content {
+            text-align: center;
+        }
+
+        .cta-content .slide-headline {
+            color: white;
+        }
+
+        .cta-content .slide-subheadline {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .cta-contact {
+            margin-top: 48px;
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .cta-contact a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+
+        /* ============ NAVIGATION ============ */
+        .nav-controls {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            z-index: 100;
+            background: rgba(26, 26, 46, 0.9);
+            padding: 12px 24px;
+            border-radius: 100px;
+            border: 1px solid var(--color-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            color: var(--color-foreground);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            font-size: 14px;
+            color: var(--color-foreground-secondary);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primitive-gradient-primary);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        /* ============ KEYBOARD HINT ============ */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            font-size: 12px;
+            color: var(--color-foreground-muted);
+            z-index: 100;
+        }
+
+        kbd {
+            background: var(--color-surface);
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            font-family: var(--typography-font-mono);
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="slides-container" id="slidesContainer">
+
+        <!-- SLIDE 1: Title -->
+        <section class="slide active" data-slide="1">
+            <div class="badge">AI-Powered Marketing Automation</div>
+            <h1 class="slide-title">AntigravityKit Marketing</h1>
+            <p class="slide-subheadline">Your AI marketing team. <span class="highlight">Always on.</span><br>Ship campaigns while you sleep.</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">Get Early Access</a>
+                <a href="#" class="btn btn-secondary">Watch Demo</a>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Problem (PAS Formula - Problem) -->
+        <section class="slide" data-slide="2">
+            <div class="badge">The Problem</div>
+            <h2 class="slide-headline">Marketing teams are <span class="highlight">drowning</span></h2>
+            <p class="slide-subheadline">You need to produce 10x more content with the same team. Something has to give.</p>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-number">01</div>
+                    <h4>Content Overload</h4>
+                    <p>Blog posts, social, email, ads—the demand never stops. Your team can't keep up.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">02</div>
+                    <h4>Tool Chaos</h4>
+                    <p>15+ marketing tools that don't talk to each other. Data silos everywhere.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">03</div>
+                    <h4>Strategy Suffers</h4>
+                    <p>When execution consumes all hours, there's no time left to think strategically.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Agitation (PAS Formula - Agitate) -->
+        <section class="slide slide--surface" data-slide="3">
+            <div class="badge">The Cost</div>
+            <h2 class="slide-headline">Every week without automation costs you <span class="highlight">$12,000+</span></h2>
+            <p class="slide-subheadline">That's the salary of the team members stuck doing repetitive tasks instead of driving growth.</p>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">23hrs</div>
+                    <div class="metric-label">Lost per week on manual tasks</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">68%</div>
+                    <div class="metric-label">Of marketers feel overwhelmed</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4.2x</div>
+                    <div class="metric-label">Content demand increase YoY</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">-31%</div>
+                    <div class="metric-label">Productivity from context switching</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: Solution -->
+        <section class="slide" data-slide="4">
+            <div class="badge">The Solution</div>
+            <h2 class="slide-headline">AI agents that <span class="highlight-accent">actually get</span> marketing</h2>
+            <div class="features-section">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">📝</div>
+                        <div class="feature-content">
+                            <h4>Content Creation</h4>
+                            <p>Blog posts, social, email—all on brand, all on time</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <div class="feature-content">
+                            <h4>Campaign Orchestration</h4>
+                            <p>Multi-channel campaigns with one command</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-content">
+                            <h4>Analytics & Optimization</h4>
+                            <p>Real-time insights without the spreadsheets</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-content">
+                            <h4>Brand Consistency</h4>
+                            <p>Every output follows your brand guidelines</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-visual">
+                    <div class="visual-placeholder">
+                        <span>🤖</span>
+                        <p>Live Product Demo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Traction with Real Chart -->
+        <section class="slide slide--surface" data-slide="5">
+            <div class="badge">Traction</div>
+            <h2 class="slide-headline">Growing <span class="highlight">3x month over month</span></h2>
+            <div class="chart-section">
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="chart-insights">
+                    <h3>Key Milestones</h3>
+                    <div class="insight-item">500+ beta users onboarded</div>
+                    <div class="insight-item">$45K MRR in month 4</div>
+                    <div class="insight-item">85% weekly active rate</div>
+                    <div class="insight-item">NPS score of 72</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Social Proof -->
+        <section class="slide" data-slide="6">
+            <div class="badge">Social Proof</div>
+            <h2 class="slide-headline">Trusted by marketing leaders</h2>
+            <div class="testimonial-container">
+                <p class="testimonial-quote">AntigravityKit replaced 3 tools and 2 contractors. Our content output tripled while costs dropped 60%. It's like having an entire marketing team that never sleeps.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SC</div>
+                    <div class="author-info">
+                        <div class="author-name">Sarah Chen</div>
+                        <div class="author-title">Head of Marketing, TechScale (Series B)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Business Model -->
+        <section class="slide slide--surface" data-slide="7">
+            <div class="badge">Pricing</div>
+            <h2 class="slide-headline">Simple, transparent pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">Starter</div>
+                    <div class="pricing-price">$99<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li>3 marketing agents</li>
+                        <li>10K words/month</li>
+                        <li>Basic analytics</li>
+                        <li>Email support</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-name">Pro</div>
+                    <div class="pricing-price">$299<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li>Unlimited agents</li>
+                        <li>100K words/month</li>
+                        <li>Advanced analytics</li>
+                        <li>Priority support</li>
+                        <li>Custom brand voice</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Enterprise</div>
+                    <div class="pricing-price">Custom</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Pro</li>
+                        <li>Unlimited usage</li>
+                        <li>SSO & RBAC</li>
+                        <li>Dedicated success manager</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: Team -->
+        <section class="slide" data-slide="8">
+            <div class="badge">Team</div>
+            <h2 class="slide-headline">Built by marketers, for marketers</h2>
+            <p class="slide-subheadline">Our team combines 15+ years of marketing experience with deep AI expertise. We've been in your shoes—now we're building the tools we wished we had.</p>
+            <div class="metrics-grid" style="margin-top: 48px;">
+                <div class="metric-card">
+                    <div class="metric-value">15+</div>
+                    <div class="metric-label">Years Marketing Exp</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Previous Exits</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">Ex-</div>
+                    <div class="metric-label">Google, Meta, HubSpot</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$2M</div>
+                    <div class="metric-label">Campaigns Managed</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: The Ask -->
+        <section class="slide slide--gradient" data-slide="9">
+            <div class="cta-content">
+                <div class="badge" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: white;">The Ask</div>
+                <h2 class="slide-headline">Raising $2M seed round</h2>
+                <p class="slide-subheadline">To accelerate product development, expand our agent library, and grow our go-to-market team.</p>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="#" class="btn" style="background: white; color: var(--color-primary);">Schedule a Call</a>
+                </div>
+                <div class="cta-contact">
+                    <a href="mailto:invest@antigravitykit.ai">invest@antigravitykit.ai</a> · <a href="https://antigravitykit.ai">antigravitykit.ai</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" onclick="prevSlide()">←</button>
+        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">9</span></span>
+        <button class="nav-btn" id="nextBtn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="keyboard-hint">
+        <kbd>←</kbd> <kbd>→</kbd> to navigate
+    </div>
+
+    <script>
+        // Slide Navigation
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+
+            if (n < 1) n = 1;
+            if (n > totalSlides) n = totalSlides;
+
+            currentSlide = n;
+
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === n - 1) {
+                    slide.classList.add('active');
+                }
+            });
+
+            document.getElementById('currentSlide').textContent = n;
+            document.getElementById('progressBar').style.width = ((n / totalSlides) * 100) + '%';
+
+            // Update nav buttons
+            document.getElementById('prevBtn').disabled = n === 1;
+            document.getElementById('nextBtn').disabled = n === totalSlides;
+
+            // Initialize chart when on traction slide
+            if (n === 5) {
+                setTimeout(initChart, 100);
+            }
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Click to advance (on sides)
+        document.addEventListener('click', (e) => {
+            const x = e.clientX;
+            const width = window.innerWidth;
+
+            if (e.target.closest('.nav-controls') || e.target.closest('.btn')) return;
+
+            if (x > width * 0.7) {
+                nextSlide();
+            } else if (x < width * 0.3) {
+                prevSlide();
+            }
+        });
+
+        // Chart.js initialization
+        let chartInstance = null;
+
+        function initChart() {
+            const ctx = document.getElementById('revenueChart');
+            if (!ctx) return;
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan (Proj)', 'Feb (Proj)'],
+                    datasets: [{
+                        label: 'MRR ($K)',
+                        data: [5, 12, 28, 45, 85, 150],
+                        borderColor: '#FF6B6B',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#FF6B6B',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.05)'
+                            },
+                            ticks: {
+                                color: '#B8B8D0',
+                                font: {
+                                    family: 'Inter'
+                                }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.05)'
+                            },
+                            ticks: {
+                                color: '#B8B8D0',
+                                font: {
+                                    family: 'Inter'
+                                },
+                                callback: function(value) {
+                                    return '$' + value + 'K';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize first slide
+        showSlide(1);
+    </script>
+</body>
+</html>

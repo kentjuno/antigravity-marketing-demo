@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AntigravityKit Marketing - Branded Pitch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       DESIGN TOKENS - Generated from design-tokens.json
+       via: node .antigravity/skills/design-system/scripts/generate-tokens.cjs
+       ============================================ */
+
+    /* === PRIMITIVES === */
+    :root {
+      --primitive-color-indigo-50: #EEF2FF;
+      --primitive-color-indigo-100: #E0E7FF;
+      --primitive-color-indigo-200: #C7D2FE;
+      --primitive-color-indigo-300: #A5B4FC;
+      --primitive-color-indigo-400: #818CF8;
+      --primitive-color-indigo-500: #6366F1;
+      --primitive-color-indigo-600: #4F46E5;
+      --primitive-color-indigo-700: #4338CA;
+      --primitive-color-indigo-800: #3730A3;
+      --primitive-color-indigo-900: #312E81;
+      --primitive-color-violet-400: #A78BFA;
+      --primitive-color-violet-500: #8B5CF6;
+      --primitive-color-violet-600: #7C3AED;
+      --primitive-color-cyan-400: #22D3EE;
+      --primitive-color-cyan-500: #06B6D4;
+      --primitive-color-gray-50: #F9FAFB;
+      --primitive-color-gray-100: #F3F4F6;
+      --primitive-color-gray-200: #E5E7EB;
+      --primitive-color-gray-300: #D1D5DB;
+      --primitive-color-gray-500: #6B7280;
+      --primitive-color-gray-700: #374151;
+      --primitive-color-gray-900: #111827;
+      --primitive-color-gray-950: #030712;
+      --primitive-color-green-500: #10B981;
+      --primitive-color-amber-500: #F59E0B;
+      --primitive-color-red-500: #EF4444;
+      --primitive-color-blue-500: #3B82F6;
+      --primitive-color-white: #FFFFFF;
+      --primitive-spacing-1: 4px;
+      --primitive-spacing-2: 8px;
+      --primitive-spacing-3: 12px;
+      --primitive-spacing-4: 16px;
+      --primitive-spacing-6: 24px;
+      --primitive-spacing-8: 32px;
+      --primitive-spacing-12: 48px;
+      --primitive-spacing-16: 64px;
+      --primitive-fontSize-sm: 14px;
+      --primitive-fontSize-base: 16px;
+      --primitive-fontSize-lg: 18px;
+      --primitive-fontSize-xl: 20px;
+      --primitive-fontSize-2xl: 24px;
+      --primitive-fontSize-3xl: 30px;
+      --primitive-fontSize-4xl: 36px;
+      --primitive-fontSize-5xl: 48px;
+      --primitive-fontSize-6xl: 60px;
+      --primitive-fontSize-7xl: 72px;
+      --primitive-fontWeight-normal: 400;
+      --primitive-fontWeight-medium: 500;
+      --primitive-fontWeight-semibold: 600;
+      --primitive-fontWeight-bold: 700;
+      --primitive-lineHeight-tight: 1.15;
+      --primitive-lineHeight-snug: 1.25;
+      --primitive-lineHeight-relaxed: 1.6;
+      --primitive-radius-sm: 4px;
+      --primitive-radius-md: 8px;
+      --primitive-radius-lg: 12px;
+      --primitive-radius-xl: 16px;
+      --primitive-shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --primitive-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --primitive-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --primitive-duration-fast: 100ms;
+      --primitive-duration-base: 200ms;
+      --primitive-duration-slow: 300ms;
+      --primitive-easing-out: ease-out;
+      --primitive-easing-inOut: ease-in-out;
+    }
+
+    /* === SEMANTIC === */
+    :root {
+      --color-primary: var(--primitive-color-indigo-500);
+      --color-primary-hover: var(--primitive-color-indigo-600);
+      --color-primary-active: var(--primitive-color-indigo-700);
+      --color-primary-light: var(--primitive-color-indigo-300);
+      --color-primary-lighter: var(--primitive-color-indigo-100);
+      --color-secondary: var(--primitive-color-violet-500);
+      --color-accent: var(--primitive-color-cyan-500);
+      --color-background: var(--primitive-color-white);
+      --color-surface: var(--primitive-color-gray-50);
+      --color-foreground: var(--primitive-color-gray-900);
+      --color-foreground-secondary: var(--primitive-color-gray-700);
+      --color-foreground-muted: var(--primitive-color-gray-500);
+      --color-border: var(--primitive-color-gray-200);
+      --color-success: var(--primitive-color-green-500);
+      --color-warning: var(--primitive-color-amber-500);
+      --color-error: var(--primitive-color-red-500);
+      --color-info: var(--primitive-color-blue-500);
+      --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    /* === COMPONENT: SLIDE === */
+    :root {
+      --slide-bg: var(--color-background);
+      --slide-bg-alt: var(--color-surface);
+      --slide-bg-gradient: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+      --slide-padding: var(--primitive-spacing-16);
+      --slide-title-size: var(--primitive-fontSize-7xl);
+      --slide-heading-size: var(--primitive-fontSize-5xl);
+      --slide-subheading-size: var(--primitive-fontSize-3xl);
+      --slide-body-size: var(--primitive-fontSize-xl);
+    }
+
+    /* === COMPONENT: BUTTON === */
+    :root {
+      --btn-primary-bg: var(--color-primary);
+      --btn-primary-bg-hover: var(--color-primary-hover);
+      --btn-primary-fg: var(--primitive-color-white);
+      --btn-radius: var(--primitive-radius-md);
+      --btn-padding-x: var(--primitive-spacing-6);
+      --btn-padding-y: var(--primitive-spacing-3);
+      --btn-font-size: var(--primitive-fontSize-base);
+      --btn-font-weight: var(--primitive-fontWeight-semibold);
+    }
+
+    /* === COMPONENT: CARD === */
+    :root {
+      --card-bg: var(--color-background);
+      --card-border: var(--color-border);
+      --card-radius: var(--primitive-radius-lg);
+      --card-padding: var(--primitive-spacing-6);
+      --card-shadow: var(--primitive-shadow-base);
+      --card-shadow-hover: var(--primitive-shadow-lg);
+    }
+
+    /* ============================================
+       BASE STYLES
+       ============================================ */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--primitive-color-gray-950);
+      overflow: hidden;
+      color: var(--color-foreground);
+    }
+
+    /* ============================================
+       SLIDES CONTAINER
+       ============================================ */
+    .slides {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      padding: var(--slide-padding);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--slide-bg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity var(--primitive-duration-slow) var(--primitive-easing-inOut);
+    }
+
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    h1 {
+      font-size: var(--slide-heading-size);
+      font-weight: var(--primitive-fontWeight-bold);
+      color: var(--color-foreground);
+      line-height: var(--primitive-lineHeight-tight);
+      margin-bottom: var(--primitive-spacing-6);
+    }
+
+    h2 {
+      font-size: var(--primitive-fontSize-4xl);
+      font-weight: var(--primitive-fontWeight-semibold);
+      color: var(--color-foreground);
+      line-height: var(--primitive-lineHeight-snug);
+      margin-bottom: var(--primitive-spacing-6);
+    }
+
+    h3 {
+      font-size: var(--primitive-fontSize-2xl);
+      font-weight: var(--primitive-fontWeight-semibold);
+      color: var(--color-foreground-secondary);
+      margin-bottom: var(--primitive-spacing-4);
+    }
+
+    p {
+      font-size: var(--slide-body-size);
+      color: var(--color-foreground-secondary);
+      line-height: var(--primitive-lineHeight-relaxed);
+      margin-bottom: var(--primitive-spacing-4);
+    }
+
+    .large { font-size: var(--primitive-fontSize-2xl); }
+    .accent { color: var(--color-primary); }
+    .secondary { color: var(--color-secondary); }
+    .muted { color: var(--color-foreground-muted); }
+
+    /* ============================================
+       SLIDE VARIANTS
+       ============================================ */
+
+    /* Title Slide - Gradient Background */
+    .slide--title {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--slide-bg-gradient);
+    }
+
+    .slide--title h1 {
+      color: var(--primitive-color-white);
+      font-size: var(--slide-title-size);
+      margin-bottom: var(--primitive-spacing-4);
+    }
+
+    .slide--title p {
+      color: rgba(255,255,255,0.9);
+      font-size: var(--primitive-fontSize-2xl);
+      margin-bottom: 0;
+      max-width: 700px;
+    }
+
+    .slide--title .tagline {
+      margin-top: var(--primitive-spacing-8);
+      padding: var(--primitive-spacing-3) var(--primitive-spacing-6);
+      background: rgba(255,255,255,0.15);
+      border-radius: var(--primitive-radius-lg);
+      font-size: var(--primitive-fontSize-lg);
+      color: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      font-weight: var(--primitive-fontWeight-medium);
+    }
+
+    /* Problem Slide - Light Surface */
+    .slide--problem {
+      background: var(--slide-bg-alt);
+    }
+
+    .slide--problem h2 {
+      color: var(--color-error);
+    }
+
+    /* CTA Slide */
+    .slide--cta {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-background) 100%);
+    }
+
+    .slide--cta h2 {
+      margin-bottom: var(--primitive-spacing-4);
+    }
+
+    .slide--cta p {
+      max-width: 600px;
+      margin-bottom: var(--primitive-spacing-8);
+    }
+
+    /* ============================================
+       COMPONENTS
+       ============================================ */
+
+    /* Pain Points Grid */
+    .pain-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--primitive-spacing-6);
+      margin-top: var(--primitive-spacing-8);
+    }
+
+    .pain-point {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--primitive-spacing-4);
+      padding: var(--card-padding);
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      border-left: 4px solid var(--color-error);
+      box-shadow: var(--card-shadow);
+    }
+
+    .pain-point-icon { font-size: 32px; flex-shrink: 0; }
+    .pain-point h4 { font-size: var(--primitive-fontSize-lg); font-weight: var(--primitive-fontWeight-semibold); margin-bottom: var(--primitive-spacing-2); }
+    .pain-point p { font-size: var(--primitive-fontSize-base); color: var(--color-foreground-muted); margin-bottom: 0; }
+
+    /* Solution Flow */
+    .solution-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--primitive-spacing-6);
+      margin-top: var(--primitive-spacing-8);
+    }
+
+    .solution-step {
+      text-align: center;
+      padding: var(--primitive-spacing-6);
+    }
+
+    .solution-step-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--color-primary-lighter);
+      border-radius: var(--primitive-radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--primitive-spacing-4);
+      font-size: 36px;
+    }
+
+    .solution-step h4 { font-size: var(--primitive-fontSize-lg); font-weight: var(--primitive-fontWeight-semibold); margin-bottom: var(--primitive-spacing-2); }
+    .solution-step p { font-size: var(--primitive-fontSize-base); color: var(--color-foreground-muted); margin-bottom: 0; }
+    .solution-arrow { font-size: 32px; color: var(--color-primary); }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--primitive-spacing-6);
+      margin-top: var(--primitive-spacing-8);
+    }
+
+    .feature-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--card-radius);
+      padding: var(--card-padding);
+      transition: transform var(--primitive-duration-base) var(--primitive-easing-inOut),
+                  box-shadow var(--primitive-duration-base) var(--primitive-easing-inOut);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--color-primary);
+      border-radius: var(--primitive-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--primitive-spacing-4);
+      font-size: 24px;
+    }
+
+    .feature-card h4 { font-size: var(--primitive-fontSize-lg); font-weight: var(--primitive-fontWeight-semibold); margin-bottom: var(--primitive-spacing-2); }
+    .feature-card p { font-size: var(--primitive-fontSize-base); color: var(--color-foreground-muted); margin-bottom: 0; line-height: 1.5; }
+
+    /* Agents Grid */
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--primitive-spacing-4);
+      margin-top: var(--primitive-spacing-6);
+    }
+
+    .agent-card {
+      background: var(--card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--primitive-radius-md);
+      padding: var(--primitive-spacing-4);
+      text-align: center;
+      transition: border-color var(--primitive-duration-fast) var(--primitive-easing-out);
+    }
+
+    .agent-card:hover { border-color: var(--color-primary); }
+    .agent-emoji { font-size: 28px; margin-bottom: var(--primitive-spacing-2); }
+    .agent-name { font-size: var(--primitive-fontSize-sm); font-weight: var(--primitive-fontWeight-semibold); }
+    .agent-role { font-size: 12px; color: var(--color-foreground-muted); }
+
+    /* Buttons */
+    .cta-buttons {
+      display: flex;
+      gap: var(--primitive-spacing-4);
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--primitive-spacing-2);
+      padding: var(--btn-padding-y) var(--btn-padding-x);
+      border-radius: var(--btn-radius);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all var(--primitive-duration-fast) var(--primitive-easing-out);
+    }
+
+    .btn-primary {
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-fg);
+    }
+
+    .btn-primary:hover {
+      background: var(--btn-primary-bg-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--color-background);
+      color: var(--color-foreground-secondary);
+      border: 1px solid var(--color-border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    /* ============================================
+       PROGRESS & CONTROLS
+       ============================================ */
+    .progress {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background: var(--color-primary);
+      transition: width var(--primitive-duration-base) var(--primitive-easing-inOut);
+      z-index: 100;
+    }
+
+    .counter {
+      position: fixed;
+      bottom: var(--primitive-spacing-4);
+      right: var(--primitive-spacing-4);
+      font-size: var(--primitive-fontSize-sm);
+      color: var(--color-foreground-muted);
+      z-index: 100;
+    }
+
+    .nav-hint {
+      position: fixed;
+      bottom: var(--primitive-spacing-4);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: var(--color-foreground-muted);
+      opacity: 0.6;
+      z-index: 100;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .slide { padding: var(--primitive-spacing-8); }
+      h1 { font-size: var(--primitive-fontSize-4xl); }
+      h2 { font-size: var(--primitive-fontSize-3xl); }
+      .slide--title h1 { font-size: var(--primitive-fontSize-5xl); }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .agents-grid { grid-template-columns: repeat(2, 1fr); }
+      .pain-points { grid-template-columns: 1fr; }
+      .solution-visual { flex-wrap: wrap; }
+    }
+
+    @media print {
+      .slide { page-break-after: always; display: flex !important; opacity: 1 !important; position: relative; }
+      .progress, .counter, .nav-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slides">
+    <!-- Slide 1: Title -->
+    <section class="slide slide--title active" data-slide="1">
+      <h1>AntigravityKit Marketing</h1>
+      <p>Autonomous marketing workflows powered by AI agents</p>
+      <div class="tagline">Save hours. Scale output. Stay on brand.</div>
+    </section>
+
+    <!-- Slide 2: Problem -->
+    <section class="slide slide--problem" data-slide="2">
+      <h2>The Problem</h2>
+      <p class="large">Marketing teams are stretched thin</p>
+      <div class="pain-points">
+        <div class="pain-point">
+          <span class="pain-point-icon">⏰</span>
+          <div>
+            <h4>"I don't have time"</h4>
+            <p>Content creation takes hours. Campaigns pile up. You're always behind.</p>
+          </div>
+        </div>
+        <div class="pain-point">
+          <span class="pain-point-icon">💸</span>
+          <div>
+            <h4>"I can't afford a team"</h4>
+            <p>Hiring specialists is expensive. Agencies cost too much for SMBs.</p>
+          </div>
+        </div>
+        <div class="pain-point">
+          <span class="pain-point-icon">🎭</span>
+          <div>
+            <h4>"My brand is inconsistent"</h4>
+            <p>Different voices across channels. Quality varies with whoever writes it.</p>
+          </div>
+        </div>
+        <div class="pain-point">
+          <span class="pain-point-icon">📊</span>
+          <div>
+            <h4>"I don't know what works"</h4>
+            <p>No time to analyze. Guessing instead of optimizing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Solution -->
+    <section class="slide" data-slide="3">
+      <h2>The Solution</h2>
+      <p class="large">AI agents that work like a marketing team</p>
+      <div class="solution-visual">
+        <div class="solution-step">
+          <div class="solution-step-icon">📝</div>
+          <h4>You Brief</h4>
+          <p>Describe what you need</p>
+        </div>
+        <span class="solution-arrow">→</span>
+        <div class="solution-step">
+          <div class="solution-step-icon">🤖</div>
+          <h4>Agents Execute</h4>
+          <p>15+ specialized agents work</p>
+        </div>
+        <span class="solution-arrow">→</span>
+        <div class="solution-step">
+          <div class="solution-step-icon">✅</div>
+          <h4>Quality Review</h4>
+          <p>Brand-aligned output</p>
+        </div>
+        <span class="solution-arrow">→</span>
+        <div class="solution-step">
+          <div class="solution-step-icon">🚀</div>
+          <h4>You Publish</h4>
+          <p>Ready for your channels</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Features -->
+    <section class="slide" data-slide="4">
+      <h2>Key Features</h2>
+      <p>Everything you need to automate your marketing</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h4>15+ AI Agents</h4>
+          <p>Specialized agents for content, SEO, email, social, ads, and analytics</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h4>Automated Workflows</h4>
+          <p>From draft to publish with quality gates and brand checks</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h4>Brand Consistency</h4>
+          <p>Every output follows your brand voice and design system</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h4>Performance Tracking</h4>
+          <p>Built-in analytics and optimization recommendations</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔌</div>
+          <h4>Integrations</h4>
+          <p>Connect to your tools: social, email, CRM, analytics</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💻</div>
+          <h4>CLI-First</h4>
+          <p>Power user interface with Google Antigravity integration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Agents -->
+    <section class="slide" data-slide="5" style="background: var(--color-surface);">
+      <h2>Meet Your <span class="accent">AI Marketing Team</span></h2>
+      <p>Specialized agents for every marketing function</p>
+      <div class="agents-grid">
+        <div class="agent-card"><div class="agent-emoji">✍️</div><div class="agent-name">Copywriter</div><div class="agent-role">High-converting copy</div></div>
+        <div class="agent-card"><div class="agent-emoji">📝</div><div class="agent-name">Content Creator</div><div class="agent-role">Blog, social, video</div></div>
+        <div class="agent-card"><div class="agent-emoji">🔍</div><div class="agent-name">SEO Specialist</div><div class="agent-role">Search optimization</div></div>
+        <div class="agent-card"><div class="agent-emoji">📧</div><div class="agent-name">Email Wizard</div><div class="agent-role">Sequences & campaigns</div></div>
+        <div class="agent-card"><div class="agent-emoji">📱</div><div class="agent-name">Social Manager</div><div class="agent-role">Multi-platform posts</div></div>
+        <div class="agent-card"><div class="agent-emoji">🎯</div><div class="agent-name">Funnel Architect</div><div class="agent-role">Conversion funnels</div></div>
+        <div class="agent-card"><div class="agent-emoji">📊</div><div class="agent-name">Analytics Analyst</div><div class="agent-role">Performance reports</div></div>
+        <div class="agent-card"><div class="agent-emoji">🔬</div><div class="agent-name">Researcher</div><div class="agent-role">Market intelligence</div></div>
+      </div>
+    </section>
+
+    <!-- Slide 6: CTA -->
+    <section class="slide slide--cta" data-slide="6">
+      <h2>Ready to <span class="accent">10x</span> your marketing output?</h2>
+      <p>Join indie hackers and small teams who are scaling their marketing with AI agents. Start automating today.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary" onclick="alert('Demo: Get started!')">
+          Get Started Free →
+        </button>
+        <a href="#" class="btn btn-secondary">
+          View Documentation
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <div class="progress" style="width: 16.67%"></div>
+  <div class="counter">1 / 6</div>
+  <div class="nav-hint">← → or Space to navigate • F for fullscreen</div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const progress = document.querySelector('.progress');
+    const counter = document.querySelector('.counter');
+    let current = 0;
+    const total = slides.length;
+
+    function showSlide(n) {
+      slides[current].classList.remove('active');
+      current = (n + total) % total;
+      slides[current].classList.add('active');
+      progress.style.width = ((current + 1) / total * 100) + '%';
+      counter.textContent = (current + 1) + ' / ' + total;
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); showSlide(current + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); showSlide(current - 1); }
+      if (e.key === 'f' || e.key === 'F') { document.documentElement.requestFullscreen?.(); }
+      if (e.key === 'Escape') { document.exitFullscreen?.(); }
+      if (e.key === 'Home') { showSlide(0); }
+      if (e.key === 'End') { showSlide(total - 1); }
+    });
+
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+    document.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) showSlide(current + (diff > 0 ? 1 : -1));
+    });
+
+    showSlide(0);
+  </script>
+</body>
+</html>

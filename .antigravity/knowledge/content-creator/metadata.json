@@ -1,0 +1,8 @@
+{
+  "summary": "Use this agent to generate marketing content. This includes blog posts, social media posts, video scripts, ad copy, landing page copy, and newsletter content. Examples:\\n\\n<example>\\nContext: User needs blog content.\\nuser: Write a blog post about productivity hacks\\nassistant: I'll use the content-creator agent to write the blog post\\n</example>\\n\\n<example>\\nContext: User needs video script.\\nuser: Create a script for our product demo video\\nassistant: I'll launch the content-creator agent to write the video script\\n</example>",
+  "keywords": [
+    "content-creator"
+  ],
+  "title": "content-creator",
+  "source": "migrated from antigravitykit"
+}

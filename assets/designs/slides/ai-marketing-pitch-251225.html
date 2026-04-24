@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Marketing Tool - Investor Pitch</title>
+    <link rel="stylesheet" href="../../design-tokens.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            background: var(--color-background);
+            color: var(--color-foreground);
+            font-family: var(--typography-font-body);
+            overflow: hidden;
+        }
+
+        .slides-container {
+            width: 100%; height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%; height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--slide-padding);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease-out;
+            background: var(--color-background);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide-with-bg {
+            background-image: url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide-with-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #070B14E6, #070B14B3);
+        }
+
+        .slide-with-bg .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--typography-font-heading);
+            font-weight: var(--primitive-fontWeight-bold);
+        }
+
+        .slide-title {
+            font-size: clamp(48px, 8vw, var(--slide-title-size));
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--primitive-spacing-6);
+            line-height: var(--primitive-lineHeight-tight);
+        }
+
+        .slide-heading {
+            font-size: clamp(36px, 6vw, var(--slide-heading-size));
+            color: var(--color-foreground);
+            margin-bottom: var(--primitive-spacing-4);
+        }
+
+        .slide-subtitle {
+            font-size: var(--primitive-fontSize-xl);
+            color: var(--color-foreground-secondary);
+            max-width: 700px;
+            line-height: var(--primitive-lineHeight-relaxed);
+        }
+
+        .tagline {
+            font-size: var(--primitive-fontSize-2xl);
+            color: var(--color-secondary);
+            font-weight: var(--primitive-fontWeight-semibold);
+            margin-top: var(--primitive-spacing-8);
+        }
+
+        /* Problem Slide */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--primitive-spacing-6);
+            margin-top: var(--primitive-spacing-10);
+            max-width: 1000px;
+        }
+
+        .problem-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--card-radius);
+            padding: var(--card-padding);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--primitive-shadow-glow-coral);
+        }
+
+        .problem-stat {
+            font-size: var(--primitive-fontSize-4xl);
+            font-family: var(--typography-font-heading);
+            font-weight: var(--primitive-fontWeight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--primitive-spacing-2);
+        }
+
+        .problem-label {
+            color: var(--color-foreground-secondary);
+            font-size: var(--primitive-fontSize-base);
+        }
+
+        /* Solution Slide */
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--primitive-spacing-6);
+            margin-top: var(--primitive-spacing-8);
+            max-width: 900px;
+            text-align: left;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--primitive-spacing-4);
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primitive-gradient-primary);
+            border-radius: var(--primitive-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: var(--primitive-fontSize-xl);
+            margin-bottom: var(--primitive-spacing-1);
+        }
+
+        .feature-text p {
+            color: var(--color-foreground-secondary);
+            font-size: var(--primitive-fontSize-base);
+        }
+
+        /* Traction Slide */
+        .traction-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--primitive-spacing-12);
+            max-width: 1100px;
+            width: 100%;
+            margin-top: var(--primitive-spacing-8);
+        }
+
+        .chart-container {
+            height: 300px;
+            background: var(--color-surface);
+            border-radius: var(--card-radius);
+            padding: var(--primitive-spacing-6);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--primitive-spacing-4);
+        }
+
+        .metric-card {
+            background: var(--color-surface);
+            border-radius: var(--primitive-radius-lg);
+            padding: var(--primitive-spacing-5);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: var(--primitive-fontSize-3xl);
+            font-family: var(--typography-font-heading);
+            font-weight: var(--primitive-fontWeight-bold);
+            background: var(--primitive-gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: var(--primitive-fontSize-sm);
+            color: var(--color-foreground-secondary);
+            margin-top: var(--primitive-spacing-1);
+        }
+
+        /* Ask Slide */
+        .ask-content {
+            max-width: 800px;
+        }
+
+        .ask-amount {
+            font-size: clamp(56px, 10vw, 120px);
+            font-family: var(--typography-font-heading);
+            font-weight: var(--primitive-fontWeight-bold);
+            background: var(--primitive-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: var(--primitive-spacing-8) 0;
+        }
+
+        .use-of-funds {
+            display: flex;
+            justify-content: center;
+            gap: var(--primitive-spacing-8);
+            margin-top: var(--primitive-spacing-8);
+        }
+
+        .fund-item {
+            text-align: center;
+        }
+
+        .fund-percent {
+            font-size: var(--primitive-fontSize-2xl);
+            font-weight: var(--primitive-fontWeight-bold);
+            color: var(--color-accent);
+        }
+
+        .fund-label {
+            color: var(--color-foreground-secondary);
+            font-size: var(--primitive-fontSize-sm);
+            margin-top: var(--primitive-spacing-1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: var(--primitive-spacing-10);
+            padding: var(--button-primary-padding-y) var(--button-primary-padding-x);
+            background: var(--button-primary-bg);
+            color: var(--button-primary-fg);
+            font-size: var(--primitive-fontSize-lg);
+            font-weight: var(--primitive-fontWeight-semibold);
+            border-radius: var(--button-primary-radius);
+            text-decoration: none;
+            box-shadow: var(--button-primary-shadow);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            background: var(--button-primary-bg-hover);
+            transform: translateY(-2px);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: var(--button-primary-shadow); }
+            50% { box-shadow: 0 0 60px rgba(59,130,246,0.5); }
+        }
+
+        /* Navigation */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--primitive-gradient-primary);
+            transition: width 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav-controls {
+            position: fixed;
+            bottom: var(--primitive-spacing-8);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: var(--primitive-spacing-4);
+            z-index: 100;
+        }
+
+        .nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--primitive-radius-full);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-foreground);
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--color-surface-elevated);
+            border-color: var(--color-primary);
+        }
+
+        .slide-counter {
+            color: var(--color-foreground-secondary);
+            font-size: var(--primitive-fontSize-sm);
+            font-family: var(--typography-font-mono);
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="slides-container">
+        <!-- Slide 1: Title/Hook -->
+        <div class="slide slide-with-bg active">
+            <div class="content">
+                <h1 class="slide-title">AI Marketing Autopilot</h1>
+                <p class="slide-subtitle">Turn 1 hour of work into 100 pieces of brand-consistent content. Powered by Antigravity AI orchestration.</p>
+                <p class="tagline">10x Output. Zero Creative Burnout.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem -->
+        <div class="slide">
+            <h2 class="slide-heading">Marketing Teams Are Drowning</h2>
+            <p class="slide-subtitle">Every month without automation costs you growth</p>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-stat">47hrs</div>
+                    <div class="problem-label">Weekly content creation time</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-stat">$8K</div>
+                    <div class="problem-label">Monthly agency spend (SMBs)</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-stat">73%</div>
+                    <div class="problem-label">Marketers feel understaffed</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Solution -->
+        <div class="slide">
+            <h2 class="slide-heading">One Command. Infinite Content.</h2>
+            <p class="slide-subtitle">AI agents that understand your brand and execute autonomously</p>
+            <div class="solution-features">
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-text">
+                        <h3>Brand-Aware AI</h3>
+                        <p>Auto-injects your colors, voice, and guidelines into every output</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📹</div>
+                    <div class="feature-text">
+                        <h3>Video → Multi-format</h3>
+                        <p>One YouTube video becomes blog, social posts, and infographics</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-text">
+                        <h3>Slide Decks in Seconds</h3>
+                        <p>Investor pitches with proven structures and emotion arcs</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✍️</div>
+                    <div class="feature-text">
+                        <h3>Copywriting Formulas</h3>
+                        <p>PAS, AIDA, FAB applied automatically for conversion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Traction -->
+        <div class="slide">
+            <h2 class="slide-heading">Early Traction</h2>
+            <div class="traction-content">
+                <div class="chart-container">
+                    <canvas id="mrrChart"></canvas>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">127</div>
+                        <div class="metric-label">Active Users</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">42%</div>
+                        <div class="metric-label">MoM Growth</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$12K</div>
+                        <div class="metric-label">MRR</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">4.8★</div>
+                        <div class="metric-label">User Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Ask -->
+        <div class="slide slide-with-bg">
+            <div class="content ask-content">
+                <h2 class="slide-heading">Join the Round</h2>
+                <div class="ask-amount">$500K</div>
+                <p class="slide-subtitle">Pre-seed to capture the AI marketing automation wave</p>
+                <div class="use-of-funds">
+                    <div class="fund-item">
+                        <div class="fund-percent">50%</div>
+                        <div class="fund-label">Engineering</div>
+                    </div>
+                    <div class="fund-item">
+                        <div class="fund-percent">30%</div>
+                        <div class="fund-label">Go-to-Market</div>
+                    </div>
+                    <div class="fund-item">
+                        <div class="fund-percent">20%</div>
+                        <div class="fund-label">Operations</div>
+                    </div>
+                </div>
+                <a href="mailto:invest@example.com" class="cta-button">Schedule a Call →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <span class="slide-counter"><span id="current">1</span> / <span id="total">5</span></span>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let current = 1;
+        const total = document.querySelectorAll('.slide').length;
+
+        function showSlide(n) {
+            if (n < 1) n = 1;
+            if (n > total) n = total;
+            current = n;
+            document.querySelectorAll('.slide').forEach((s, i) => {
+                s.classList.toggle('active', i === n - 1);
+            });
+            document.getElementById('current').textContent = n;
+            document.getElementById('progressBar').style.width = (n / total * 100) + '%';
+        }
+
+        function nextSlide() { showSlide(current + 1); }
+        function prevSlide() { showSlide(current - 1); }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+        });
+
+        // Initialize Chart.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('mrrChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Sep', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            label: 'MRR ($K)',
+                            data: [2, 5, 8, 12],
+                            borderColor: '#3B82F6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#3B82F6',
+                            pointRadius: 6,
+                            pointHoverRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: 'Monthly Recurring Revenue',
+                                color: '#94A3B8',
+                                font: { size: 14, family: 'Inter' }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: { color: 'rgba(255,255,255,0.05)' },
+                                ticks: { color: '#94A3B8' }
+                            },
+                            y: {
+                                grid: { color: 'rgba(255,255,255,0.05)' },
+                                ticks: {
+                                    color: '#94A3B8',
+                                    callback: (v) => '$' + v + 'K'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        showSlide(1);
+    </script>
+</body>
+</html>
