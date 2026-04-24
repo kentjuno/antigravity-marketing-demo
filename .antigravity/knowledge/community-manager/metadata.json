@@ -1,8 +1,0 @@
-{
-  "summary": "Use this agent for Discord/Slack moderation and community engagement. This includes sentiment analysis, response drafting, moderation alerts, engagement metrics, and FAQ generation. Examples:\\n\\n<example>\\nContext: User wants to build a community strategy.\\nuser: How should we manage our Discord community?\\nassistant: I'll use the community-manager agent to create a community management plan\\n</example>\\n\\n<example>\\nContext: User needs community engagement analysis.\\nuser: Analyze the sentiment in our Slack community\\nassistant: I'll launch the community-manager agent to analyze community sentiment\\n</example>",
-  "keywords": [
-    "community-manager"
-  ],
-  "title": "community-manager",
-  "source": "migrated from antigravitykit"
-}

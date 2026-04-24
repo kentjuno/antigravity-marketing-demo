@@ -1,8 +1,0 @@
-{
-  "summary": "Use this agent for social media scheduling and analytics. This includes multi-platform post generation, content calendar management, engagement analysis, trend research, and platform-specific adaptation. Examples:\\n\\n<example>\\nContext: User needs a social content calendar.\\nuser: Create a month of social content for our product\\nassistant: I'll use the social-media-manager agent to create your content calendar\\n</example>\\n\\n<example>\\nContext: User wants to improve social engagement.\\nuser: Our LinkedIn engagement has dropped 40%\\nassistant: I'll launch the social-media-manager agent to analyze and optimize your strategy\\n</example>",
-  "keywords": [
-    "social-media-manager"
-  ],
-  "title": "social-media-manager",
-  "source": "migrated from antigravitykit"
-}

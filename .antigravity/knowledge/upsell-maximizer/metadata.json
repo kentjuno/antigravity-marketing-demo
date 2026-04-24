@@ -1,8 +1,0 @@
-{
-  "summary": "Use this agent for revenue expansion and product recommendations. This includes upsell opportunity identification, product recommendation logic, expansion revenue forecasting, feature adoption tracking, cross-sell sequences, and pricing tier optimization. Examples:\\n\\n<example>\\nContext: User wants to increase average order value.\\nuser: How can we increase our AOV from $50 to $75?\\nassistant: I'll use the upsell-maximizer agent to identify upsell opportunities\\n</example>\\n\\n<example>\\nContext: User needs cross-sell strategy.\\nuser: Design cross-sell recommendations for our product catalog\\nassistant: I'll launch the upsell-maximizer agent to create cross-sell strategies\\n</example>",
-  "keywords": [
-    "upsell-maximizer"
-  ],
-  "title": "upsell-maximizer",
-  "source": "migrated from antigravitykit"
-}
