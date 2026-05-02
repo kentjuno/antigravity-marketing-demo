@@ -2,7 +2,7 @@
   <div class="h-full flex">
     <!-- Docs Sidebar -->
     <div class="w-64 border-r border-border bg-surface-elevated/30 flex flex-col hidden md:flex shrink-0">
-      <div class="p-4 border-b border-border">
+      <div class="p-4 border-b border-border flex items-center justify-between">
         <h2 class="font-heading font-semibold text-text-primary flex items-center gap-2">
           <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -23,26 +23,60 @@
         </div>
         <div v-else class="space-y-0.5">
           <template v-for="item in docsTree" :key="item.slug || item.name">
-            <!-- Category header -->
+            <!-- Level 1 Category -->
             <div v-if="item.type === 'category'" class="pt-4 first:pt-1">
               <div class="px-3 pb-1.5 text-[10px] font-bold text-text-tertiary uppercase tracking-widest flex items-center gap-1.5">
                 <span class="w-3 h-px bg-secondary/50 inline-block"></span>
                 {{ item.name }}
               </div>
-              <RouterLink
-                v-for="child in item.children"
-                :key="child.slug"
-                :to="`/docs/${child.slug}`"
-                class="flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-all duration-150 group"
-                :class="isActive(child.slug)
-                  ? 'bg-secondary/10 text-secondary font-medium border-l-2 border-secondary'
-                  : 'text-text-secondary hover:text-text-primary hover:bg-surface border-l-2 border-transparent'"
-              >
-                <span class="w-1.5 h-1.5 rounded-full shrink-0 transition-colors"
-                  :class="isActive(child.slug) ? 'bg-secondary' : 'bg-border group-hover:bg-text-secondary'">
-                </span>
-                {{ child.name }}
-              </RouterLink>
+              <template v-for="child in item.children" :key="child.slug">
+                <!-- Level 2 Category -->
+                <div v-if="child.type === 'category'" class="pl-2 mt-2">
+                  <div 
+                    @click="toggleCategory(child.slug)" 
+                    class="px-3 pb-1 text-[10px] font-bold text-text-tertiary uppercase tracking-wider flex items-center justify-between cursor-pointer hover:text-text-secondary transition-colors"
+                  >
+                    <span>{{ child.name }}</span>
+                    <svg 
+                      class="w-3 h-3 transition-transform duration-200" 
+                      :class="isCategoryExpanded(child.slug) ? 'rotate-90' : ''" 
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <div v-show="isCategoryExpanded(child.slug)" class="space-y-0.5 mt-0.5">
+                    <RouterLink
+                      v-for="subchild in child.children"
+                      :key="subchild.slug"
+                      :to="`/docs/${subchild.slug}`"
+                      class="flex items-center gap-2 px-3 py-1.5 text-xs rounded-lg transition-all duration-150 group"
+                      :class="isActive(subchild.slug)
+                        ? 'bg-secondary/10 text-secondary font-medium border-l-2 border-secondary'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-surface border-l-2 border-transparent'"
+                    >
+                      <span class="w-1.5 h-1.5 rounded-full shrink-0 transition-colors"
+                        :class="isActive(subchild.slug) ? 'bg-secondary' : 'bg-border group-hover:bg-text-secondary'">
+                      </span>
+                      {{ getDocName(subchild) }}
+                    </RouterLink>
+                  </div>
+                </div>
+                <!-- Level 2 Doc -->
+                <RouterLink
+                  v-else
+                  :to="`/docs/${child.slug}`"
+                  class="flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-all duration-150 group"
+                  :class="isActive(child.slug)
+                    ? 'bg-secondary/10 text-secondary font-medium border-l-2 border-secondary'
+                    : 'text-text-secondary hover:text-text-primary hover:bg-surface border-l-2 border-transparent'"
+                >
+                  <span class="w-1.5 h-1.5 rounded-full shrink-0 transition-colors"
+                    :class="isActive(child.slug) ? 'bg-secondary' : 'bg-border group-hover:bg-text-secondary'">
+                  </span>
+                  {{ getDocName(child) }}
+                </RouterLink>
+              </template>
             </div>
             <!-- Top level doc -->
             <RouterLink
@@ -153,7 +187,7 @@ import { useI18n } from 'vue-i18n'
 
 const route = useRoute()
 const router = useRouter()
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const docsTree = ref([])
 const loadingTree = ref(true)
@@ -163,6 +197,13 @@ const currentDoc = ref(null)
 const loadingContent = ref(false)
 const contentError = ref(false)
 const articleRef = ref(null)
+
+// Watch for global locale changes
+watch(locale, () => {
+  if (route.params.slug) {
+    fetchDocContent(route.params.slug)
+  }
+})
 
 // Configure marked with marked-highlight (correct API for marked v17)
 marked.use(markedHighlight({
@@ -191,27 +232,45 @@ const readingTime = computed(() => {
   return Math.max(1, Math.round(words / 200))
 })
 
+const expandedCategories = ref({})
+
+function toggleCategory(slug) {
+  expandedCategories.value[slug] = !isCategoryExpanded(slug)
+}
+
+function isCategoryExpanded(slug) {
+  // Return true if expanded. Default is true.
+  return expandedCategories.value[slug] !== false
+}
+
+function getDocName(doc) {
+  if (!doc) return ''
+  if (typeof doc.name === 'string') return doc.name
+  if (!doc.name) return doc.slug
+  const mappedLang = locale.value === 'vi' ? 'vn' : locale.value
+  return doc.name[mappedLang] || doc.name.vn || doc.name.en || doc.name.default || doc.slug
+}
+
+function findDocInTree(tree, slug) {
+  for (const item of tree) {
+    if (item.slug === slug) return item;
+    if (item.children) {
+      const found = findDocInTree(item.children, slug);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
 const currentDocName = computed(() => {
   if (!currentDoc.value) return ''
   const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug
-  // Find from tree
-  for (const item of docsTree.value) {
-    if (item.slug === slug) return item.name
-    if (item.children) {
-      for (const child of item.children) {
-        if (child.slug === slug) return child.name
-        if (child.children) {
-          const subchild = child.children.find(c => c.slug === slug)
-          if (subchild) return subchild.name
-        }
-      }
-    }
-  }
-  return slug || ''
+  const docItem = findDocInTree(docsTree.value, slug)
+  return docItem ? getDocName(docItem) : slug
 })
 
 function isActive(slug) {
-  const routeSlug = Array.isArray(route.params.slug) ? route.params.slug[0] : route.params.slug
+  const routeSlug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug
   return routeSlug === slug
 }
 
@@ -290,7 +349,21 @@ async function fetchDocContent(slug) {
 
   try {
     const slugPath = Array.isArray(slug) ? slug.join('/') : slug
-    const res = await fetch(`/api/docs/${slugPath}`)
+    let fetchPath = slugPath;
+    
+    const docItem = findDocInTree(docsTree.value, slugPath);
+    if (docItem && docItem.langs) {
+       const mappedLang = locale.value === 'vi' ? 'vn' : locale.value;
+       if (docItem.langs[mappedLang]) {
+         fetchPath = docItem.langs[mappedLang].path;
+       } else if (docItem.langs['default']) {
+         fetchPath = docItem.langs['default'].path;
+       } else {
+         fetchPath = Object.values(docItem.langs)[0].path;
+       }
+    }
+
+    const res = await fetch(`/api/docs/${fetchPath}`)
     if (!res.ok) throw new Error('Failed to fetch doc content')
     const data = await res.json()
     currentDoc.value = data
@@ -304,10 +377,10 @@ async function fetchDocContent(slug) {
   }
 }
 
-onMounted(() => {
-  fetchDocsTree()
+onMounted(async () => {
+  await fetchDocsTree()
   if (route.params.slug) {
-    fetchDocContent(route.params.slug)
+    await fetchDocContent(route.params.slug)
   }
 })
 

@@ -11,6 +11,23 @@ const app = new Hono();
 // Docs root: <project>/docs/
 const getDocsDir = () => resolve(join(__dirname, '../../../../../docs'));
 
+function parseFrontmatter(content) {
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  const data = {};
+  let body = content;
+  if (match) {
+    const yaml = match[1];
+    body = content.slice(match[0].length).trim();
+    yaml.split('\n').forEach(line => {
+      const [key, ...values] = line.split(':');
+      if (key && values.length > 0) {
+        data[key.trim()] = values.join(':').trim();
+      }
+    });
+  }
+  return { data, body };
+}
+
 /**
  * Build a navigation tree from the docs directory
  */
@@ -18,12 +35,8 @@ function buildNavTree(dir, baseDir = dir) {
   const items = [];
   if (!existsSync(dir)) return items;
 
-  const entries = readdirSync(dir, { withFileTypes: true }).sort((a, b) => {
-    // Directories first, then files
-    if (a.isDirectory() && !b.isDirectory()) return -1;
-    if (!a.isDirectory() && b.isDirectory()) return 1;
-    return a.name.localeCompare(b.name);
-  });
+  const entries = readdirSync(dir, { withFileTypes: true });
+  const docGroups = {};
 
   for (const entry of entries) {
     if (entry.name.startsWith('.') || entry.name === 'index.json') continue;
@@ -33,27 +46,68 @@ function buildNavTree(dir, baseDir = dir) {
     if (entry.isDirectory()) {
       const children = buildNavTree(fullPath, baseDir);
       if (children.length > 0) {
+        let order = 999;
+        const match = entry.name.match(/^(\d+)-/);
+        if (match) order = parseInt(match[1], 10);
+
         items.push({
           type: 'category',
           name: formatName(entry.name),
           slug: relativePath,
+          order,
           children
         });
       }
     } else if (extname(entry.name) === '.md') {
-      const slug = relativePath.replace(/\.md$/, '');
       const content = readFileSync(fullPath, 'utf-8');
-      const title = extractTitle(content) || formatName(basename(entry.name, '.md'));
-      const description = extractDescription(content);
-      items.push({
-        type: 'doc',
-        name: title,
-        description,
-        slug,
-        path: relativePath
-      });
+      const { data, body } = parseFrontmatter(content);
+      
+      let baseSlugName = entry.name.replace(/\.md$/, '');
+      let lang = data.lang;
+      
+      const langMatch = baseSlugName.match(/\.(vn|en)$/i);
+      if (langMatch) {
+         lang = langMatch[1].toLowerCase();
+         baseSlugName = baseSlugName.replace(/\.(vn|en)$/i, '');
+      }
+      
+      const relativePathDir = relative(baseDir, dir).replace(/\\/g, '/');
+      const baseSlug = relativePathDir ? `${relativePathDir}/${baseSlugName}` : baseSlugName;
+
+      const title = data.title || extractTitle(body) || formatName(baseSlugName);
+      const description = data.description || extractDescription(body);
+      const order = data.order !== undefined ? parseInt(data.order, 10) : 999;
+      
+      if (!docGroups[baseSlug]) {
+        docGroups[baseSlug] = {
+           type: 'doc',
+           name: {},
+           description,
+           slug: baseSlug,
+           order: order,
+           langs: {}
+        };
+        items.push(docGroups[baseSlug]);
+      }
+      
+      const targetLang = lang || 'default';
+      docGroups[baseSlug].name[targetLang] = title;
+      docGroups[baseSlug].langs[targetLang] = { path: relativePath };
+      
+      if (order < docGroups[baseSlug].order) docGroups[baseSlug].order = order;
     }
   }
+
+  // Sort items based on order, then name
+  items.sort((a, b) => {
+    const orderA = a.order !== undefined ? a.order : 999;
+    const orderB = b.order !== undefined ? b.order : 999;
+    if (orderA !== orderB) return orderA - orderB;
+    const nameA = typeof a.name === 'string' ? a.name : (a.name.vn || a.name.en || a.name.default || '');
+    const nameB = typeof b.name === 'string' ? b.name : (b.name.vn || b.name.en || b.name.default || '');
+    return nameA.localeCompare(nameB);
+  });
+
   return items;
 }
 
@@ -117,8 +171,10 @@ app.get('/*', (c) => {
       const resolved = resolve(candidate);
       if (!resolved.startsWith(resolve(docsDir))) continue;
       if (existsSync(resolved)) {
-        filePath = resolved;
-        break;
+        if (statSync(resolved).isFile()) {
+          filePath = resolved;
+          break;
+        }
       }
     }
 
@@ -126,14 +182,15 @@ app.get('/*', (c) => {
       return c.json({ error: 'Doc not found', slug }, 404);
     }
 
-    const content = readFileSync(filePath, 'utf-8');
+    const rawContent = readFileSync(filePath, 'utf-8');
+    const { data, body } = parseFrontmatter(rawContent);
     const stats = statSync(filePath);
-    const title = extractTitle(content) || formatName(basename(filePath, '.md'));
+    const title = data.title || extractTitle(body) || formatName(basename(filePath, '.md'));
 
     return c.json({
       slug,
       title,
-      content,
+      content: body,
       modifiedAt: stats.mtime.toISOString()
     });
   } catch (error) {
