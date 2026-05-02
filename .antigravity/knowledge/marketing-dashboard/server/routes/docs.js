@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
-import { join, dirname, resolve, extname, basename } from 'path';
+import { join, dirname, resolve, extname, basename, relative } from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -28,7 +28,7 @@ function buildNavTree(dir, baseDir = dir) {
   for (const entry of entries) {
     if (entry.name.startsWith('.') || entry.name === 'index.json') continue;
     const fullPath = join(dir, entry.name);
-    const relativePath = fullPath.replace(baseDir, '').replace(/\\/g, '/').replace(/^\//, '');
+    const relativePath = relative(baseDir, fullPath).replace(/\\/g, '/');
 
     if (entry.isDirectory()) {
       const children = buildNavTree(fullPath, baseDir);
@@ -143,3 +143,4 @@ app.get('/*', (c) => {
 });
 
 export default app;
+

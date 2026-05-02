@@ -198,8 +198,13 @@ const currentDocName = computed(() => {
   for (const item of docsTree.value) {
     if (item.slug === slug) return item.name
     if (item.children) {
-      const child = item.children.find(c => c.slug === slug)
-      if (child) return child.name
+      for (const child of item.children) {
+        if (child.slug === slug) return child.name
+        if (child.children) {
+          const subchild = child.children.find(c => c.slug === slug)
+          if (subchild) return subchild.name
+        }
+      }
     }
   }
   return slug || ''
